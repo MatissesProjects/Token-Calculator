@@ -7,6 +7,7 @@
     <style>
         :root {
             --primary: #4F46E5;
+            --primary-hover: #4338CA;
             --bg: #F9FAFB;
             --card: #FFFFFF;
             --text: #111827;
@@ -19,7 +20,7 @@
             background-color: var(--bg);
             color: var(--text);
             padding: 2rem;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         h1 {
@@ -36,23 +37,6 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
         }
-        .search-panel {
-            margin-bottom: 2rem;
-            width: 100%;
-        }
-        .search-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-size: 1.1rem;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
         .input-group {
             display: flex;
             flex-direction: column;
@@ -62,12 +46,83 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        input[type="number"] {
-            padding: 0.5rem;
+        input[type="number"], input[type="text"] {
+            padding: 0.75rem;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
         }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Model Selection UI */
+        .selection-toggle-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        .selection-toggle-btn:hover {
+            background-color: var(--primary-hover);
+        }
+        .selection-panel {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            display: none; /* Hidden by default */
+        }
+        .selection-panel.active {
+            display: block;
+        }
+        .provider-group {
+            margin-bottom: 1.5rem;
+        }
+        .provider-group h4 {
+            margin: 0 0 0.75rem 0;
+            color: #6b7280;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        .chip-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .chip {
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: transparent;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+        .chip:hover {
+            border-color: var(--primary);
+        }
+        .chip.selected {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .search-panel { margin-bottom: 2rem; }
+        
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -120,9 +175,6 @@
             border-top: 1px solid var(--border);
             padding-top: 0.5rem;
         }
-        .hidden {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
@@ -144,8 +196,12 @@
         </div>
     </div>
 
+    <button class="selection-toggle-btn" onclick="toggleSelectionPanel()">Select Models to Compare</button>
+    <div class="selection-panel" id="selectionPanel">
+        </div>
+
     <div class="search-panel">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search models or providers (e.g., 'Llama', 'OpenAI', 'Flash')...">
+        <input type="text" id="searchInput" placeholder="Search selected models...">
     </div>
 
     <div class="results-grid" id="resultsContainer">
@@ -153,7 +209,14 @@
 
     <script>
         const API_URL = "http://localhost:8000/estimate";
-        let currentEstimations = []; // Store the latest backend data here for fast searching
+        let currentEstimations = []; 
+        let selectedModelNames = new Set(); 
+        let isFirstLoad = true;
+
+        function toggleSelectionPanel() {
+            const panel = document.getElementById('selectionPanel');
+            panel.classList.toggle('active');
+        }
 
         async function fetchEstimates() {
             const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
@@ -177,11 +240,66 @@
                 if (!response.ok) throw new Error("Network response was not ok");
                 
                 const data = await response.json();
-                currentEstimations = data.estimations; // Cache the data
-                renderCards(); // Draw the UI
+                currentEstimations = data.estimations; 
+
+                // If this is the first load, automatically select ALL models
+                if (isFirstLoad) {
+                    currentEstimations.forEach(m => selectedModelNames.add(m.model_name));
+                    isFirstLoad = false;
+                }
+
+                buildSelectionPanel();
+                renderCards(); 
             } catch (error) {
                 console.error("Failed to fetch:", error);
                 container.innerHTML = '<p style="color:red; text-align:center; width:100%;">Failed to connect to the backend. Is main.py running?</p>';
+            }
+        }
+
+        function buildSelectionPanel() {
+            const panel = document.getElementById('selectionPanel');
+            panel.innerHTML = ''; 
+
+            // Group the available models by their provider
+            const grouped = {};
+            currentEstimations.forEach(m => {
+                if (!grouped[m.provider]) grouped[m.provider] = [];
+                grouped[m.provider].push(m.model_name);
+            });
+
+            // Create the HTML for the chips
+            for (const provider in grouped) {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'provider-group';
+                groupDiv.innerHTML = `<h4>${provider}</h4>`;
+                
+                const chipContainer = document.createElement('div');
+                chipContainer.className = 'chip-container';
+
+                grouped[provider].forEach(modelName => {
+                    const chip = document.createElement('button');
+                    // Check if it's currently selected in our Set
+                    const isSelected = selectedModelNames.has(modelName);
+                    chip.className = `chip ${isSelected ? 'selected' : ''}`;
+                    chip.innerText = modelName;
+                    
+                    // Toggle logic on click
+                    chip.onclick = () => {
+                        if (selectedModelNames.has(modelName)) {
+                            selectedModelNames.delete(modelName);
+                            chip.classList.remove('selected');
+                        } else {
+                            selectedModelNames.add(modelName);
+                            chip.classList.add('selected');
+                        }
+                        renderCards(); // instantly update the UI without hitting backend
+                    };
+                    
+                    chipContainer.appendChild(chip);
+                });
+
+                groupDiv.appendChild(chipContainer);
+                panel.appendChild(groupDiv);
             }
         }
 
@@ -190,18 +308,21 @@
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
             container.innerHTML = ''; 
 
-            // Filter the cached estimations based on the search bar
-            const filteredEstimations = currentEstimations.filter(model => {
+            // 1. Filter by explicitly selected checkboxes/chips
+            let displayModels = currentEstimations.filter(m => selectedModelNames.has(m.model_name));
+
+            // 2. Filter by the text search bar
+            displayModels = displayModels.filter(model => {
                 const searchString = `${model.model_name} ${model.provider}`.toLowerCase();
                 return searchString.includes(searchQuery);
             });
 
-            if (filteredEstimations.length === 0) {
-                container.innerHTML = '<p style="text-align:center; width:100%; color: #6b7280;">No models found matching your search.</p>';
+            if (displayModels.length === 0) {
+                container.innerHTML = '<p style="text-align:center; width:100%; color: #6b7280;">No models match your selection/search.</p>';
                 return;
             }
 
-            filteredEstimations.forEach(model => {
+            displayModels.forEach(model => {
                 const card = document.createElement('div');
                 card.className = 'model-card';
                 card.innerHTML = `
@@ -219,16 +340,12 @@
             });
         }
 
-        // Event Listeners
-        // Token inputs trigger a full backend recalculation
         document.querySelectorAll('input[type="number"]').forEach(input => {
-            input.addEventListener('change', fetchEstimates); // Using 'change' instead of 'input' to reduce API spam
+            input.addEventListener('change', fetchEstimates);
         });
 
-        // The search bar only triggers a frontend re-render (instant filtering)
         document.getElementById('searchInput').addEventListener('input', renderCards);
 
-        // Initial run
         fetchEstimates();
     </script>
 </body>

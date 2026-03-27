@@ -3,9 +3,23 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import requests
-import math
+from contextlib import asynccontextmanager
 
 app = FastAPI(title="AI Run Estimator API")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Everything before the 'yield' happens on startup
+    global ACTIVE_MODELS_DATA
+    ACTIVE_MODELS_DATA = fetch_live_pricing()
+    
+    yield # This tells FastAPI to run the app now
+    
+    # Everything after the 'yield' happens on shutdown (we leave it blank!)
+
+# --- UPDATE YOUR APP INITIALIZATION ---
+# Attach the lifespan function to the app here
+app = FastAPI(title="AI Run Estimator API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
