@@ -8,223 +8,380 @@
         :root {
             --primary: #4F46E5;
             --primary-hover: #4338CA;
-            --bg: #F9FAFB;
+            --bg: #F3F4F6; /* Slightly darker background to make cards pop */
             --card: #FFFFFF;
-            --text: #111827;
+            --text-main: #111827;
+            --text-muted: #6B7280;
             --border: #E5E7EB;
             --badge-bg: #EEF2FF;
             --badge-text: #4338CA;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+        
         body {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
-            padding: 2rem;
+            color: var(--text-main);
+            padding: 2rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
+            line-height: 1.5;
         }
+
         h1 {
             text-align: center;
-            color: var(--primary);
+            color: var(--text-main);
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 2rem;
         }
-        .control-panel {
+
+        /* --- CONTROLS & LAYOUT --- */
+        .header-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .token-panel {
             background: var(--card);
             padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
+
         .input-group {
             display: flex;
             flex-direction: column;
         }
+
         label {
             font-size: 0.875rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-        input[type="number"], input[type="text"] {
-            padding: 0.75rem;
+
+        input[type="number"], input[type="text"], select {
+            padding: 0.75rem 1rem;
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: #F9FAFB;
+            transition: all 0.2s ease;
         }
-        input[type="text"]:focus {
+
+        input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            background-color: #FFF;
         }
-        
-        /* Model Selection UI */
-        .selection-toggle-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
+
+        /* --- BUTTONS & UTILITIES --- */
+        .utility-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            margin-bottom: 1rem;
-            width: 100%;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
-        .selection-toggle-btn:hover {
-            background-color: var(--primary-hover);
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
+
+        .btn-primary:hover { background-color: var(--primary-hover); }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .btn-outline:hover {
+            background-color: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        .search-flex {
+            display: flex;
+            flex: 1;
+            gap: 1rem;
+            min-width: 300px;
+        }
+
+        /* --- SELECTION PANEL --- */
         .selection-panel {
             background: var(--card);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            margin-bottom: 2rem;
-            display: none; /* Hidden by default */
+            display: none;
+            animation: fadeIn 0.2s ease-out;
         }
-        .selection-panel.active {
-            display: block;
-        }
-        .provider-group {
-            margin-bottom: 1.5rem;
-        }
+
+        .selection-panel.active { display: block; }
+
+        .provider-group { margin-bottom: 1.5rem; }
+        .provider-group:last-child { margin-bottom: 0; }
+        
         .provider-group h4 {
             margin: 0 0 0.75rem 0;
-            color: #6b7280;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.25rem;
         }
+
         .chip-container {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
+
         .chip {
-            padding: 0.4rem 0.8rem;
+            padding: 0.35rem 0.85rem;
             border-radius: 999px;
             border: 1px solid var(--border);
-            background: transparent;
+            background: #F9FAFB;
             font-size: 0.85rem;
+            font-weight: 500;
             cursor: pointer;
-            color: var(--text);
-            transition: all 0.2s;
+            color: var(--text-muted);
+            transition: all 0.15s ease;
         }
-        .chip:hover {
-            border-color: var(--primary);
-        }
+
+        .chip:hover { border-color: var(--primary); color: var(--primary); }
         .chip.selected {
-            background: var(--primary);
-            color: white;
+            background: var(--badge-bg);
+            color: var(--badge-text);
             border-color: var(--primary);
         }
 
-        .search-panel { margin-bottom: 2rem; }
-        
+        /* --- RESULTS GRID --- */
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
+
         .model-card {
             background: var(--card);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 0.3s ease-out forwards;
+            opacity: 0;
         }
+
         .model-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: #D1D5DB;
         }
+
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.75rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
         }
+
         .card-header h3 {
             margin: 0;
             font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-main);
         }
+
         .provider-badge {
             background: var(--badge-bg);
             color: var(--badge-text);
-            padding: 0.25rem 0.5rem;
-            border-radius: 999px;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            margin-left: 0.5rem;
         }
+
+        .metric-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
+        }
+
         .metric {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
             font-size: 0.9rem;
+            color: var(--text-muted);
         }
+        
+        .metric span:last-child {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .total-cost-container {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px dashed var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-label {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
         .total-cost {
-            font-size: 1.25rem;
-            font-weight: bold;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--primary);
-            margin-top: 1rem;
-            text-align: right;
-            border-top: 1px solid var(--border);
-            padding-top: 0.5rem;
         }
+
+        /* --- UTILS --- */
+        .loading-state {
+            text-align: center;
+            width: 100%;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            grid-column: 1 / -1;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Stagger animation for cards */
+        .model-card:nth-child(1) { animation-delay: 0.05s; }
+        .model-card:nth-child(2) { animation-delay: 0.1s; }
+        .model-card:nth-child(3) { animation-delay: 0.15s; }
+        .model-card:nth-child(4) { animation-delay: 0.2s; }
+        .model-card:nth-child(n+5) { animation-delay: 0.25s; }
+
     </style>
 </head>
 <body>
 
     <h1>AI Run Estimator</h1>
 
-    <div class="control-panel">
-        <div class="input-group">
-            <label for="inputTokens">Input Tokens (Prompt)</label>
-            <input type="number" id="inputTokens" value="10000" min="0">
-        </div>
-        <div class="input-group">
-            <label for="cachedTokens">Cached Tokens</label>
-            <input type="number" id="cachedTokens" value="0" min="0">
-        </div>
-        <div class="input-group">
-            <label for="outputTokens">Output Tokens (Generated)</label>
-            <input type="number" id="outputTokens" value="500" min="0">
-        </div>
-    </div>
-
-    <button class="selection-toggle-btn" onclick="toggleSelectionPanel()">Select Models to Compare</button>
-    <div class="selection-panel" id="selectionPanel">
+    <div class="header-controls">
+        <div class="token-panel">
+            <div class="input-group">
+                <label for="inputTokens">Input Tokens</label>
+                <input type="number" id="inputTokens" value="100000" min="0">
+            </div>
+            <div class="input-group">
+                <label for="cachedTokens">Cached Tokens</label>
+                <input type="number" id="cachedTokens" value="0" min="0">
+            </div>
+            <div class="input-group">
+                <label for="outputTokens">Output Tokens</label>
+                <input type="number" id="outputTokens" value="5000" min="0">
+            </div>
         </div>
 
-    <div class="search-panel">
-        <input type="text" id="searchInput" placeholder="Search selected models...">
+        <div class="utility-row">
+            <button class="btn btn-outline" onclick="toggleSelectionPanel()">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                Filter Providers
+            </button>
+            
+            <button class="btn btn-outline" onclick="exportToCSV()" id="exportBtn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Export CSV
+            </button>
+
+            <div class="search-flex">
+                <input type="text" id="searchInput" placeholder="Search models (e.g., 'Flash', 'Sonnet')..." style="flex: 2;">
+                <select id="sortSelect" style="flex: 1;">
+                    <option value="newest">Sort: Newest First</option>
+                    <option value="price">Sort: Cheapest First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="selection-panel" id="selectionPanel"></div>
     </div>
 
     <div class="results-grid" id="resultsContainer">
-        </div>
+        <div class="loading-state">Initializing calculator...</div>
+    </div>
 
     <script>
         const API_URL = "http://localhost:8000/estimate";
         let currentEstimations = []; 
         let selectedModelNames = new Set(); 
         let isFirstLoad = true;
+        let activeDisplayModels = []; // Keep track of currently visible models for CSV export
+
+        // Formatting utility for currency
+        const formatMoney = (amount) => {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 4, maximumFractionDigits: 4 }).format(amount);
+        };
 
         function toggleSelectionPanel() {
-            const panel = document.getElementById('selectionPanel');
-            panel.classList.toggle('active');
+            document.getElementById('selectionPanel').classList.toggle('active');
         }
 
         async function fetchEstimates() {
             const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
-            const cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
+            let cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
             const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
 
+            // UI UX Polish: Don't let user think they are caching more than they input
+            if (cachedTokens > inputTokens) {
+                cachedTokens = inputTokens;
+                document.getElementById('cachedTokens').value = inputTokens;
+            }
+
             const container = document.getElementById('resultsContainer');
-            container.innerHTML = '<p style="text-align:center; width:100%;">Calculating...</p>';
+            if (isFirstLoad) container.innerHTML = '<div class="loading-state">Fetching live pricing and computing models...</div>';
 
             try {
                 const response = await fetch(API_URL, {
@@ -237,12 +394,11 @@
                     })
                 });
 
-                if (!response.ok) throw new Error("Network response was not ok");
+                if (!response.ok) throw new Error("Network error");
                 
                 const data = await response.json();
                 currentEstimations = data.estimations; 
 
-                // If this is the first load, automatically select ALL models
                 if (isFirstLoad) {
                     currentEstimations.forEach(m => selectedModelNames.add(m.model_name));
                     isFirstLoad = false;
@@ -252,7 +408,7 @@
                 renderCards(); 
             } catch (error) {
                 console.error("Failed to fetch:", error);
-                container.innerHTML = '<p style="color:red; text-align:center; width:100%;">Failed to connect to the backend. Is main.py running?</p>';
+                container.innerHTML = '<div class="loading-state" style="color:#DC2626;">Failed to connect to backend. Make sure main.py is running!</div>';
             }
         }
 
@@ -260,14 +416,12 @@
             const panel = document.getElementById('selectionPanel');
             panel.innerHTML = ''; 
 
-            // Group the available models by their provider
             const grouped = {};
             currentEstimations.forEach(m => {
                 if (!grouped[m.provider]) grouped[m.provider] = [];
                 grouped[m.provider].push(m.model_name);
             });
 
-            // Create the HTML for the chips
             for (const provider in grouped) {
                 const groupDiv = document.createElement('div');
                 groupDiv.className = 'provider-group';
@@ -278,12 +432,10 @@
 
                 grouped[provider].forEach(modelName => {
                     const chip = document.createElement('button');
-                    // Check if it's currently selected in our Set
                     const isSelected = selectedModelNames.has(modelName);
                     chip.className = `chip ${isSelected ? 'selected' : ''}`;
                     chip.innerText = modelName;
                     
-                    // Toggle logic on click
                     chip.onclick = () => {
                         if (selectedModelNames.has(modelName)) {
                             selectedModelNames.delete(modelName);
@@ -292,12 +444,10 @@
                             selectedModelNames.add(modelName);
                             chip.classList.add('selected');
                         }
-                        renderCards(); // instantly update the UI without hitting backend
+                        renderCards(); 
                     };
-                    
                     chipContainer.appendChild(chip);
                 });
-
                 groupDiv.appendChild(chipContainer);
                 panel.appendChild(groupDiv);
             }
@@ -306,19 +456,26 @@
         function renderCards() {
             const container = document.getElementById('resultsContainer');
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const sortOrder = document.getElementById('sortSelect').value;
             container.innerHTML = ''; 
 
-            // 1. Filter by explicitly selected checkboxes/chips
             let displayModels = currentEstimations.filter(m => selectedModelNames.has(m.model_name));
 
-            // 2. Filter by the text search bar
             displayModels = displayModels.filter(model => {
                 const searchString = `${model.model_name} ${model.provider}`.toLowerCase();
                 return searchString.includes(searchQuery);
             });
 
+            if (sortOrder === 'newest') {
+                displayModels.sort((a, b) => b.release_date.localeCompare(a.release_date) || a.total_cost - b.total_cost);
+            } else {
+                displayModels.sort((a, b) => a.total_cost - b.total_cost);
+            }
+
+            activeDisplayModels = displayModels; // Save for CSV export
+
             if (displayModels.length === 0) {
-                container.innerHTML = '<p style="text-align:center; width:100%; color: #6b7280;">No models match your selection/search.</p>';
+                container.innerHTML = '<div class="loading-state">No models match your current filters.</div>';
                 return;
             }
 
@@ -330,22 +487,68 @@
                         <h3>${model.model_name}</h3>
                         <span class="provider-badge">${model.provider}</span>
                     </div>
-                    <div class="metric"><span>Input Cost:</span> <span>$${model.input_cost.toFixed(4)}</span></div>
-                    <div class="metric"><span>Cache Cost:</span> <span>$${model.cache_cost.toFixed(4)}</span></div>
-                    <div class="metric"><span>Output Cost:</span> <span>$${model.output_cost.toFixed(4)}</span></div>
-                    <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${model.estimated_latency_sec}s</span></div>
-                    <div class="total-cost">Total: $${model.total_cost.toFixed(4)}</div>
+                    <div class="metric-list">
+                        <div class="metric"><span>Input</span> <span>${formatMoney(model.input_cost)}</span></div>
+                        <div class="metric"><span>Cache</span> <span>${formatMoney(model.cache_cost)}</span></div>
+                        <div class="metric"><span>Output</span> <span>${formatMoney(model.output_cost)}</span></div>
+                        <div class="metric" style="margin-top: 4px;"><span>Est. Latency</span> <span>~${model.estimated_latency_sec}s</span></div>
+                    </div>
+                    <div class="total-cost-container">
+                        <span class="total-label">Total Est.</span>
+                        <span class="total-cost">${formatMoney(model.total_cost)}</span>
+                    </div>
                 `;
                 container.appendChild(card);
             });
         }
 
+        // CSV Export Feature
+        function exportToCSV() {
+            if (activeDisplayModels.length === 0) {
+                alert("No models to export!");
+                return;
+            }
+
+            const headers = ["Provider", "Model Name", "Input Cost ($)", "Cache Cost ($)", "Output Cost ($)", "Total Cost ($)", "Est Latency (s)", "Release Date"];
+            const rows = activeDisplayModels.map(m => [
+                m.provider,
+                `"${m.model_name}"`, // Quote strings to prevent comma issues
+                m.input_cost.toFixed(6),
+                m.cache_cost.toFixed(6),
+                m.output_cost.toFixed(6),
+                m.total_cost.toFixed(6),
+                m.estimated_latency_sec,
+                m.release_date
+            ]);
+
+            const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+            
+            // Trigger Download
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", `ai_cost_estimate_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Debounce utility for inputs (waits 300ms after user stops typing to fetch)
+        let debounceTimer;
         document.querySelectorAll('input[type="number"]').forEach(input => {
-            input.addEventListener('change', fetchEstimates);
+            input.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(fetchEstimates, 300);
+            });
         });
 
+        // Instant frontend updates for search and sort
         document.getElementById('searchInput').addEventListener('input', renderCards);
+        document.getElementById('sortSelect').addEventListener('change', renderCards);
 
+        // Run on load
         fetchEstimates();
     </script>
 </body>
