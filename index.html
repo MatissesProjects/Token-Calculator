@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Run Estimator</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --bg: #F9FAFB;
+            --card: #FFFFFF;
+            --text: #111827;
+            --border: #E5E7EB;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+        }
+        .control-panel {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .model-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .model-card h3 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .total-cost {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-top: 1rem;
+            text-align: right;
+            border-top: 1px solid var(--border);
+            padding-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI Run Estimator</h1>
+
+    <div class="control-panel">
+        <div class="input-group">
+            <label for="inputTokens">Input Tokens (Prompt)</label>
+            <input type="number" id="inputTokens" value="10000" min="0">
+        </div>
+        <div class="input-group">
+            <label for="cachedTokens">Cached Tokens</label>
+            <input type="number" id="cachedTokens" value="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="outputTokens">Output Tokens (Generated)</label>
+            <input type="number" id="outputTokens" value="500" min="0">
+        </div>
+    </div>
+
+    <div class="results-grid" id="resultsContainer">
+        </div>
+
+    <script>
+        // Data structure for models (Prices per 1 Million tokens)
+        const models = [
+            {
+                name: "GPT-4o",
+                inputPrice: 5.00,
+                outputPrice: 15.00,
+                cacheReadPrice: 2.50, // 50% discount for cached
+                speedTps: 70 // approx tokens per second for latency math
+            },
+            {
+                name: "Claude 3.5 Sonnet",
+                inputPrice: 3.00,
+                outputPrice: 15.00,
+                cacheReadPrice: 0.30, // 90% discount for cached read
+                speedTps: 80
+            },
+            {
+                name: "Gemini 1.5 Pro",
+                inputPrice: 3.50,
+                outputPrice: 10.50,
+                cacheReadPrice: 0.88, // Context caching pricing
+                speedTps: 60
+            }
+        ];
+
+        function calculateMetrics() {
+            const inputTokens = parseFloat(document.getElementById('inputTokens').value) || 0;
+            const cachedTokens = parseFloat(document.getElementById('cachedTokens').value) || 0;
+            const outputTokens = parseFloat(document.getElementById('outputTokens').value) || 0;
+
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = ''; // Clear previous
+
+            models.forEach(model => {
+                // Ensure we don't calculate more cached tokens than input tokens
+                const actualCached = Math.min(cachedTokens, inputTokens);
+                const actualFreshInput = inputTokens - actualCached;
+
+                // Math (divided by 1M since prices are per million)
+                const inputCost = (actualFreshInput / 1000000) * model.inputPrice;
+                const cacheCost = (actualCached / 1000000) * model.cacheReadPrice;
+                const outputCost = (outputTokens / 1000000) * model.outputPrice;
+                const totalCost = inputCost + cacheCost + outputCost;
+
+                // Time estimate (very rough: Input usually processes faster, output is bottleneck)
+                const estimatedTimeSec = (outputTokens / model.speedTps).toFixed(1);
+
+                // Create Card UI
+                const card = document.createElement('div');
+                card.className = 'model-card';
+                card.innerHTML = `
+                    <h3>${model.name}</h3>
+                    <div class="metric"><span>Input Cost:</span> <span>$${inputCost.toFixed(4)}</span></div>
+                    <div class="metric"><span>Cache Cost:</span> <span>$${cacheCost.toFixed(4)}</span></div>
+                    <div class="metric"><span>Output Cost:</span> <span>$${outputCost.toFixed(4)}</span></div>
+                    <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${estimatedTimeSec}s</span></div>
+                    <div class="total-cost">Total: $${totalCost.toFixed(4)}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Add event listeners to update automatically when typing
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', calculateMetrics);
+        });
+
+        // Initial run
+        calculateMetrics();
+    </script>
+</body>
+</html>
