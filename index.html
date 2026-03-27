@@ -11,13 +11,15 @@
             --card: #FFFFFF;
             --text: #111827;
             --border: #E5E7EB;
+            --badge-bg: #EEF2FF;
+            --badge-text: #4338CA;
         }
         body {
             font-family: system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         h1 {
@@ -29,10 +31,27 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
+        }
+        .search-panel {
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
         }
         .input-group {
             display: flex;
@@ -43,7 +62,7 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        input {
+        input[type="number"] {
             padding: 0.5rem;
             border: 1px solid var(--border);
             border-radius: 4px;
@@ -51,7 +70,7 @@
         }
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
         .model-card {
@@ -60,11 +79,31 @@
             border-radius: 8px;
             border: 1px solid var(--border);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
         }
-        .model-card h3 {
-            margin-top: 0;
+        .model-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .provider-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 0.25rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
         .metric {
             display: flex;
@@ -80,6 +119,9 @@
             text-align: right;
             border-top: 1px solid var(--border);
             padding-top: 0.5rem;
+        }
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
@@ -102,12 +144,16 @@
         </div>
     </div>
 
+    <div class="search-panel">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search models or providers (e.g., 'Llama', 'OpenAI', 'Flash')...">
+    </div>
+
     <div class="results-grid" id="resultsContainer">
         </div>
 
     <script>
-        // The URL of your new Python backend
         const API_URL = "http://localhost:8000/estimate";
+        let currentEstimations = []; // Store the latest backend data here for fast searching
 
         async function fetchEstimates() {
             const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
@@ -115,17 +161,12 @@
             const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
 
             const container = document.getElementById('resultsContainer');
-            
-            // Show a loading state while waiting for the backend
-            container.innerHTML = '<p style="text-align:center; width:100%; color: var(--primary);">Fetching live estimates...</p>';
+            container.innerHTML = '<p style="text-align:center; width:100%;">Calculating...</p>';
 
             try {
-                // Send the data to Python
                 const response = await fetch(API_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         input_tokens: inputTokens,
                         cached_tokens: cachedTokens,
@@ -136,33 +177,56 @@
                 if (!response.ok) throw new Error("Network response was not ok");
                 
                 const data = await response.json();
-                container.innerHTML = ''; // Clear loading message
-
-                // Render the UI based on the Python backend's response
-                data.estimations.forEach(model => {
-                    const card = document.createElement('div');
-                    card.className = 'model-card';
-                    card.innerHTML = `
-                        <h3>${model.model_name}</h3>
-                        <div class="metric"><span>Input Cost:</span> <span>$${model.input_cost.toFixed(4)}</span></div>
-                        <div class="metric"><span>Cache Cost:</span> <span>$${model.cache_cost.toFixed(4)}</span></div>
-                        <div class="metric"><span>Output Cost:</span> <span>$${model.output_cost.toFixed(4)}</span></div>
-                        <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${model.estimated_latency_sec}s</span></div>
-                        <div class="total-cost">Total: $${model.total_cost.toFixed(4)}</div>
-                    `;
-                    container.appendChild(card);
-                });
-
+                currentEstimations = data.estimations; // Cache the data
+                renderCards(); // Draw the UI
             } catch (error) {
                 console.error("Failed to fetch:", error);
                 container.innerHTML = '<p style="color:red; text-align:center; width:100%;">Failed to connect to the backend. Is main.py running?</p>';
             }
         }
 
-        // Add event listeners (we use 'change' or a small debounce in production so we don't spam the API on every single keystroke, but 'input' is fine for local testing)
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', fetchEstimates);
+        function renderCards() {
+            const container = document.getElementById('resultsContainer');
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = ''; 
+
+            // Filter the cached estimations based on the search bar
+            const filteredEstimations = currentEstimations.filter(model => {
+                const searchString = `${model.model_name} ${model.provider}`.toLowerCase();
+                return searchString.includes(searchQuery);
+            });
+
+            if (filteredEstimations.length === 0) {
+                container.innerHTML = '<p style="text-align:center; width:100%; color: #6b7280;">No models found matching your search.</p>';
+                return;
+            }
+
+            filteredEstimations.forEach(model => {
+                const card = document.createElement('div');
+                card.className = 'model-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3>${model.model_name}</h3>
+                        <span class="provider-badge">${model.provider}</span>
+                    </div>
+                    <div class="metric"><span>Input Cost:</span> <span>$${model.input_cost.toFixed(4)}</span></div>
+                    <div class="metric"><span>Cache Cost:</span> <span>$${model.cache_cost.toFixed(4)}</span></div>
+                    <div class="metric"><span>Output Cost:</span> <span>$${model.output_cost.toFixed(4)}</span></div>
+                    <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${model.estimated_latency_sec}s</span></div>
+                    <div class="total-cost">Total: $${model.total_cost.toFixed(4)}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Event Listeners
+        // Token inputs trigger a full backend recalculation
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('change', fetchEstimates); // Using 'change' instead of 'input' to reduce API spam
         });
+
+        // The search bar only triggers a frontend re-render (instant filtering)
+        document.getElementById('searchInput').addEventListener('input', renderCards);
 
         // Initial run
         fetchEstimates();
