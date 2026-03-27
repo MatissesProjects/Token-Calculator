@@ -106,75 +106,66 @@
         </div>
 
     <script>
-        // Data structure for models (Prices per 1 Million tokens)
-        const models = [
-            {
-                name: "GPT-4o",
-                inputPrice: 5.00,
-                outputPrice: 15.00,
-                cacheReadPrice: 2.50, // 50% discount for cached
-                speedTps: 70 // approx tokens per second for latency math
-            },
-            {
-                name: "Claude 3.5 Sonnet",
-                inputPrice: 3.00,
-                outputPrice: 15.00,
-                cacheReadPrice: 0.30, // 90% discount for cached read
-                speedTps: 80
-            },
-            {
-                name: "Gemini 1.5 Pro",
-                inputPrice: 3.50,
-                outputPrice: 10.50,
-                cacheReadPrice: 0.88, // Context caching pricing
-                speedTps: 60
-            }
-        ];
+        // The URL of your new Python backend
+        const API_URL = "http://localhost:8000/estimate";
 
-        function calculateMetrics() {
-            const inputTokens = parseFloat(document.getElementById('inputTokens').value) || 0;
-            const cachedTokens = parseFloat(document.getElementById('cachedTokens').value) || 0;
-            const outputTokens = parseFloat(document.getElementById('outputTokens').value) || 0;
+        async function fetchEstimates() {
+            const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
+            const cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
 
             const container = document.getElementById('resultsContainer');
-            container.innerHTML = ''; // Clear previous
+            
+            // Show a loading state while waiting for the backend
+            container.innerHTML = '<p style="text-align:center; width:100%; color: var(--primary);">Fetching live estimates...</p>';
 
-            models.forEach(model => {
-                // Ensure we don't calculate more cached tokens than input tokens
-                const actualCached = Math.min(cachedTokens, inputTokens);
-                const actualFreshInput = inputTokens - actualCached;
+            try {
+                // Send the data to Python
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        input_tokens: inputTokens,
+                        cached_tokens: cachedTokens,
+                        output_tokens: outputTokens
+                    })
+                });
 
-                // Math (divided by 1M since prices are per million)
-                const inputCost = (actualFreshInput / 1000000) * model.inputPrice;
-                const cacheCost = (actualCached / 1000000) * model.cacheReadPrice;
-                const outputCost = (outputTokens / 1000000) * model.outputPrice;
-                const totalCost = inputCost + cacheCost + outputCost;
+                if (!response.ok) throw new Error("Network response was not ok");
+                
+                const data = await response.json();
+                container.innerHTML = ''; // Clear loading message
 
-                // Time estimate (very rough: Input usually processes faster, output is bottleneck)
-                const estimatedTimeSec = (outputTokens / model.speedTps).toFixed(1);
+                // Render the UI based on the Python backend's response
+                data.estimations.forEach(model => {
+                    const card = document.createElement('div');
+                    card.className = 'model-card';
+                    card.innerHTML = `
+                        <h3>${model.model_name}</h3>
+                        <div class="metric"><span>Input Cost:</span> <span>$${model.input_cost.toFixed(4)}</span></div>
+                        <div class="metric"><span>Cache Cost:</span> <span>$${model.cache_cost.toFixed(4)}</span></div>
+                        <div class="metric"><span>Output Cost:</span> <span>$${model.output_cost.toFixed(4)}</span></div>
+                        <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${model.estimated_latency_sec}s</span></div>
+                        <div class="total-cost">Total: $${model.total_cost.toFixed(4)}</div>
+                    `;
+                    container.appendChild(card);
+                });
 
-                // Create Card UI
-                const card = document.createElement('div');
-                card.className = 'model-card';
-                card.innerHTML = `
-                    <h3>${model.name}</h3>
-                    <div class="metric"><span>Input Cost:</span> <span>$${inputCost.toFixed(4)}</span></div>
-                    <div class="metric"><span>Cache Cost:</span> <span>$${cacheCost.toFixed(4)}</span></div>
-                    <div class="metric"><span>Output Cost:</span> <span>$${outputCost.toFixed(4)}</span></div>
-                    <div class="metric" style="color: #6b7280; margin-top: 10px;"><span>Est. Latency:</span> <span>~${estimatedTimeSec}s</span></div>
-                    <div class="total-cost">Total: $${totalCost.toFixed(4)}</div>
-                `;
-                container.appendChild(card);
-            });
+            } catch (error) {
+                console.error("Failed to fetch:", error);
+                container.innerHTML = '<p style="color:red; text-align:center; width:100%;">Failed to connect to the backend. Is main.py running?</p>';
+            }
         }
 
-        // Add event listeners to update automatically when typing
+        // Add event listeners (we use 'change' or a small debounce in production so we don't spam the API on every single keystroke, but 'input' is fine for local testing)
         document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', calculateMetrics);
+            input.addEventListener('input', fetchEstimates);
         });
 
         // Initial run
-        calculateMetrics();
+        fetchEstimates();
     </script>
 </body>
 </html>
