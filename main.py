@@ -8,6 +8,7 @@ from calculator import ModelCalculator
 class EstimationRequest(BaseModel):
     input_tokens: int = 10000
     cached_tokens: int = 0
+    cache_write_tokens: int = 0
     output_tokens: int = 500
 
 class ModelEstimation(BaseModel):
@@ -19,6 +20,8 @@ class ModelEstimation(BaseModel):
     total_cost: float
     estimated_latency_sec: float
     release_date: str
+    max_context: float
+    is_too_big: bool
 
 class Subscription(BaseModel):
     id: str
@@ -60,7 +63,8 @@ async def calculate_metrics(request: EstimationRequest):
     results = calculator.estimate(
         request.input_tokens, 
         request.cached_tokens, 
-        request.output_tokens
+        request.output_tokens,
+        request.cache_write_tokens
     )
     
     # Map to API response model

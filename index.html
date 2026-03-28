@@ -317,8 +317,12 @@
                 <input type="number" id="inputTokens" value="100000" min="0">
             </div>
             <div class="input-group">
-                <label for="cachedTokens">Cached Tokens</label>
+                <label for="cachedTokens">Cached Tokens (Hits)</label>
                 <input type="number" id="cachedTokens" value="0" min="0">
+            </div>
+            <div class="input-group">
+                <label for="cacheWriteTokens">Cache Write (Creation)</label>
+                <input type="number" id="cacheWriteTokens" value="0" min="0">
             </div>
             <div class="input-group">
                 <label for="outputTokens">Output Tokens</label>
@@ -402,14 +406,15 @@
         async function fetchEstimates() {
             const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
             let cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
+            let cacheWriteTokens = parseInt(document.getElementById('cacheWriteTokens').value) || 0;
             const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
 
             if (isFirstLoad) fetchSubscriptions();
 
             // UI UX Polish: Don't let user think they are caching more than they input
-            if (cachedTokens > inputTokens) {
-                cachedTokens = inputTokens;
-                document.getElementById('cachedTokens').value = inputTokens;
+            if (cachedTokens + cacheWriteTokens > inputTokens) {
+                cachedTokens = Math.min(cachedTokens, inputTokens);
+                cacheWriteTokens = Math.min(cacheWriteTokens, inputTokens - cachedTokens);
             }
 
             const container = document.getElementById('resultsContainer');
@@ -422,6 +427,7 @@
                     body: JSON.stringify({
                         input_tokens: inputTokens,
                         cached_tokens: cachedTokens,
+                        cache_write_tokens: cacheWriteTokens,
                         output_tokens: outputTokens
                     })
                 });
@@ -546,23 +552,32 @@
 
             displayModels.forEach(model => {
                 const card = document.createElement('div');
-                card.className = 'model-card';
+                card.className = `model-card ${model.is_too_big ? 'too-big' : ''}`;
                 const monthlyTotal = model.total_cost * runs;
                 
+                if (model.is_too_big) {
+                    card.style.opacity = '0.6';
+                    card.style.border = '1px solid #FCA5A5';
+                    card.style.background = '#FEF2F2';
+                }
+
                 card.innerHTML = `
                     <div class="card-header">
-                        <h3>${model.model_name}</h3>
+                        <div style="display:flex; flex-direction:column;">
+                            <h3>${model.model_name}</h3>
+                            ${model.is_too_big ? '<span style="color:#DC2626; font-size:0.7rem; font-weight:700;">⚠ EXCEEDS CONTEXT</span>' : ''}
+                        </div>
                         <span class="provider-badge">${model.provider}</span>
                     </div>
                     <div class="metric-list">
                         <div class="metric"><span>Per Run</span> <span>${formatMoney(model.total_cost)}</span></div>
-                        <div class="metric"><span>Input/Cache</span> <span>${formatMoney(model.input_cost + model.cache_cost)}</span></div>
                         <div class="metric"><span>Output</span> <span>${formatMoney(model.output_cost)}</span></div>
+                        <div class="metric"><span>Context Limit</span> <span>${(model.max_context / 1000).toFixed(0)}k</span></div>
                         <div class="metric" style="margin-top: 4px;"><span>Est. Latency</span> <span>~${model.estimated_latency_sec}s</span></div>
                     </div>
-                    <div class="total-cost-container" style="background: #F9FAFB; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid var(--border);">
+                    <div class="total-cost-container" style="background: ${model.is_too_big ? '#FEE2E2' : '#F9FAFB'}; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid ${model.is_too_big ? '#FCA5A5' : 'var(--border)'};">
                         <span class="total-label">Monthly (${runs}x)</span>
-                        <span class="total-cost">${formatMoney(monthlyTotal)}</span>
+                        <span class="total-cost" style="${model.is_too_big ? 'color:#B91C1C;' : ''}">${formatMoney(monthlyTotal)}</span>
                     </div>
                 `;
                 container.appendChild(card);

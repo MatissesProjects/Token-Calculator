@@ -10,9 +10,9 @@
     - [x] Add Subscription Comparison (Cursor, Copilot, etc.)
     - [x] Batch Estimation Scaling (1x, 100x, 1000x)
 
-- [ ] Phase 3: Advanced Pricing Logic
-    - [ ] Anthropic Cache Write vs Read logic
-    - [ ] Context Window Warnings
+- [x] Phase 3: Advanced Pricing Logic
+    - [x] Anthropic Cache Write vs Read logic
+    - [x] Context Window Warnings
 
 - [ ] Phase 4: Data & Maintenance
     - [ ] Improved Live Sync auto-discovery

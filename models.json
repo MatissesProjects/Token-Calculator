@@ -6,7 +6,9 @@
         "output_price": 0.14,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "amazon-nova-lite": {
         "name": "Amazon Nova Lite",
@@ -15,7 +17,9 @@
         "output_price": 0.24,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "amazon-nova-pro": {
         "name": "Amazon Nova Pro",
@@ -24,7 +28,9 @@
         "output_price": 3.2,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "amazon-nova-premier": {
         "name": "Amazon Nova Premier",
@@ -33,7 +39,9 @@
         "output_price": 12.5,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2025-01"
+        "release_date": "2025-01",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-1.5-flash-8b": {
         "name": "Gemini 1.5 Flash-8B \u2264128k",
@@ -43,7 +51,9 @@
         "speed_tps": 120,
         "cache_discount": 1.0,
         "max_context": 128000,
-        "release_date": "2024-10"
+        "release_date": "2024-10",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-1.5-flash-8b-128k": {
         "name": "Gemini 1.5 Flash-8B >128k",
@@ -53,7 +63,10 @@
         "speed_tps": 120,
         "cache_discount": 1.0,
         "min_context": 128001,
-        "release_date": "2024-10"
+        "release_date": "2024-10",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-1.5-flash": {
         "name": "Gemini 1.5 Flash \u2264128k",
@@ -63,7 +76,9 @@
         "speed_tps": 120,
         "cache_discount": 1.0,
         "max_context": 128000,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-1.5-flash-128k": {
         "name": "Gemini 1.5 Flash >128k",
@@ -73,7 +88,10 @@
         "speed_tps": 120,
         "cache_discount": 1.0,
         "min_context": 128001,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-1.5-pro": {
         "name": "Gemini 1.5 Pro \u2264128k",
@@ -83,7 +101,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "max_context": 128000,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-1.5-pro-128k": {
         "name": "Gemini 1.5 Pro >128k",
@@ -93,7 +113,10 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "min_context": 128001,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.0-flash-lite": {
         "name": "Gemini 2.0 Flash Lite",
@@ -102,7 +125,10 @@
         "output_price": 0.3,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.0-flash": {
         "name": "Gemini 2.0 Flash",
@@ -111,7 +137,10 @@
         "output_price": 0.4,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.5-flash-lite": {
         "name": "Gemini 2.5 Flash-Lite",
@@ -120,7 +149,10 @@
         "output_price": 0.4,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.5-flash": {
         "name": "Gemini 2.5 Flash",
@@ -129,7 +161,10 @@
         "output_price": 2.5,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.5-flash-preview-09-2025": {
         "name": "Gemini 2.5 Flash Preview (09-2025)",
@@ -138,7 +173,10 @@
         "output_price": 2.5,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-09"
+        "release_date": "2025-09",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.5-pro-preview-03-25": {
         "name": "Gemini 2.5 Pro Preview \u2264200k",
@@ -148,7 +186,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "max_context": 200000,
-        "release_date": "2025-03"
+        "release_date": "2025-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-2.5-pro-preview-03-25-200k": {
         "name": "Gemini 2.5 Pro Preview >200k",
@@ -158,7 +198,10 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "min_context": 200001,
-        "release_date": "2025-03"
+        "release_date": "2025-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-2.5-pro": {
         "name": "Gemini 2.5 Pro \u2264200k",
@@ -168,7 +211,9 @@
         "speed_tps": 40,
         "cache_discount": 0.1,
         "max_context": 200000,
-        "release_date": "2025-04"
+        "release_date": "2025-04",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gemini-2.5-pro-200k": {
         "name": "Gemini 2.5 Pro >200k",
@@ -178,7 +223,10 @@
         "speed_tps": 40,
         "cache_discount": 0.1,
         "min_context": 200001,
-        "release_date": "2025-04"
+        "release_date": "2025-04",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-3-flash-preview": {
         "name": "Gemini 3 Flash Preview",
@@ -187,7 +235,10 @@
         "output_price": 3.0,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2025-10"
+        "release_date": "2025-10",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-3.1-flash-lite-preview": {
         "name": "Gemini 3.1 Flash-Lite",
@@ -196,7 +247,10 @@
         "output_price": 1.5,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-3-pro-preview": {
         "name": "Gemini 3 Pro \u2264200k",
@@ -206,7 +260,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "max_context": 200000,
-        "release_date": "2025-11"
+        "release_date": "2025-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-3-pro-preview-200k": {
         "name": "Gemini 3 Pro >200k",
@@ -216,7 +272,10 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "min_context": 200001,
-        "release_date": "2025-11"
+        "release_date": "2025-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gemini-3-1-pro-preview": {
         "name": "Gemini 3.1 Pro \u2264200k",
@@ -226,7 +285,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "max_context": 200000,
-        "release_date": "2026-02"
+        "release_date": "2026-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gemini-3-1-pro-preview-200k": {
         "name": "Gemini 3.1 Pro >200k",
@@ -236,7 +297,10 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "min_context": 200001,
-        "release_date": "2026-02"
+        "release_date": "2026-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "max_context": 1000000
     },
     "gpt-4o-mini": {
         "name": "GPT-4o Mini",
@@ -245,7 +309,10 @@
         "output_price": 0.6,
         "speed_tps": 120,
         "cache_discount": 0.5,
-        "release_date": "2024-07"
+        "release_date": "2024-07",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "gpt-4o": {
         "name": "GPT-4o",
@@ -254,7 +321,10 @@
         "output_price": 10.0,
         "speed_tps": 80,
         "cache_discount": 0.5,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "chatgpt-4o-latest": {
         "name": "ChatGPT 4o Latest",
@@ -263,7 +333,10 @@
         "output_price": 15.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-08"
+        "release_date": "2024-08",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "gpt-4.1-nano": {
         "name": "GPT-4.1 Nano",
@@ -272,7 +345,9 @@
         "output_price": 0.4,
         "speed_tps": 120,
         "cache_discount": 0.25,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "gpt-4.1-mini": {
         "name": "GPT-4.1 Mini",
@@ -281,7 +356,9 @@
         "output_price": 1.6,
         "speed_tps": 120,
         "cache_discount": 0.25,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "gpt-4.1": {
         "name": "GPT-4.1",
@@ -290,7 +367,9 @@
         "output_price": 8.0,
         "speed_tps": 80,
         "cache_discount": 0.25,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "gpt-4.5": {
         "name": "GPT-4.5",
@@ -299,7 +378,9 @@
         "output_price": 150.0,
         "speed_tps": 40,
         "cache_discount": 0.5,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0
     },
     "gpt-5-nano": {
         "name": "GPT-5 Nano",
@@ -308,7 +389,9 @@
         "output_price": 0.4,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5-mini": {
         "name": "GPT-5 Mini",
@@ -317,7 +400,9 @@
         "output_price": 2.0,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5": {
         "name": "GPT-5",
@@ -326,7 +411,9 @@
         "output_price": 10.0,
         "speed_tps": 60,
         "cache_discount": 0.1,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5-pro": {
         "name": "GPT-5 Pro",
@@ -335,7 +422,9 @@
         "output_price": 120.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2025-09"
+        "release_date": "2025-09",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gpt-5.1-codex-mini": {
         "name": "GPT-5.1 Codex mini",
@@ -344,7 +433,9 @@
         "output_price": 2.0,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-11"
+        "release_date": "2025-11",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.1-codex": {
         "name": "GPT-5.1 Codex",
@@ -353,7 +444,9 @@
         "output_price": 10.0,
         "speed_tps": 80,
         "cache_discount": 0.1,
-        "release_date": "2025-11"
+        "release_date": "2025-11",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.1": {
         "name": "GPT-5.1",
@@ -362,7 +455,9 @@
         "output_price": 10.0,
         "speed_tps": 60,
         "cache_discount": 0.1,
-        "release_date": "2025-12"
+        "release_date": "2025-12",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.2": {
         "name": "GPT-5.2",
@@ -371,7 +466,9 @@
         "output_price": 14.0,
         "speed_tps": 60,
         "cache_discount": 0.1,
-        "release_date": "2026-03"
+        "release_date": "2026-03",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.2-pro": {
         "name": "GPT-5.2 Pro",
@@ -380,7 +477,9 @@
         "output_price": 168.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2026-04"
+        "release_date": "2026-04",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4-nano": {
         "name": "GPT-5.4 Nano",
@@ -389,7 +488,9 @@
         "output_price": 1.25,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2026-08"
+        "release_date": "2026-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4-mini": {
         "name": "GPT-5.4 Mini",
@@ -398,7 +499,9 @@
         "output_price": 4.5,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2026-08"
+        "release_date": "2026-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4": {
         "name": "GPT-5.4 \u2264272k",
@@ -408,7 +511,9 @@
         "speed_tps": 60,
         "cache_discount": 0.1,
         "max_context": 272000,
-        "release_date": "2026-08"
+        "release_date": "2026-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4-272k": {
         "name": "GPT-5.4 >272k",
@@ -418,7 +523,9 @@
         "speed_tps": 60,
         "cache_discount": 0.1,
         "min_context": 272001,
-        "release_date": "2026-08"
+        "release_date": "2026-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4-pro": {
         "name": "GPT-5.4 Pro \u2264272k",
@@ -428,7 +535,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "max_context": 272000,
-        "release_date": "2026-09"
+        "release_date": "2026-09",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gpt-5.4-pro-272k": {
         "name": "GPT-5.4 Pro >272k",
@@ -438,7 +547,9 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "min_context": 272001,
-        "release_date": "2026-09"
+        "release_date": "2026-09",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "gpt-image-1-mini": {
         "name": "gpt-image-1-mini",
@@ -447,7 +558,9 @@
         "output_price": 8.0,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-06"
+        "release_date": "2025-06",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "gpt-image-1": {
         "name": "gpt-image-1",
@@ -456,7 +569,9 @@
         "output_price": 40.0,
         "speed_tps": 80,
         "cache_discount": 0.125,
-        "release_date": "2025-06"
+        "release_date": "2025-06",
+        "cache_read_factor": 0.125,
+        "cache_write_factor": 1.0
     },
     "o1-mini": {
         "name": "o1-mini",
@@ -465,7 +580,10 @@
         "output_price": 4.4,
         "speed_tps": 40,
         "cache_discount": 0.5,
-        "release_date": "2024-09"
+        "release_date": "2024-09",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "o1-preview": {
         "name": "o1 and o1-preview",
@@ -474,7 +592,10 @@
         "output_price": 60.0,
         "speed_tps": 40,
         "cache_discount": 0.5,
-        "release_date": "2024-09"
+        "release_date": "2024-09",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "o1-pro": {
         "name": "o1 Pro",
@@ -483,7 +604,10 @@
         "output_price": 600.0,
         "speed_tps": 20,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0,
+        "max_context": 128000
     },
     "o3-mini": {
         "name": "o3-mini",
@@ -492,7 +616,9 @@
         "output_price": 4.4,
         "speed_tps": 40,
         "cache_discount": 0.5,
-        "release_date": "2025-01"
+        "release_date": "2025-01",
+        "cache_read_factor": 0.5,
+        "cache_write_factor": 1.0
     },
     "o3": {
         "name": "o3",
@@ -501,7 +627,9 @@
         "output_price": 40.0,
         "speed_tps": 40,
         "cache_discount": 0.05,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.05,
+        "cache_write_factor": 1.0
     },
     "o3-deep-research": {
         "name": "o3 Deep Research",
@@ -510,7 +638,9 @@
         "output_price": 40.0,
         "speed_tps": 40,
         "cache_discount": 0.25,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "o3-pro": {
         "name": "o3 Pro",
@@ -519,7 +649,9 @@
         "output_price": 80.0,
         "speed_tps": 20,
         "cache_discount": 1.0,
-        "release_date": "2025-03"
+        "release_date": "2025-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "o4-mini": {
         "name": "o4-mini",
@@ -528,7 +660,9 @@
         "output_price": 4.4,
         "speed_tps": 40,
         "cache_discount": 0.25,
-        "release_date": "2025-10"
+        "release_date": "2025-10",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "o4-mini-deep-research": {
         "name": "o4-mini Deep Research",
@@ -537,7 +671,9 @@
         "output_price": 8.0,
         "speed_tps": 40,
         "cache_discount": 0.25,
-        "release_date": "2025-10"
+        "release_date": "2025-10",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "text-davinci-003": {
         "name": "GPT-3 Text Davinci 003",
@@ -546,7 +682,9 @@
         "output_price": 20.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2022-11"
+        "release_date": "2022-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-3-haiku": {
         "name": "Claude 3 Haiku",
@@ -555,7 +693,9 @@
         "output_price": 1.25,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-03"
+        "release_date": "2024-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-3.5-haiku": {
         "name": "Claude 3.5 Haiku",
@@ -564,7 +704,9 @@
         "output_price": 4.0,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-4.5-haiku": {
         "name": "Claude 4.5 Haiku",
@@ -573,7 +715,9 @@
         "output_price": 5.0,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2025-11"
+        "release_date": "2025-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-3.5-sonnet": {
         "name": "Claude 3.5 Sonnet",
@@ -582,7 +726,9 @@
         "output_price": 15.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-06"
+        "release_date": "2024-06",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-3.7-sonnet": {
         "name": "Claude 3.7 Sonnet",
@@ -591,7 +737,9 @@
         "output_price": 15.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-sonnet-4.5": {
         "name": "Claude Sonnet 4 and 4.5 \u2264200k",
@@ -601,7 +749,9 @@
         "speed_tps": 80,
         "cache_discount": 1.0,
         "max_context": 200000,
-        "release_date": "2026-02"
+        "release_date": "2026-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-sonnet-4.5-200k": {
         "name": "Claude Sonnet 4.5 >200k",
@@ -611,7 +761,9 @@
         "speed_tps": 80,
         "cache_discount": 1.0,
         "min_context": 200001,
-        "release_date": "2026-02"
+        "release_date": "2026-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-3-opus": {
         "name": "Claude 3 Opus",
@@ -620,7 +772,9 @@
         "output_price": 75.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2024-03"
+        "release_date": "2024-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-opus-4": {
         "name": "Claude Opus 4",
@@ -629,7 +783,9 @@
         "output_price": 75.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2025-04"
+        "release_date": "2025-04",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-opus-4-1": {
         "name": "Claude Opus 4.1",
@@ -638,7 +794,9 @@
         "output_price": 75.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "claude-opus-4-5": {
         "name": "Claude Opus 4.5",
@@ -647,7 +805,9 @@
         "output_price": 25.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2026-03"
+        "release_date": "2026-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "ministral-3b-latest": {
         "name": "Ministral 3B",
@@ -656,7 +816,9 @@
         "output_price": 0.04,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-10"
+        "release_date": "2024-10",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "ministral-8b-latest": {
         "name": "Ministral 8B",
@@ -665,7 +827,9 @@
         "output_price": 0.1,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-10"
+        "release_date": "2024-10",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "mistral-small-latest": {
         "name": "Mistral Small 3.1",
@@ -674,7 +838,9 @@
         "output_price": 0.3,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-08"
+        "release_date": "2024-08",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "pixtral-12b": {
         "name": "Pixtral 12B",
@@ -683,7 +849,9 @@
         "output_price": 0.15,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2024-09"
+        "release_date": "2024-09",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "mistral-nemo": {
         "name": "Mistral NeMo",
@@ -692,7 +860,9 @@
         "output_price": 0.15,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-07"
+        "release_date": "2024-07",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "mistral-saba-latest": {
         "name": "Mistral Saba",
@@ -701,7 +871,9 @@
         "output_price": 0.6,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "open-mistral-7b": {
         "name": "Mistral 7B",
@@ -710,7 +882,9 @@
         "output_price": 0.25,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2023-09"
+        "release_date": "2023-09",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "codestral-latest": {
         "name": "Codestral",
@@ -719,7 +893,9 @@
         "output_price": 0.9,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-05"
+        "release_date": "2024-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "mistral-medium-2505": {
         "name": "Mistral Medium 3",
@@ -728,7 +904,9 @@
         "output_price": 2.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2025-05"
+        "release_date": "2025-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "open-mixtral-8x7b": {
         "name": "Mixtral 8x7B",
@@ -737,7 +915,9 @@
         "output_price": 0.7,
         "speed_tps": 120,
         "cache_discount": 1.0,
-        "release_date": "2023-12"
+        "release_date": "2023-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "open-mixtral-8x22b": {
         "name": "Mixtral 8x22B",
@@ -746,7 +926,9 @@
         "output_price": 6.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2024-04"
+        "release_date": "2024-04",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "mistral-large-latest": {
         "name": "Mistral Large 24.11",
@@ -755,7 +937,9 @@
         "output_price": 6.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "pixtral-large-latest": {
         "name": "Pixtral Large",
@@ -764,7 +948,9 @@
         "output_price": 6.0,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2024-11"
+        "release_date": "2024-11",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "magistral-medium-latest": {
         "name": "Magistral Medium",
@@ -773,7 +959,9 @@
         "output_price": 5.0,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2025-03"
+        "release_date": "2025-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "grok-4-fast": {
         "name": "Grok 4 Fast \u2264128k",
@@ -783,7 +971,9 @@
         "speed_tps": 120,
         "cache_discount": 0.25,
         "max_context": 128000,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "grok-4-fast-reasoning": {
         "name": "Grok 4 Fast Reasoning \u2264128k",
@@ -793,7 +983,9 @@
         "speed_tps": 40,
         "cache_discount": 0.25,
         "max_context": 128000,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "grok-code-fast-1": {
         "name": "Grok Code Fast 1",
@@ -802,7 +994,9 @@
         "output_price": 1.5,
         "speed_tps": 120,
         "cache_discount": 0.1,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 0.1,
+        "cache_write_factor": 1.0
     },
     "grok-3-mini": {
         "name": "Grok 3 Mini",
@@ -811,7 +1005,9 @@
         "output_price": 0.5,
         "speed_tps": 120,
         "cache_discount": 0.25,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "grok-4-fast-128k": {
         "name": "Grok 4 Fast >128k",
@@ -821,7 +1017,9 @@
         "speed_tps": 120,
         "cache_discount": 0.125,
         "min_context": 128001,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.125,
+        "cache_write_factor": 1.0
     },
     "grok-4-fast-reasoning-128k": {
         "name": "Grok 4 Fast Reasoning >128k",
@@ -831,7 +1029,9 @@
         "speed_tps": 40,
         "cache_discount": 0.125,
         "min_context": 128001,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.125,
+        "cache_write_factor": 1.0
     },
     "grok-3": {
         "name": "Grok 3",
@@ -840,7 +1040,9 @@
         "output_price": 15.0,
         "speed_tps": 60,
         "cache_discount": 0.25,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "grok-4": {
         "name": "Grok 4 \u2264128k",
@@ -850,7 +1052,9 @@
         "speed_tps": 60,
         "cache_discount": 0.25,
         "max_context": 128000,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "grok-4-128k": {
         "name": "Grok 4 >128k",
@@ -860,7 +1064,9 @@
         "speed_tps": 60,
         "cache_discount": 0.125,
         "min_context": 128001,
-        "release_date": "2026-01"
+        "release_date": "2026-01",
+        "cache_read_factor": 0.125,
+        "cache_write_factor": 1.0
     },
     "kimi-k2-0905-preview": {
         "name": "Kimi K2 0905 Preview",
@@ -869,7 +1075,9 @@
         "output_price": 2.5,
         "speed_tps": 80,
         "cache_discount": 0.25,
-        "release_date": "2025-09"
+        "release_date": "2025-09",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "kimi-k2-0711-preview": {
         "name": "Kimi K2 0711 Preview",
@@ -878,7 +1086,9 @@
         "output_price": 2.5,
         "speed_tps": 80,
         "cache_discount": 0.25,
-        "release_date": "2025-07"
+        "release_date": "2025-07",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "kimi-k2-thinking": {
         "name": "Kimi K2 Thinking",
@@ -887,7 +1097,9 @@
         "output_price": 2.5,
         "speed_tps": 40,
         "cache_discount": 0.25,
-        "release_date": "2025-08"
+        "release_date": "2025-08",
+        "cache_read_factor": 0.25,
+        "cache_write_factor": 1.0
     },
     "kimi-k2-turbo-preview": {
         "name": "Kimi K2 Turbo Preview",
@@ -896,7 +1108,9 @@
         "output_price": 8.0,
         "speed_tps": 120,
         "cache_discount": 0.1304,
-        "release_date": "2025-10"
+        "release_date": "2025-10",
+        "cache_read_factor": 0.1304,
+        "cache_write_factor": 1.0
     },
     "kimi-k2-thinking-turbo": {
         "name": "Kimi K2 Thinking Turbo",
@@ -905,7 +1119,9 @@
         "output_price": 8.0,
         "speed_tps": 80,
         "cache_discount": 0.1304,
-        "release_date": "2025-10"
+        "release_date": "2025-10",
+        "cache_read_factor": 0.1304,
+        "cache_write_factor": 1.0
     },
     "deepseek-chat": {
         "name": "DeepSeek Chat",
@@ -914,7 +1130,9 @@
         "output_price": 1.1,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2024-12"
+        "release_date": "2024-12",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "deepseek-reasoner": {
         "name": "DeepSeek Reasoner",
@@ -923,7 +1141,9 @@
         "output_price": 2.19,
         "speed_tps": 40,
         "cache_discount": 1.0,
-        "release_date": "2025-01"
+        "release_date": "2025-01",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     },
     "minimax-m2": {
         "name": "MiniMax M2",
@@ -932,6 +1152,8 @@
         "output_price": 1.2,
         "speed_tps": 80,
         "cache_discount": 1.0,
-        "release_date": "2025-02"
+        "release_date": "2025-02",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
     }
 }
