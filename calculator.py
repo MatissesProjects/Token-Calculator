@@ -89,11 +89,11 @@ class ModelCalculator:
         """Calculates cost and latency for all supported models."""
         results = []
         
-        actual_read = min(cache_read_tokens, input_tokens)
-        actual_write = min(cache_write_tokens, input_tokens - actual_read)
-        actual_fresh_input = input_tokens - actual_read - actual_write
+        actual_read = cache_read_tokens
+        actual_write = cache_write_tokens
+        actual_fresh_input = input_tokens
         
-        total_context = input_tokens + output_tokens
+        total_context = actual_fresh_input + actual_read + actual_write + output_tokens
 
         for model in self.active_models:
             max_ctx = model.get("max_context", float('inf'))

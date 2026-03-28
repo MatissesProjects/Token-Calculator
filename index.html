@@ -3,371 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Run Estimator</title>
+    <title>AI Run Estimator | Token Cost Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --primary: #4F46E5;
-            --primary-hover: #4338CA;
-            --bg: #F3F4F6; /* Slightly darker background to make cards pop */
-            --card: #FFFFFF;
-            --text-main: #111827;
-            --text-muted: #6B7280;
-            --border: #E5E7EB;
-            --badge-bg: #EEF2FF;
-            --badge-text: #4338CA;
-            --radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #eef2ff;
+            --success: #10b981;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
         
+        * { box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            padding: 2rem 1rem;
-            max-width: 1200px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
-            line-height: 1.5;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
         }
 
         h1 {
-            text-align: center;
-            color: var(--text-main);
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 2rem;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.04em;
         }
 
-        /* --- CONTROLS & LAYOUT --- */
-        .header-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
+        /* Input Panel */
         .token-panel {
             background: var(--card);
-            padding: 1.5rem;
-            border-radius: var(--radius);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
         }
 
         .input-group {
             display: flex;
             flex-direction: column;
+            gap: 0.6rem;
         }
 
-        label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .input-group label {
+            font-size: 0.75rem;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
         input[type="number"], input[type="text"], select {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
             font-size: 1rem;
-            font-family: inherit;
+            font-weight: 500;
             color: var(--text-main);
-            background-color: #F9FAFB;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
+            background: #fff;
         }
 
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-            background-color: #FFF;
+            box-shadow: 0 0 0 4px var(--primary-light);
         }
 
-        /* --- BUTTONS & UTILITIES --- */
-        .utility-row {
+        /* Monthly Runs Specialized Group */
+        .monthly-group {
+            grid-column: span 1;
+            background: var(--bg);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border);
+        }
+
+        .runs-actions {
             display: flex;
-            gap: 1rem;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Buttons & Utilities */
+        .utility-bar {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
         }
 
+        .btn-group { display: flex; gap: 0.75rem; }
+
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            padding: 0.8rem 1.4rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background: var(--primary);
             color: white;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
-
-        .btn-primary:hover { background-color: var(--primary-hover); }
+        .btn-primary:hover { 
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgb(99 102 241 / 0.3);
+        }
 
         .btn-outline {
-            background-color: white;
+            background: white;
             color: var(--text-main);
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            border-color: var(--border);
         }
-
         .btn-outline:hover {
-            background-color: #F9FAFB;
-            border-color: #D1D5DB;
+            background: var(--bg);
+            border-color: var(--text-muted);
         }
 
-        .search-flex {
-            display: flex;
+        .search-box {
+            position: relative;
             flex: 1;
-            gap: 1rem;
-            min-width: 300px;
+            max-width: 400px;
         }
 
-        /* --- SELECTION PANEL --- */
-        .selection-panel {
+        /* Panels */
+        .content-panel {
             background: var(--card);
-            padding: 1.5rem;
-            border-radius: var(--radius);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            border: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
             display: none;
-            animation: fadeIn 0.2s ease-out;
+        }
+        .content-panel.active { display: block; }
+
+        .chart-container {
+            padding: 2rem;
+            height: 500px;
+            width: 100%;
         }
 
-        .selection-panel.active { display: block; }
-
-        .provider-group { margin-bottom: 1.5rem; }
-        .provider-group:last-child { margin-bottom: 0; }
-        
-        .provider-group h4 {
-            margin: 0 0 0.75rem 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.25rem;
+        .selection-panel {
+            padding: 2rem;
+            background: #fff;
         }
 
-        .chip-container {
+        /* Results Grid */
+        .section-header {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .chip {
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: #F9FAFB;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: all 0.15s ease;
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.02em;
         }
 
-        .chip:hover { border-color: var(--primary); color: var(--primary); }
-        .chip.selected {
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            border-color: var(--primary);
+        .badge-count {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
 
-        /* --- RESULTS GRID --- */
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 1.5rem;
+            margin-bottom: 4rem;
         }
 
         .model-card {
             background: var(--card);
-            padding: 1.5rem;
-            border-radius: var(--radius);
+            border-radius: var(--radius-lg);
             border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            animation: slideUp 0.3s ease-out forwards;
-            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .model-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: #D1D5DB;
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
         }
 
-        .card-header {
+        .card-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
-        .card-header h3 {
+        .model-info h3 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            line-height: 1.3;
             color: var(--text-main);
         }
 
-        .provider-badge {
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
+        .provider-label {
             font-size: 0.75rem;
-            font-weight: 700;
+            color: var(--text-muted);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-            margin-left: 0.5rem;
         }
 
-        .metric-list {
+        .pin-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pin-btn:hover, .pin-btn.pinned {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border-color: var(--primary);
+        }
+
+        .card-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-item {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            flex-grow: 1;
         }
 
-        .metric {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
+        .metric-label {
+            font-size: 0.7rem;
+            font-weight: 700;
             color: var(--text-muted);
+            text-transform: uppercase;
         }
-        
-        .metric span:last-child {
-            font-weight: 500;
+
+        .metric-value {
+            font-size: 1rem;
+            font-weight: 600;
             color: var(--text-main);
         }
 
-        .total-cost-container {
-            margin-top: 1.25rem;
+        .card-footer {
+            margin-top: auto;
             padding-top: 1.25rem;
-            border-top: 1px dashed var(--border);
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .total-label {
+        .price-main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--text-muted);
         }
 
-        .total-cost {
+        .price-value {
             font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
+            font-weight: 900;
+            color: var(--primary-dark);
         }
 
-        /* --- UTILS --- */
-        .loading-state {
-            text-align: center;
-            width: 100%;
-            padding: 3rem;
+        .too-big-warning {
+            background: #fff1f2;
+            color: #e11d48;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Chips */
+        .provider-group h4 {
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-weight: 500;
-            grid-column: 1 / -1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .chip-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        
+        .chip {
+            padding: 0.4rem 0.9rem;
+            border-radius: 99px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .chip.selected {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .loading-overlay.active { visibility: visible; opacity: 1; }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 4px solid var(--primary-light);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes slideUp { 
-            from { opacity: 0; transform: translateY(10px); } 
+            from { opacity: 0; transform: translateY(20px); } 
             to { opacity: 1; transform: translateY(0); } 
         }
 
-        /* Stagger animation for cards */
-        .model-card:nth-child(1) { animation-delay: 0.05s; }
-        .model-card:nth-child(2) { animation-delay: 0.1s; }
-        .model-card:nth-child(3) { animation-delay: 0.15s; }
-        .model-card:nth-child(4) { animation-delay: 0.2s; }
-        .model-card:nth-child(n+5) { animation-delay: 0.25s; }
+        .fade-in { animation: slideUp 0.4s cubic-bezier(0, 0, 0.2, 1) forwards; }
 
     </style>
 </head>
 <body>
 
-    <h1>AI Run Estimator</h1>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
 
-    <div class="header-controls">
-        <div class="token-panel">
+    <div class="container">
+        <header>
+            <h1>AI Run Estimator</h1>
+            <p class="subtitle">Compare token costs and latency across 100+ LLM configurations</p>
+        </header>
+
+        <section class="token-panel">
             <div class="input-group">
-                <label for="inputTokens">Input Tokens</label>
+                <label for="inputTokens">Fresh Input</label>
                 <input type="number" id="inputTokens" value="100000" min="0">
             </div>
             <div class="input-group">
-                <label for="cachedTokens">Cached Tokens (Hits)</label>
+                <label for="cachedTokens">Cache Read (Hits)</label>
                 <input type="number" id="cachedTokens" value="0" min="0">
             </div>
             <div class="input-group">
-                <label for="cacheWriteTokens">Cache Write (Creation)</label>
+                <label for="cacheWriteTokens">Cache Write (Create)</label>
                 <input type="number" id="cacheWriteTokens" value="0" min="0">
             </div>
             <div class="input-group">
                 <label for="outputTokens">Output Tokens</label>
                 <input type="number" id="outputTokens" value="5000" min="0">
             </div>
-            <div class="input-group" style="border-left: 2px solid var(--border); padding-left: 1.5rem;">
+            <div class="input-group monthly-group">
                 <label for="monthlyRuns">Monthly Runs</label>
-                <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <input type="number" id="monthlyRuns" value="500" min="1" style="width: 100px;">
-                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(1)">1x</button>
-                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(100)">100x</button>
-                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(1000)">1k</button>
+                <input type="number" id="monthlyRuns" value="500" min="1">
+                <div class="runs-actions">
+                    <button class="chip" onclick="setRuns(1)">1x</button>
+                    <button class="chip" onclick="setRuns(100)">100x</button>
+                    <button class="chip" onclick="setRuns(1000)">1k</button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="utility-row">
-            <button class="btn btn-outline" onclick="toggleSelectionPanel()">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                Filter Providers
-            </button>
-            
-            <button class="btn btn-outline" onclick="exportToCSV()" id="exportBtn">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                Export CSV
-            </button>
-
-            <div class="search-flex">
-                <input type="text" id="searchInput" placeholder="Search models (e.g., 'Flash', 'Sonnet')..." style="flex: 2;">
-                <select id="sortSelect" style="flex: 1;">
-                    <option value="newest">Sort: Newest First</option>
-                    <option value="price">Sort: Cheapest First</option>
+        <div class="utility-bar">
+            <div class="btn-group">
+                <button class="btn btn-outline" onclick="togglePanel('selectionPanel')">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    Filter Models
+                </button>
+                <button class="btn btn-primary" onclick="togglePanel('chartPanel')">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                    Toggle Analysis Chart
+                </button>
+            </div>
+            <div class="btn-group" style="flex: 1; justify-content: flex-end;">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search models or providers...">
+                </div>
+                <select id="sortSelect" style="max-width: 180px;">
+                    <option value="price">Cheapest First</option>
+                    <option value="newest">Latest Models</option>
                 </select>
+                <button class="btn btn-outline" onclick="exportToCSV()">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </button>
             </div>
         </div>
 
-        <div class="selection-panel" id="selectionPanel"></div>
-    </div>
+        <div id="selectionPanel" class="content-panel">
+            <div class="selection-panel" id="selectionInner"></div>
+        </div>
 
-    <h2 id="subsHeader" style="margin: 2rem 0 1rem 0; font-weight: 700; display: none;">Fixed-Price Subscriptions</h2>
-    <div class="results-grid" id="subsContainer" style="margin-bottom: 2rem;"></div>
+        <div id="chartPanel" class="content-panel">
+            <div class="chart-container">
+                <canvas id="costChart"></canvas>
+            </div>
+        </div>
 
-    <h2 style="margin: 2rem 0 1rem 0; font-weight: 700;">Pay-as-you-go Models</h2>
-    <div class="results-grid" id="resultsContainer">
-        <div class="loading-state">Initializing calculator...</div>
+        <div id="pinnedSection" style="display: none;">
+            <div class="section-header">
+                <h2>Pinned Comparisons</h2>
+                <span class="badge-count" id="pinnedCount">0</span>
+            </div>
+            <div class="results-grid" id="pinnedContainer"></div>
+        </div>
+
+        <div id="subsSection" style="display: none;">
+            <div class="section-header">
+                <h2>Fixed-Price Subscriptions</h2>
+            </div>
+            <div class="results-grid" id="subsContainer"></div>
+        </div>
+
+        <div class="section-header">
+            <h2>Pay-as-you-go Models</h2>
+            <span class="badge-count" id="totalCount">0</span>
+        </div>
+        <div class="results-grid" id="resultsContainer"></div>
     </div>
 
     <script>
@@ -376,116 +506,84 @@
         let currentEstimations = []; 
         let subscriptions = [];
         let selectedModelNames = new Set(); 
+        let pinnedModelIds = new Set();
         let isFirstLoad = true;
-        let activeDisplayModels = []; 
+        let costChart = null;
 
-        // Formatting utility for currency
         const formatMoney = (amount) => {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 4 }).format(amount);
         };
 
-        function toggleSelectionPanel() {
-            document.getElementById('selectionPanel').classList.toggle('active');
+        function togglePanel(id) {
+            const panel = document.getElementById(id);
+            const isActive = panel.classList.contains('active');
+            
+            // Close other panels
+            document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+            
+            if (!isActive) {
+                panel.classList.add('active');
+                if (id === 'chartPanel') renderChart();
+            }
         }
 
         function setRuns(val) {
-            const input = document.getElementById('monthlyRuns');
-            input.value = val;
-            renderCards();
-            renderSubscriptions();
+            document.getElementById('monthlyRuns').value = val;
+            renderAll();
         }
 
-        async function fetchSubscriptions() {
+        function togglePin(modelName) {
+            if (pinnedModelIds.has(modelName)) pinnedModelIds.delete(modelName);
+            else pinnedModelIds.add(modelName);
+            renderAll();
+        }
+
+        async function fetchInitial() {
+            showLoading(true);
             try {
-                const response = await fetch(SUBS_URL);
-                subscriptions = await response.json();
-                renderSubscriptions();
-            } catch (e) { console.error("Subs fetch failed", e); }
+                const subRes = await fetch(SUBS_URL);
+                subscriptions = await subRes.json();
+                await fetchEstimates();
+            } catch (e) { console.error(e); }
+            finally { showLoading(false); }
         }
 
         async function fetchEstimates() {
-            const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
-            let cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
-            let cacheWriteTokens = parseInt(document.getElementById('cacheWriteTokens').value) || 0;
-            const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
-
-            if (isFirstLoad) fetchSubscriptions();
-
-            // UI UX Polish: Don't let user think they are caching more than they input
-            if (cachedTokens + cacheWriteTokens > inputTokens) {
-                cachedTokens = Math.min(cachedTokens, inputTokens);
-                cacheWriteTokens = Math.min(cacheWriteTokens, inputTokens - cachedTokens);
-            }
-
-            const container = document.getElementById('resultsContainer');
-            if (isFirstLoad) container.innerHTML = '<div class="loading-state">Fetching live pricing and computing models...</div>';
+            const payload = {
+                input_tokens: parseInt(document.getElementById('inputTokens').value) || 0,
+                cached_tokens: parseInt(document.getElementById('cachedTokens').value) || 0,
+                cache_write_tokens: parseInt(document.getElementById('cacheWriteTokens').value) || 0,
+                output_tokens: parseInt(document.getElementById('outputTokens').value) || 0
+            };
 
             try {
                 const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        input_tokens: inputTokens,
-                        cached_tokens: cachedTokens,
-                        cache_write_tokens: cacheWriteTokens,
-                        output_tokens: outputTokens
-                    })
+                    body: JSON.stringify(payload)
                 });
-
-                if (!response.ok) throw new Error("Network error");
-                
                 const data = await response.json();
                 currentEstimations = data.estimations; 
-
+                
                 if (isFirstLoad) {
                     currentEstimations.forEach(m => selectedModelNames.add(m.model_name));
                     isFirstLoad = false;
                 }
-
+                
                 buildSelectionPanel();
-                renderCards(); 
-                renderSubscriptions();
-            } catch (error) {
-                console.error("Failed to fetch:", error);
-                container.innerHTML = '<div class="loading-state" style="color:#DC2626;">Failed to connect to backend. Make sure main.py is running!</div>';
-            }
+                renderAll();
+            } catch (error) { console.error(error); }
         }
 
-        function renderSubscriptions() {
-            const container = document.getElementById('subsContainer');
-            const header = document.getElementById('subsHeader');
-            if (subscriptions.length === 0) return;
-            header.style.display = 'block';
-            container.innerHTML = '';
-
-            subscriptions.forEach(sub => {
-                const card = document.createElement('div');
-                card.className = 'model-card';
-                card.style.border = '2px solid #E0E7FF';
-                card.innerHTML = `
-                    <div class="card-header">
-                        <h3>${sub.name}</h3>
-                        <span class="provider-badge" style="background:#E0E7FF; color:#4338CA;">${sub.provider}</span>
-                    </div>
-                    <div class="metric-list">
-                        <div class="metric"><span>Monthly Fee</span> <span>${formatMoney(sub.monthly_price)}</span></div>
-                        <div class="metric"><span>Included Models</span> <span>${sub.included_models.length}</span></div>
-                        <div class="metric"><span>Usage</span> <span>${sub.is_unlimited ? 'Unlimited*' : 'Limited'}</span></div>
-                        ${sub.limit_note ? `<div class="metric" style="font-size:0.75rem; color:#9CA3AF;"><span>Note</span> <span>${sub.limit_note}</span></div>` : ''}
-                    </div>
-                    <div class="total-cost-container" style="background: #F5F7FF; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid #E0E7FF;">
-                        <span class="total-label">Effective Cost</span>
-                        <span class="total-cost">${formatMoney(sub.monthly_price)}</span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+        function renderAll() {
+            renderCards();
+            renderSubscriptions();
+            if (document.getElementById('chartPanel').classList.contains('active')) renderChart();
         }
 
         function buildSelectionPanel() {
-            const panel = document.getElementById('selectionPanel');
-            panel.innerHTML = ''; 
-
+            const inner = document.getElementById('selectionInner');
+            inner.innerHTML = '<h3>Model Visibility</h3>'; 
             const grouped = {};
             currentEstimations.forEach(m => {
                 if (!grouped[m.provider]) grouped[m.provider] = [];
@@ -493,145 +591,214 @@
             });
 
             for (const provider in grouped) {
-                const groupDiv = document.createElement('div');
-                groupDiv.className = 'provider-group';
-                groupDiv.innerHTML = `<h4>${provider}</h4>`;
-                
-                const chipContainer = document.createElement('div');
-                chipContainer.className = 'chip-container';
-
-                grouped[provider].forEach(modelName => {
+                const div = document.createElement('div');
+                div.className = 'provider-group';
+                div.innerHTML = `<h4>${provider}</h4>`;
+                const chips = document.createElement('div');
+                chips.className = 'chip-container';
+                grouped[provider].forEach(name => {
                     const chip = document.createElement('button');
-                    const isSelected = selectedModelNames.has(modelName);
-                    chip.className = `chip ${isSelected ? 'selected' : ''}`;
-                    chip.innerText = modelName;
-                    
+                    chip.className = `chip ${selectedModelNames.has(name) ? 'selected' : ''}`;
+                    chip.innerText = name;
                     chip.onclick = () => {
-                        if (selectedModelNames.has(modelName)) {
-                            selectedModelNames.delete(modelName);
-                            chip.classList.remove('selected');
-                        } else {
-                            selectedModelNames.add(modelName);
-                            chip.classList.add('selected');
-                        }
-                        renderCards(); 
+                        if (selectedModelNames.has(name)) selectedModelNames.delete(name);
+                        else selectedModelNames.add(name);
+                        buildSelectionPanel();
+                        renderAll();
                     };
-                    chipContainer.appendChild(chip);
+                    chips.appendChild(chip);
                 });
-                groupDiv.appendChild(chipContainer);
-                panel.appendChild(groupDiv);
+                div.appendChild(chips);
+                inner.appendChild(div);
             }
+        }
+
+        function createModelCard(model) {
+            const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
+            const monthlyTotal = model.total_cost * runs;
+            const isPinned = pinnedModelIds.has(model.model_name);
+
+            const card = document.createElement('div');
+            card.className = 'model-card fade-in';
+            
+            card.innerHTML = `
+                ${model.is_too_big ? '<div class="too-big-warning"><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg> Exceeds Context Limit</div>' : ''}
+                <div class="card-top">
+                    <div class="model-info">
+                        <span class="provider-label">${model.provider}</span>
+                        <h3>${model.model_name}</h3>
+                    </div>
+                    <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${model.model_name}')">
+                        <svg width="18" height="18" fill="${isPinned ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                    </button>
+                </div>
+                <div class="card-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Per Run</span>
+                        <span class="metric-value">${formatMoney(model.total_cost)}</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Latency</span>
+                        <span class="metric-value">~${model.estimated_latency_sec}s</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Max Context</span>
+                        <span class="metric-value">${(model.max_context / 1000).toFixed(0)}k</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Release</span>
+                        <span class="metric-value">${model.release_date}</span>
+                    </div>
+                </div>
+                <div class="card-footer" style="${model.is_too_big ? 'opacity: 0.5' : ''}">
+                    <div class="price-main">
+                        <span class="price-label">Monthly (${runs}x)</span>
+                        <span class="price-value">${formatMoney(monthlyTotal)}</span>
+                    </div>
+                </div>
+            `;
+            return card;
         }
 
         function renderCards() {
             const container = document.getElementById('resultsContainer');
-            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
-            const sortOrder = document.getElementById('sortSelect').value;
-            const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
+            const pinnedContainer = document.getElementById('pinnedContainer');
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const sort = document.getElementById('sortSelect').value;
+            
             container.innerHTML = ''; 
+            pinnedContainer.innerHTML = '';
 
             let displayModels = currentEstimations.filter(m => selectedModelNames.has(m.model_name));
+            displayModels = displayModels.filter(m => `${m.model_name} ${m.provider}`.toLowerCase().includes(search));
 
-            displayModels = displayModels.filter(model => {
-                const searchString = `${model.model_name} ${model.provider}`.toLowerCase();
-                return searchString.includes(searchQuery);
-            });
+            if (sort === 'newest') displayModels.sort((a, b) => b.release_date.localeCompare(a.release_date));
+            else displayModels.sort((a, b) => a.total_cost - b.total_cost);
 
-            if (sortOrder === 'newest') {
-                displayModels.sort((a, b) => b.release_date.localeCompare(a.release_date) || a.total_cost - b.total_cost);
-            } else {
-                displayModels.sort((a, b) => a.total_cost - b.total_cost);
-            }
+            const pinned = displayModels.filter(m => pinnedModelIds.has(m.model_name));
+            document.getElementById('pinnedSection').style.display = pinned.length ? 'block' : 'none';
+            document.getElementById('pinnedCount').innerText = pinned.length;
+            pinned.forEach(m => pinnedContainer.appendChild(createModelCard(m)));
 
-            activeDisplayModels = displayModels; // Save for CSV export
+            document.getElementById('totalCount').innerText = displayModels.length;
+            displayModels.forEach(m => container.appendChild(createModelCard(m)));
+        }
 
-            if (displayModels.length === 0) {
-                container.innerHTML = '<div class="loading-state">No models match your current filters.</div>';
-                return;
-            }
+        function renderSubscriptions() {
+            const container = document.getElementById('subsContainer');
+            if (!subscriptions.length) return;
+            document.getElementById('subsSection').style.display = 'block';
+            container.innerHTML = '';
 
-            displayModels.forEach(model => {
+            subscriptions.forEach(sub => {
                 const card = document.createElement('div');
-                card.className = `model-card ${model.is_too_big ? 'too-big' : ''}`;
-                const monthlyTotal = model.total_cost * runs;
-                
-                if (model.is_too_big) {
-                    card.style.opacity = '0.6';
-                    card.style.border = '1px solid #FCA5A5';
-                    card.style.background = '#FEF2F2';
-                }
-
+                card.className = 'model-card';
+                card.style.borderColor = '#6366f1';
                 card.innerHTML = `
-                    <div class="card-header">
-                        <div style="display:flex; flex-direction:column;">
-                            <h3>${model.model_name}</h3>
-                            ${model.is_too_big ? '<span style="color:#DC2626; font-size:0.7rem; font-weight:700;">⚠ EXCEEDS CONTEXT</span>' : ''}
+                    <div class="card-top">
+                        <div class="model-info">
+                            <span class="provider-label">${sub.provider}</span>
+                            <h3>${sub.name}</h3>
                         </div>
-                        <span class="provider-badge">${model.provider}</span>
                     </div>
-                    <div class="metric-list">
-                        <div class="metric"><span>Per Run</span> <span>${formatMoney(model.total_cost)}</span></div>
-                        <div class="metric"><span>Output</span> <span>${formatMoney(model.output_cost)}</span></div>
-                        <div class="metric"><span>Context Limit</span> <span>${(model.max_context / 1000).toFixed(0)}k</span></div>
-                        <div class="metric" style="margin-top: 4px;"><span>Est. Latency</span> <span>~${model.estimated_latency_sec}s</span></div>
+                    <div class="card-metrics" style="grid-template-columns: 1fr;">
+                        <div class="metric-item">
+                            <span class="metric-label">Included Models</span>
+                            <span class="metric-value" style="font-size: 0.85rem;">${sub.included_models.join(', ')}</span>
+                        </div>
                     </div>
-                    <div class="total-cost-container" style="background: ${model.is_too_big ? '#FEE2E2' : '#F9FAFB'}; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid ${model.is_too_big ? '#FCA5A5' : 'var(--border)'};">
-                        <span class="total-label">Monthly (${runs}x)</span>
-                        <span class="total-cost" style="${model.is_too_big ? 'color:#B91C1C;' : ''}">${formatMoney(monthlyTotal)}</span>
+                    <div class="card-footer" style="background: var(--primary-light); margin: 1.5rem -1.5rem -1.5rem -1.5rem; padding: 1.25rem 1.5rem;">
+                        <div class="price-main">
+                            <span class="price-label">Fixed Subscription</span>
+                            <span class="price-value">${formatMoney(sub.monthly_price)}</span>
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // CSV Export Feature
-        function exportToCSV() {
-            if (activeDisplayModels.length === 0) {
-                alert("No models to export!");
-                return;
-            }
-
-            const headers = ["Provider", "Model Name", "Input Cost ($)", "Cache Cost ($)", "Output Cost ($)", "Total Cost ($)", "Est Latency (s)", "Release Date"];
-            const rows = activeDisplayModels.map(m => [
-                m.provider,
-                `"${m.model_name}"`, // Quote strings to prevent comma issues
-                m.input_cost.toFixed(6),
-                m.cache_cost.toFixed(6),
-                m.output_cost.toFixed(6),
-                m.total_cost.toFixed(6),
-                m.estimated_latency_sec,
-                m.release_date
-            ]);
-
-            const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+        function renderChart() {
+            const canvas = document.getElementById('costChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const runs = [1, 100, 250, 500, 1000, 1500, 2000, 3000, 5000];
             
-            // Trigger Download
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            const url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", `ai_cost_estimate_${new Date().toISOString().split('T')[0]}.csv`);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            let modelsToChart = currentEstimations.filter(m => pinnedModelIds.has(m.model_name));
+            if (modelsToChart.length === 0) modelsToChart = currentEstimations.slice(0, 5);
+
+            const datasets = modelsToChart.map((m, i) => ({
+                label: m.model_name,
+                data: runs.map(r => m.total_cost * r),
+                borderColor: `hsl(${i * 60}, 70%, 50%)`,
+                backgroundColor: `hsl(${i * 60}, 70%, 50%, 0.1)`,
+                borderWidth: 3,
+                tension: 0.3,
+                fill: false
+            }));
+
+            subscriptions.forEach((sub, i) => {
+                datasets.push({
+                    label: `Sub: ${sub.name}`,
+                    data: runs.map(() => sub.monthly_price),
+                    borderColor: '#1e293b',
+                    borderDash: [8, 4],
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    fill: false
+                });
+            });
+
+            if (costChart) costChart.destroy();
+            costChart = new Chart(ctx, {
+                type: 'line',
+                data: { labels: runs.map(r => `${r}x`), datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } },
+                        tooltip: { padding: 12, backgroundColor: 'rgba(30, 41, 59, 0.9)' }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#f1f5f9' }, title: { display: true, text: 'Monthly Cost (USD)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
         }
 
-        // Debounce utility for inputs (waits 300ms after user stops typing to fetch)
-        let debounceTimer;
-        document.querySelectorAll('input[type="number"]').forEach(input => {
-            input.addEventListener('input', () => {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(fetchEstimates, 300);
+        function exportToCSV() {
+            const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
+            const headers = ["Provider", "Model", "Per Run", "Monthly", "Context", "Latency"];
+            const rows = currentEstimations.filter(m => selectedModelNames.has(m.model_name)).map(m => [
+                m.provider, m.model_name, m.total_cost, (m.total_cost * runs), m.max_context, m.estimated_latency_sec
+            ]);
+            const csv = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `token-costs-${runs}x.csv`;
+            a.click();
+        }
+
+        function showLoading(active) {
+            document.getElementById('loadingOverlay').classList.toggle('active', active);
+        }
+
+        let debounce;
+        document.querySelectorAll('input[type="number"]').forEach(el => {
+            el.addEventListener('input', () => {
+                clearTimeout(debounce);
+                debounce = setTimeout(fetchEstimates, 400);
             });
         });
-
-        // Instant frontend updates for search and sort
         document.getElementById('searchInput').addEventListener('input', renderCards);
         document.getElementById('sortSelect').addEventListener('change', renderCards);
 
-        // Run on load
-        fetchEstimates();
+        fetchInitial();
     </script>
 </body>
 </html>

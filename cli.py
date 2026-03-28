@@ -4,8 +4,8 @@ from calculator import ModelCalculator
 
 def main():
     parser = argparse.ArgumentParser(description="AI Token Cost Estimator CLI")
-    parser.add_argument("-i", "--input", type=int, default=100000, help="Input tokens (default: 100k)")
-    parser.add_argument("-c", "--cached", type=int, default=0, help="Cached tokens (default: 0)")
+    parser.add_argument("-i", "--input", type=int, default=100000, help="Fresh input tokens (additive to cached, default: 100k)")
+    parser.add_argument("-c", "--cached", type=int, default=0, help="Cached read tokens (default: 0)")
     parser.add_argument("-o", "--output", type=int, default=5000, help="Output tokens (default: 5k)")
     parser.add_argument("-l", "--live", action="store_true", help="Fetch live pricing from OpenRouter")
     parser.add_argument("-t", "--top", type=int, default=10, help="Show top N cheapest models (default: 10)")
@@ -23,7 +23,7 @@ def main():
     if args.provider:
         results = [r for r in results if args.provider.lower() in r["provider"].lower()]
 
-    print(f"\nEstimation for {args.input:,} input ({args.cached:,} cached) and {args.output:,} output tokens:")
+    print(f"\nEstimation for {args.input:,} fresh input, {args.cached:,} cached, and {args.output:,} output tokens:")
     print("-" * 100)
     print(f"{'Provider':<15} {'Model Name':<35} {'Total Cost':<12} {'Latency':<10}")
     print("-" * 100)

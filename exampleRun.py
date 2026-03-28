@@ -2,8 +2,8 @@ import requests
 
 url = "http://localhost:8000/estimate"
 data = {
-    "input_tokens": 50000,
-    "cached_tokens": 40000,
+    "input_tokens": 10000, # Fresh input tokens
+    "cached_tokens": 40000, # Cached tokens (now additive)
     "output_tokens": 800
 }
 
