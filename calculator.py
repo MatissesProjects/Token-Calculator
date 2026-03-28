@@ -5,21 +5,27 @@ from typing import List, Dict, Optional
 
 # Constants
 DEFAULT_MODELS_PATH = os.path.join(os.path.dirname(__file__), "models.json")
+DEFAULT_SUBS_PATH = os.path.join(os.path.dirname(__file__), "subscriptions.json")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/models"
 
 class ModelCalculator:
-    def __init__(self, models_path: str = DEFAULT_MODELS_PATH):
+    def __init__(self, models_path: str = DEFAULT_MODELS_PATH, subs_path: str = DEFAULT_SUBS_PATH):
         self.models_path = models_path
-        self.raw_catalog = self._load_catalog()
+        self.subs_path = subs_path
+        self.raw_catalog = self._load_json(self.models_path)
+        self.subscriptions = self._load_json(self.subs_path)
         self.active_models = []
         self.refresh_catalog(use_live_pricing=False)
 
-    def _load_catalog(self) -> Dict:
+    def _load_json(self, path: str) -> Dict:
         try:
-            with open(self.models_path, "r") as f:
+            with open(path, "r") as f:
                 return json.load(f)
         except FileNotFoundError:
             return {}
+
+    def get_subscriptions(self) -> List[Dict]:
+        return [{"id": k, **v} for k, v in self.subscriptions.items()]
 
     def refresh_catalog(self, use_live_pricing: bool = False):
         """Builds the active model list, optionally fetching live prices."""

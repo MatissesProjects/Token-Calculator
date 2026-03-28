@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 from contextlib import asynccontextmanager
 from calculator import ModelCalculator
 
@@ -19,6 +19,15 @@ class ModelEstimation(BaseModel):
     total_cost: float
     estimated_latency_sec: float
     release_date: str
+
+class Subscription(BaseModel):
+    id: str
+    name: str
+    provider: str
+    monthly_price: float
+    included_models: List[str]
+    is_unlimited: bool
+    limit_note: Optional[str] = None
 
 class EstimationResponse(BaseModel):
     estimations: List[ModelEstimation]
@@ -41,6 +50,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/subscriptions", response_model=List[Subscription])
+async def get_subscriptions():
+    return [Subscription(**s) for s in calculator.get_subscriptions()]
 
 @app.post("/estimate", response_model=EstimationResponse)
 async def calculate_metrics(request: EstimationRequest):

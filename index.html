@@ -324,6 +324,15 @@
                 <label for="outputTokens">Output Tokens</label>
                 <input type="number" id="outputTokens" value="5000" min="0">
             </div>
+            <div class="input-group" style="border-left: 2px solid var(--border); padding-left: 1.5rem;">
+                <label for="monthlyRuns">Monthly Runs</label>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="number" id="monthlyRuns" value="500" min="1" style="width: 100px;">
+                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(1)">1x</button>
+                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(100)">100x</button>
+                    <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.75rem;" onclick="setRuns(1000)">1k</button>
+                </div>
+            </div>
         </div>
 
         <div class="utility-row">
@@ -349,30 +358,53 @@
         <div class="selection-panel" id="selectionPanel"></div>
     </div>
 
+    <h2 id="subsHeader" style="margin: 2rem 0 1rem 0; font-weight: 700; display: none;">Fixed-Price Subscriptions</h2>
+    <div class="results-grid" id="subsContainer" style="margin-bottom: 2rem;"></div>
+
+    <h2 style="margin: 2rem 0 1rem 0; font-weight: 700;">Pay-as-you-go Models</h2>
     <div class="results-grid" id="resultsContainer">
         <div class="loading-state">Initializing calculator...</div>
     </div>
 
     <script>
         const API_URL = "http://localhost:8000/estimate";
+        const SUBS_URL = "http://localhost:8000/subscriptions";
         let currentEstimations = []; 
+        let subscriptions = [];
         let selectedModelNames = new Set(); 
         let isFirstLoad = true;
-        let activeDisplayModels = []; // Keep track of currently visible models for CSV export
+        let activeDisplayModels = []; 
 
         // Formatting utility for currency
         const formatMoney = (amount) => {
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 4, maximumFractionDigits: 4 }).format(amount);
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 4 }).format(amount);
         };
 
         function toggleSelectionPanel() {
             document.getElementById('selectionPanel').classList.toggle('active');
         }
 
+        function setRuns(val) {
+            const input = document.getElementById('monthlyRuns');
+            input.value = val;
+            renderCards();
+            renderSubscriptions();
+        }
+
+        async function fetchSubscriptions() {
+            try {
+                const response = await fetch(SUBS_URL);
+                subscriptions = await response.json();
+                renderSubscriptions();
+            } catch (e) { console.error("Subs fetch failed", e); }
+        }
+
         async function fetchEstimates() {
             const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
             let cachedTokens = parseInt(document.getElementById('cachedTokens').value) || 0;
             const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
+
+            if (isFirstLoad) fetchSubscriptions();
 
             // UI UX Polish: Don't let user think they are caching more than they input
             if (cachedTokens > inputTokens) {
@@ -406,10 +438,42 @@
 
                 buildSelectionPanel();
                 renderCards(); 
+                renderSubscriptions();
             } catch (error) {
                 console.error("Failed to fetch:", error);
                 container.innerHTML = '<div class="loading-state" style="color:#DC2626;">Failed to connect to backend. Make sure main.py is running!</div>';
             }
+        }
+
+        function renderSubscriptions() {
+            const container = document.getElementById('subsContainer');
+            const header = document.getElementById('subsHeader');
+            if (subscriptions.length === 0) return;
+            header.style.display = 'block';
+            container.innerHTML = '';
+
+            subscriptions.forEach(sub => {
+                const card = document.createElement('div');
+                card.className = 'model-card';
+                card.style.border = '2px solid #E0E7FF';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3>${sub.name}</h3>
+                        <span class="provider-badge" style="background:#E0E7FF; color:#4338CA;">${sub.provider}</span>
+                    </div>
+                    <div class="metric-list">
+                        <div class="metric"><span>Monthly Fee</span> <span>${formatMoney(sub.monthly_price)}</span></div>
+                        <div class="metric"><span>Included Models</span> <span>${sub.included_models.length}</span></div>
+                        <div class="metric"><span>Usage</span> <span>${sub.is_unlimited ? 'Unlimited*' : 'Limited'}</span></div>
+                        ${sub.limit_note ? `<div class="metric" style="font-size:0.75rem; color:#9CA3AF;"><span>Note</span> <span>${sub.limit_note}</span></div>` : ''}
+                    </div>
+                    <div class="total-cost-container" style="background: #F5F7FF; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid #E0E7FF;">
+                        <span class="total-label">Effective Cost</span>
+                        <span class="total-cost">${formatMoney(sub.monthly_price)}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
         }
 
         function buildSelectionPanel() {
@@ -457,6 +521,7 @@
             const container = document.getElementById('resultsContainer');
             const searchQuery = document.getElementById('searchInput').value.toLowerCase();
             const sortOrder = document.getElementById('sortSelect').value;
+            const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
             container.innerHTML = ''; 
 
             let displayModels = currentEstimations.filter(m => selectedModelNames.has(m.model_name));
@@ -482,20 +547,22 @@
             displayModels.forEach(model => {
                 const card = document.createElement('div');
                 card.className = 'model-card';
+                const monthlyTotal = model.total_cost * runs;
+                
                 card.innerHTML = `
                     <div class="card-header">
                         <h3>${model.model_name}</h3>
                         <span class="provider-badge">${model.provider}</span>
                     </div>
                     <div class="metric-list">
-                        <div class="metric"><span>Input</span> <span>${formatMoney(model.input_cost)}</span></div>
-                        <div class="metric"><span>Cache</span> <span>${formatMoney(model.cache_cost)}</span></div>
+                        <div class="metric"><span>Per Run</span> <span>${formatMoney(model.total_cost)}</span></div>
+                        <div class="metric"><span>Input/Cache</span> <span>${formatMoney(model.input_cost + model.cache_cost)}</span></div>
                         <div class="metric"><span>Output</span> <span>${formatMoney(model.output_cost)}</span></div>
                         <div class="metric" style="margin-top: 4px;"><span>Est. Latency</span> <span>~${model.estimated_latency_sec}s</span></div>
                     </div>
-                    <div class="total-cost-container">
-                        <span class="total-label">Total Est.</span>
-                        <span class="total-cost">${formatMoney(model.total_cost)}</span>
+                    <div class="total-cost-container" style="background: #F9FAFB; margin: 1.25rem -1.5rem -1.5rem -1.5rem; padding: 1rem 1.5rem; border-radius: 0 0 12px 12px; border-top: 1px solid var(--border);">
+                        <span class="total-label">Monthly (${runs}x)</span>
+                        <span class="total-cost">${formatMoney(monthlyTotal)}</span>
                     </div>
                 `;
                 container.appendChild(card);

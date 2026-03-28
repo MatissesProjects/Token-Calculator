@@ -1,0 +1,32 @@
+{
+    "cursor-pro": {
+        "name": "Cursor Pro",
+        "provider": "Cursor",
+        "monthly_price": 20.0,
+        "included_models": ["claude-3.5-sonnet", "gpt-4o", "o1-mini"],
+        "is_unlimited": true
+    },
+    "github-copilot": {
+        "name": "GitHub Copilot",
+        "provider": "GitHub",
+        "monthly_price": 10.0,
+        "included_models": ["claude-3.5-sonnet", "gpt-4o"],
+        "is_unlimited": true
+    },
+    "claude-pro": {
+        "name": "Claude Pro",
+        "provider": "Anthropic",
+        "monthly_price": 20.0,
+        "included_models": ["claude-3.5-sonnet", "claude-3-opus", "claude-3-haiku"],
+        "is_unlimited": false,
+        "limit_note": "Usage limits apply (approx. 5x free tier)"
+    },
+    "chatgpt-plus": {
+        "name": "ChatGPT Plus",
+        "provider": "OpenAI",
+        "monthly_price": 20.0,
+        "included_models": ["gpt-4o", "o1-preview", "o1-mini"],
+        "is_unlimited": false,
+        "limit_note": "80 msgs / 3 hrs for GPT-4o"
+    }
+}
