@@ -27,9 +27,10 @@ class ModelCalculator:
     def get_subscriptions(self) -> List[Dict]:
         return [{"id": k, **v} for k, v in self.subscriptions.items()]
 
-    def refresh_catalog(self, use_live_pricing: bool = False):
-        """Builds the active model list, optionally fetching live prices."""
+    def refresh_catalog(self, use_live_pricing: bool = False, discover_new: bool = False):
+        """Builds the active model list, optionally fetching live prices and discovering new models."""
         working_catalog = dict(self.raw_catalog)
+        new_discoveries = False
         
         if use_live_pricing:
             try:
@@ -37,28 +38,50 @@ class ModelCalculator:
                 api_models = response.json().get("data", [])
                 for api_model in api_models:
                     model_id = api_model["id"]
+                    live_input = float(api_model["pricing"]["prompt"]) * 1_000_000
+                    live_output = float(api_model["pricing"]["completion"]) * 1_000_000
+                    
                     if model_id in working_catalog:
-                        live_input = float(api_model["pricing"]["prompt"]) * 1_000_000
-                        live_output = float(api_model["pricing"]["completion"]) * 1_000_000
                         if live_input > 0 or live_output > 0:
                             working_catalog[model_id]["input_price"] = live_input
                             working_catalog[model_id]["output_price"] = live_output
+                    elif discover_new and (live_input > 0 or live_output > 0):
+                        # Discovery!
+                        working_catalog[model_id] = {
+                            "name": api_model.get("name", model_id),
+                            "provider": model_id.split("/")[0].capitalize(),
+                            "input_price": live_input,
+                            "output_price": live_output,
+                            "max_context": api_model.get("context_length", 128000),
+                            "speed_tps": 30, # Guessed average
+                            "release_date": "2024-Discover",
+                            "cache_read_factor": 1.0,
+                            "cache_write_factor": 1.0
+                        }
+                        new_discoveries = True
             except Exception as e:
                 # Silently fail and use fallbacks
                 pass
 
+        if new_discoveries:
+            # Optionally save back to disk to persist discoveries
+            try:
+                with open(self.models_path, "w") as f:
+                    json.dump(working_catalog, f, indent=4)
+                self.raw_catalog = working_catalog
+            except: pass
+
         final_list = []
         for key, data in working_catalog.items():
-            data["id"] = key
-            # Advanced caching logic: Use explicit factors if they exist
-            # cache_read_factor: 1.0 (no discount), 0.5 (50%), 0.1 (10%)
-            # cache_write_factor: 1.0 (no surcharge), 1.25 (25% surcharge)
-            data["cache_read_price"] = data["input_price"] * data.get("cache_read_factor", data.get("cache_discount", 1.0))
-            data["cache_write_price"] = data["input_price"] * data.get("cache_write_factor", 1.0)
+            model_data = dict(data)
+            model_data["id"] = key
+            # Advanced caching logic
+            model_data["cache_read_price"] = model_data["input_price"] * model_data.get("cache_read_factor", model_data.get("cache_discount", 1.0))
+            model_data["cache_write_price"] = model_data["input_price"] * model_data.get("cache_write_factor", 1.0)
             
-            if "release_date" not in data:
-                data["release_date"] = "2024-01"
-            final_list.append(data)
+            if "release_date" not in model_data:
+                model_data["release_date"] = "2024-01"
+            final_list.append(model_data)
         
         self.active_models = final_list
 
@@ -66,9 +89,6 @@ class ModelCalculator:
         """Calculates cost and latency for all supported models."""
         results = []
         
-        # total_tokens is the sum of fresh input, read cache, and write cache.
-        # But usually 'input_tokens' represents the total prompt size.
-        # Let's adjust for consistency: actual_fresh = input - read - write
         actual_read = min(cache_read_tokens, input_tokens)
         actual_write = min(cache_write_tokens, input_tokens - actual_read)
         actual_fresh_input = input_tokens - actual_read - actual_write
@@ -77,7 +97,6 @@ class ModelCalculator:
 
         for model in self.active_models:
             max_ctx = model.get("max_context", float('inf'))
-            # Still filter by hard limits if they exist (Gemini context-based pricing)
             min_ctx = model.get("min_context", 0)
             if not (min_ctx <= total_context):
                 continue
@@ -96,7 +115,7 @@ class ModelCalculator:
                 "model_name": model["name"],
                 "provider": model["provider"],
                 "input_cost": round(input_cost, 6),
-                "cache_cost": round(read_cost + write_cost, 6), # Combined for simplicity in UI
+                "cache_cost": round(read_cost + write_cost, 6),
                 "output_cost": round(output_cost, 6),
                 "total_cost": round(total_cost, 6),
                 "estimated_latency_sec": latency,
@@ -105,5 +124,4 @@ class ModelCalculator:
                 "is_too_big": total_context > max_ctx
             })
 
-        # Sort by total cost by default
         return sorted(results, key=lambda x: x["total_cost"])

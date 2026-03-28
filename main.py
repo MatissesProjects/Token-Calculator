@@ -40,8 +40,8 @@ calculator = ModelCalculator()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Optional: Fetch live pricing on startup
-    calculator.refresh_catalog(use_live_pricing=True)
+    # Optional: Fetch live pricing on startup and discover new models
+    calculator.refresh_catalog(use_live_pricing=True, discover_new=True)
     yield 
 
 app = FastAPI(title="AI Run Estimator API", lifespan=lifespan)

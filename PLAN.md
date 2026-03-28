@@ -14,5 +14,5 @@
     - [x] Anthropic Cache Write vs Read logic
     - [x] Context Window Warnings
 
-- [ ] Phase 4: Data & Maintenance
-    - [ ] Improved Live Sync auto-discovery
+- [x] Phase 4: Data & Maintenance
+    - [x] Improved Live Sync auto-discovery
