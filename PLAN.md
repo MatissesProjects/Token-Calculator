@@ -18,6 +18,7 @@
 - [x] Phase 4: Data & Maintenance
     - [x] Improved Live Sync auto-discovery
 
-- [ ] Phase 5: Visual Cost Analysis & Comparison
-    - [ ] Add Break-even Chart (Chart.js)
-    - [ ] Locked Comparison View (Pinning)
+- [x] Phase 5: Visual Cost Analysis & Comparison
+    - [x] Add Break-even Chart (Chart.js)
+    - [x] Locked Comparison View (Pinning)
+    - [x] Provider-based model filtering with select all/none capability
