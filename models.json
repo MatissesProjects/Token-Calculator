@@ -142,30 +142,6 @@
         "cache_write_factor": 1.0,
         "max_context": 1000000
     },
-    "gemini-2.5-flash-lite": {
-        "name": "Gemini 2.5 Flash-Lite",
-        "provider": "Google",
-        "input_price": 0.1,
-        "output_price": 0.4,
-        "speed_tps": 120,
-        "cache_discount": 0.1,
-        "release_date": "2025-02",
-        "cache_read_factor": 0.1,
-        "cache_write_factor": 1.0,
-        "max_context": 1000000
-    },
-    "gemini-2.5-flash": {
-        "name": "Gemini 2.5 Flash",
-        "provider": "Google",
-        "input_price": 0.3,
-        "output_price": 2.5,
-        "speed_tps": 120,
-        "cache_discount": 0.1,
-        "release_date": "2025-02",
-        "cache_read_factor": 0.1,
-        "cache_write_factor": 1.0,
-        "max_context": 1000000
-    },
     "gemini-2.5-flash-preview-09-2025": {
         "name": "Gemini 2.5 Flash Preview (09-2025)",
         "provider": "Google",
@@ -310,18 +286,6 @@
         "speed_tps": 120,
         "cache_discount": 0.5,
         "release_date": "2024-07",
-        "cache_read_factor": 0.5,
-        "cache_write_factor": 1.0,
-        "max_context": 128000
-    },
-    "gpt-4o": {
-        "name": "GPT-4o",
-        "provider": "OpenAI",
-        "input_price": 2.5,
-        "output_price": 10.0,
-        "speed_tps": 80,
-        "cache_discount": 0.5,
-        "release_date": "2024-05",
         "cache_read_factor": 0.5,
         "cache_write_factor": 1.0,
         "max_context": 128000
@@ -686,17 +650,6 @@
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0
     },
-    "claude-3-haiku": {
-        "name": "Claude 3 Haiku",
-        "provider": "Anthropic",
-        "input_price": 0.25,
-        "output_price": 1.25,
-        "speed_tps": 120,
-        "cache_discount": 1.0,
-        "release_date": "2024-03",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
     "claude-3.5-haiku": {
         "name": "Claude 3.5 Haiku",
         "provider": "Anthropic",
@@ -963,18 +916,6 @@
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0
     },
-    "grok-4-fast": {
-        "name": "Grok 4 Fast \u2264128k",
-        "provider": "xAI",
-        "input_price": 0.2,
-        "output_price": 0.5,
-        "speed_tps": 120,
-        "cache_discount": 0.25,
-        "max_context": 128000,
-        "release_date": "2026-01",
-        "cache_read_factor": 0.25,
-        "cache_write_factor": 1.0
-    },
     "grok-4-fast-reasoning": {
         "name": "Grok 4 Fast Reasoning \u2264128k",
         "provider": "xAI",
@@ -984,28 +925,6 @@
         "cache_discount": 0.25,
         "max_context": 128000,
         "release_date": "2026-01",
-        "cache_read_factor": 0.25,
-        "cache_write_factor": 1.0
-    },
-    "grok-code-fast-1": {
-        "name": "Grok Code Fast 1",
-        "provider": "xAI",
-        "input_price": 0.2,
-        "output_price": 1.5,
-        "speed_tps": 120,
-        "cache_discount": 0.1,
-        "release_date": "2025-08",
-        "cache_read_factor": 0.1,
-        "cache_write_factor": 1.0
-    },
-    "grok-3-mini": {
-        "name": "Grok 3 Mini",
-        "provider": "xAI",
-        "input_price": 0.3,
-        "output_price": 0.5,
-        "speed_tps": 120,
-        "cache_discount": 0.25,
-        "release_date": "2025-02",
         "cache_read_factor": 0.25,
         "cache_write_factor": 1.0
     },
@@ -1142,17 +1061,6 @@
         "speed_tps": 40,
         "cache_discount": 1.0,
         "release_date": "2025-01",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "minimax-m2": {
-        "name": "MiniMax M2",
-        "provider": "MiniMax",
-        "input_price": 0.3,
-        "output_price": 1.2,
-        "speed_tps": 80,
-        "cache_discount": 1.0,
-        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0
     },
@@ -1888,776 +1796,6 @@
         "input_price": 5.0,
         "output_price": 25.0,
         "max_context": 200000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "olmo-3-32b-think": {
-        "name": "AllenAI: Olmo 3 32B Think",
-        "provider": "Allenai",
-        "input_price": 0.15,
-        "output_price": 0.5,
-        "max_context": 65536,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gemini-3-pro-image-preview": {
-        "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
-        "provider": "Google",
-        "input_price": 2.0,
-        "output_price": 12.0,
-        "max_context": 65536,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "grok-4.1-fast": {
-        "name": "xAI: Grok 4.1 Fast",
-        "provider": "X-ai",
-        "input_price": 0.19999999999999998,
-        "output_price": 0.5,
-        "max_context": 2000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "cogito-v2.1-671b": {
-        "name": "Deep Cogito: Cogito v2.1 671B",
-        "provider": "Deepcogito",
-        "input_price": 1.25,
-        "output_price": 1.25,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-5.1-chat": {
-        "name": "OpenAI: GPT-5.1 Chat",
-        "provider": "Openai",
-        "input_price": 1.25,
-        "output_price": 10.0,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "kat-coder-pro": {
-        "name": "Kwaipilot: KAT-Coder-Pro V1",
-        "provider": "Kwaipilot",
-        "input_price": 0.207,
-        "output_price": 0.828,
-        "max_context": 256000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "nova-premier-v1": {
-        "name": "Amazon: Nova Premier 1.0",
-        "provider": "Amazon",
-        "input_price": 2.5,
-        "output_price": 12.5,
-        "max_context": 1000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "sonar-pro-search": {
-        "name": "Perplexity: Sonar Pro Search",
-        "provider": "Perplexity",
-        "input_price": 3.0,
-        "output_price": 15.0,
-        "max_context": 200000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "voxtral-small-24b-2507": {
-        "name": "Mistral: Voxtral Small 24B 2507",
-        "provider": "Mistralai",
-        "input_price": 0.09999999999999999,
-        "output_price": 0.3,
-        "max_context": 32000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-oss-safeguard-20b": {
-        "name": "OpenAI: gpt-oss-safeguard-20b",
-        "provider": "Openai",
-        "input_price": 0.075,
-        "output_price": 0.3,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "nemotron-nano-12b-v2-vl": {
-        "name": "NVIDIA: Nemotron Nano 12B 2 VL",
-        "provider": "Nvidia",
-        "input_price": 0.19999999999999998,
-        "output_price": 0.6,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-32b-instruct": {
-        "name": "Qwen: Qwen3 VL 32B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.10400000000000001,
-        "output_price": 0.41600000000000004,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "lfm2-8b-a1b": {
-        "name": "LiquidAI: LFM2-8B-A1B",
-        "provider": "Liquid",
-        "input_price": 0.01,
-        "output_price": 0.02,
-        "max_context": 32768,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "lfm-2.2-6b": {
-        "name": "LiquidAI: LFM2-2.6B",
-        "provider": "Liquid",
-        "input_price": 0.01,
-        "output_price": 0.02,
-        "max_context": 32768,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "granite-4.0-h-micro": {
-        "name": "IBM: Granite 4.0 Micro",
-        "provider": "Ibm-granite",
-        "input_price": 0.017,
-        "output_price": 0.11,
-        "max_context": 131000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-5-image-mini": {
-        "name": "OpenAI: GPT-5 Image Mini",
-        "provider": "Openai",
-        "input_price": 2.5,
-        "output_price": 2.0,
-        "max_context": 400000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "claude-haiku-4.5": {
-        "name": "Anthropic: Claude Haiku 4.5",
-        "provider": "Anthropic",
-        "input_price": 1.0,
-        "output_price": 5.0,
-        "max_context": 200000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-8b-thinking": {
-        "name": "Qwen: Qwen3 VL 8B Thinking",
-        "provider": "Qwen",
-        "input_price": 0.117,
-        "output_price": 1.365,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-8b-instruct": {
-        "name": "Qwen: Qwen3 VL 8B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.08,
-        "output_price": 0.5,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-5-image": {
-        "name": "OpenAI: GPT-5 Image",
-        "provider": "Openai",
-        "input_price": 10.0,
-        "output_price": 10.0,
-        "max_context": 400000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "llama-3.3-nemotron-super-49b-v1.5": {
-        "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
-        "provider": "Nvidia",
-        "input_price": 0.09999999999999999,
-        "output_price": 0.39999999999999997,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "ernie-4.5-21b-a3b-thinking": {
-        "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
-        "provider": "Baidu",
-        "input_price": 0.07,
-        "output_price": 0.28,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gemini-2.5-flash-image": {
-        "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
-        "provider": "Google",
-        "input_price": 0.3,
-        "output_price": 2.5,
-        "max_context": 32768,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-30b-a3b-thinking": {
-        "name": "Qwen: Qwen3 VL 30B A3B Thinking",
-        "provider": "Qwen",
-        "input_price": 0.13,
-        "output_price": 1.56,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-30b-a3b-instruct": {
-        "name": "Qwen: Qwen3 VL 30B A3B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.13,
-        "output_price": 0.52,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "glm-4.6": {
-        "name": "Z.ai: GLM 4.6",
-        "provider": "Z-ai",
-        "input_price": 0.39,
-        "output_price": 1.9,
-        "max_context": 204800,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "deepseek-v3.2-exp": {
-        "name": "DeepSeek: DeepSeek V3.2 Exp",
-        "provider": "Deepseek",
-        "input_price": 0.27,
-        "output_price": 0.41,
-        "max_context": 163840,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "cydonia-24b-v4.1": {
-        "name": "TheDrummer: Cydonia 24B V4.1",
-        "provider": "Thedrummer",
-        "input_price": 0.3,
-        "output_price": 0.5,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "relace-apply-3": {
-        "name": "Relace: Relace Apply 3",
-        "provider": "Relace",
-        "input_price": 0.85,
-        "output_price": 1.25,
-        "max_context": 256000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gemini-2.5-flash-lite-preview-09-2025": {
-        "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
-        "provider": "Google",
-        "input_price": 0.09999999999999999,
-        "output_price": 0.39999999999999997,
-        "max_context": 1048576,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-235b-a22b-thinking": {
-        "name": "Qwen: Qwen3 VL 235B A22B Thinking",
-        "provider": "Qwen",
-        "input_price": 0.26,
-        "output_price": 2.6,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-vl-235b-a22b-instruct": {
-        "name": "Qwen: Qwen3 VL 235B A22B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.19999999999999998,
-        "output_price": 0.88,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-max": {
-        "name": "Qwen: Qwen3 Max",
-        "provider": "Qwen",
-        "input_price": 0.78,
-        "output_price": 3.9,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-coder-plus": {
-        "name": "Qwen: Qwen3 Coder Plus",
-        "provider": "Qwen",
-        "input_price": 0.65,
-        "output_price": 3.25,
-        "max_context": 1000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-5-codex": {
-        "name": "OpenAI: GPT-5 Codex",
-        "provider": "Openai",
-        "input_price": 1.25,
-        "output_price": 10.0,
-        "max_context": 400000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "deepseek-v3.1-terminus": {
-        "name": "DeepSeek: DeepSeek V3.1 Terminus",
-        "provider": "Deepseek",
-        "input_price": 0.21,
-        "output_price": 0.7899999999999999,
-        "max_context": 163840,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "tongyi-deepresearch-30b-a3b": {
-        "name": "Tongyi DeepResearch 30B A3B",
-        "provider": "Alibaba",
-        "input_price": 0.09,
-        "output_price": 0.44999999999999996,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-coder-flash": {
-        "name": "Qwen: Qwen3 Coder Flash",
-        "provider": "Qwen",
-        "input_price": 0.195,
-        "output_price": 0.975,
-        "max_context": 1000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-next-80b-a3b-thinking": {
-        "name": "Qwen: Qwen3 Next 80B A3B Thinking",
-        "provider": "Qwen",
-        "input_price": 0.0975,
-        "output_price": 0.78,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-next-80b-a3b-instruct": {
-        "name": "Qwen: Qwen3 Next 80B A3B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.09,
-        "output_price": 1.1,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "longcat-flash-chat": {
-        "name": "Meituan: LongCat Flash Chat",
-        "provider": "Meituan",
-        "input_price": 0.19999999999999998,
-        "output_price": 0.7999999999999999,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen-plus-2025-07-28:thinking": {
-        "name": "Qwen: Qwen Plus 0728 (thinking)",
-        "provider": "Qwen",
-        "input_price": 0.26,
-        "output_price": 0.78,
-        "max_context": 1000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen-plus-2025-07-28": {
-        "name": "Qwen: Qwen Plus 0728",
-        "provider": "Qwen",
-        "input_price": 0.26,
-        "output_price": 0.78,
-        "max_context": 1000000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "nemotron-nano-9b-v2": {
-        "name": "NVIDIA: Nemotron Nano 9B V2",
-        "provider": "Nvidia",
-        "input_price": 0.04,
-        "output_price": 0.16,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "kimi-k2-0905": {
-        "name": "MoonshotAI: Kimi K2 0905",
-        "provider": "Moonshotai",
-        "input_price": 0.39999999999999997,
-        "output_price": 2.0,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-30b-a3b-thinking-2507": {
-        "name": "Qwen: Qwen3 30B A3B Thinking 2507",
-        "provider": "Qwen",
-        "input_price": 0.08,
-        "output_price": 0.39999999999999997,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "hermes-4-70b": {
-        "name": "Nous: Hermes 4 70B",
-        "provider": "Nousresearch",
-        "input_price": 0.13,
-        "output_price": 0.39999999999999997,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "hermes-4-405b": {
-        "name": "Nous: Hermes 4 405B",
-        "provider": "Nousresearch",
-        "input_price": 1.0,
-        "output_price": 3.0,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "deepseek-chat-v3.1": {
-        "name": "DeepSeek: DeepSeek V3.1",
-        "provider": "Deepseek",
-        "input_price": 0.15,
-        "output_price": 0.75,
-        "max_context": 32768,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-4o-audio-preview": {
-        "name": "OpenAI: GPT-4o Audio",
-        "provider": "Openai",
-        "input_price": 2.5,
-        "output_price": 10.0,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "mistral-medium-3.1": {
-        "name": "Mistral: Mistral Medium 3.1",
-        "provider": "Mistralai",
-        "input_price": 0.39999999999999997,
-        "output_price": 2.0,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "ernie-4.5-21b-a3b": {
-        "name": "Baidu: ERNIE 4.5 21B A3B",
-        "provider": "Baidu",
-        "input_price": 0.07,
-        "output_price": 0.28,
-        "max_context": 120000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "ernie-4.5-vl-28b-a3b": {
-        "name": "Baidu: ERNIE 4.5 VL 28B A3B",
-        "provider": "Baidu",
-        "input_price": 0.14,
-        "output_price": 0.56,
-        "max_context": 30000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "glm-4.5v": {
-        "name": "Z.ai: GLM 4.5V",
-        "provider": "Z-ai",
-        "input_price": 0.6,
-        "output_price": 1.7999999999999998,
-        "max_context": 65536,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "jamba-large-1.7": {
-        "name": "AI21: Jamba Large 1.7",
-        "provider": "Ai21",
-        "input_price": 2.0,
-        "output_price": 8.0,
-        "max_context": 256000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-5-chat": {
-        "name": "OpenAI: GPT-5 Chat",
-        "provider": "Openai",
-        "input_price": 1.25,
-        "output_price": 10.0,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-oss-120b": {
-        "name": "OpenAI: gpt-oss-120b",
-        "provider": "Openai",
-        "input_price": 0.039,
-        "output_price": 0.19,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "gpt-oss-20b": {
-        "name": "OpenAI: gpt-oss-20b",
-        "provider": "Openai",
-        "input_price": 0.03,
-        "output_price": 0.11,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "claude-opus-4.1": {
-        "name": "Anthropic: Claude Opus 4.1",
-        "provider": "Anthropic",
-        "input_price": 15.0,
-        "output_price": 75.0,
-        "max_context": 200000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "codestral-2508": {
-        "name": "Mistral: Codestral 2508",
-        "provider": "Mistralai",
-        "input_price": 0.3,
-        "output_price": 0.8999999999999999,
-        "max_context": 256000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-coder-30b-a3b-instruct": {
-        "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
-        "provider": "Qwen",
-        "input_price": 0.07,
-        "output_price": 0.27,
-        "max_context": 160000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-30b-a3b-instruct-2507": {
-        "name": "Qwen: Qwen3 30B A3B Instruct 2507",
-        "provider": "Qwen",
-        "input_price": 0.09,
-        "output_price": 0.3,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "glm-4.5": {
-        "name": "Z.ai: GLM 4.5",
-        "provider": "Z-ai",
-        "input_price": 0.6,
-        "output_price": 2.2,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "glm-4.5-air": {
-        "name": "Z.ai: GLM 4.5 Air",
-        "provider": "Z-ai",
-        "input_price": 0.13,
-        "output_price": 0.85,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-235b-a22b-thinking-2507": {
-        "name": "Qwen: Qwen3 235B A22B Thinking 2507",
-        "provider": "Qwen",
-        "input_price": 0.14950000000000002,
-        "output_price": 1.495,
-        "max_context": 131072,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "glm-4-32b": {
-        "name": "Z.ai: GLM 4 32B ",
-        "provider": "Z-ai",
-        "input_price": 0.09999999999999999,
-        "output_price": 0.09999999999999999,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-coder": {
-        "name": "Qwen: Qwen3 Coder 480B A35B",
-        "provider": "Qwen",
-        "input_price": 0.22,
-        "output_price": 1.0,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "ui-tars-1.5-7b": {
-        "name": "ByteDance: UI-TARS 7B ",
-        "provider": "Bytedance",
-        "input_price": 0.09999999999999999,
-        "output_price": 0.19999999999999998,
-        "max_context": 128000,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "qwen3-235b-a22b-2507": {
-        "name": "Qwen: Qwen3 235B A22B Instruct 2507",
-        "provider": "Qwen",
-        "input_price": 0.071,
-        "output_price": 0.09999999999999999,
-        "max_context": 262144,
-        "speed_tps": 30,
-        "release_date": "2024-Discover",
-        "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
-    },
-    "router": {
-        "name": "Switchpoint Router",
-        "provider": "Switchpoint",
-        "input_price": 0.85,
-        "output_price": 3.4,
-        "max_context": 131072,
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
@@ -3708,6 +2846,853 @@
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0
     },
+    "gemini-3.1-pro-preview": {
+        "name": "Google: Gemini 3.1 Pro Preview",
+        "provider": "Google",
+        "input_price": 2.0,
+        "output_price": 12.0,
+        "max_context": 1048576,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "olmo-3-32b-think": {
+        "name": "AllenAI: Olmo 3 32B Think",
+        "provider": "Allenai",
+        "input_price": 0.15,
+        "output_price": 0.5,
+        "max_context": 65536,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gemini-3-pro-image-preview": {
+        "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
+        "provider": "Google",
+        "input_price": 2.0,
+        "output_price": 12.0,
+        "max_context": 65536,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "grok-4.1-fast": {
+        "name": "xAI: Grok 4.1 Fast",
+        "provider": "X-ai",
+        "input_price": 0.19999999999999998,
+        "output_price": 0.5,
+        "max_context": 2000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "cogito-v2.1-671b": {
+        "name": "Deep Cogito: Cogito v2.1 671B",
+        "provider": "Deepcogito",
+        "input_price": 1.25,
+        "output_price": 1.25,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-5.1-chat": {
+        "name": "OpenAI: GPT-5.1 Chat",
+        "provider": "Openai",
+        "input_price": 1.25,
+        "output_price": 10.0,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "kat-coder-pro": {
+        "name": "Kwaipilot: KAT-Coder-Pro V1",
+        "provider": "Kwaipilot",
+        "input_price": 0.207,
+        "output_price": 0.828,
+        "max_context": 256000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "nova-premier-v1": {
+        "name": "Amazon: Nova Premier 1.0",
+        "provider": "Amazon",
+        "input_price": 2.5,
+        "output_price": 12.5,
+        "max_context": 1000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "sonar-pro-search": {
+        "name": "Perplexity: Sonar Pro Search",
+        "provider": "Perplexity",
+        "input_price": 3.0,
+        "output_price": 15.0,
+        "max_context": 200000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "voxtral-small-24b-2507": {
+        "name": "Mistral: Voxtral Small 24B 2507",
+        "provider": "Mistralai",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.3,
+        "max_context": 32000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-oss-safeguard-20b": {
+        "name": "OpenAI: gpt-oss-safeguard-20b",
+        "provider": "Openai",
+        "input_price": 0.075,
+        "output_price": 0.3,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "nemotron-nano-12b-v2-vl": {
+        "name": "NVIDIA: Nemotron Nano 12B 2 VL",
+        "provider": "Nvidia",
+        "input_price": 0.19999999999999998,
+        "output_price": 0.6,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "minimax-m2": {
+        "name": "MiniMax: MiniMax M2",
+        "provider": "Minimax",
+        "input_price": 0.255,
+        "output_price": 1.0,
+        "max_context": 196608,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-32b-instruct": {
+        "name": "Qwen: Qwen3 VL 32B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.10400000000000001,
+        "output_price": 0.41600000000000004,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "lfm2-8b-a1b": {
+        "name": "LiquidAI: LFM2-8B-A1B",
+        "provider": "Liquid",
+        "input_price": 0.01,
+        "output_price": 0.02,
+        "max_context": 32768,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "lfm-2.2-6b": {
+        "name": "LiquidAI: LFM2-2.6B",
+        "provider": "Liquid",
+        "input_price": 0.01,
+        "output_price": 0.02,
+        "max_context": 32768,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "granite-4.0-h-micro": {
+        "name": "IBM: Granite 4.0 Micro",
+        "provider": "Ibm-granite",
+        "input_price": 0.017,
+        "output_price": 0.11,
+        "max_context": 131000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-5-image-mini": {
+        "name": "OpenAI: GPT-5 Image Mini",
+        "provider": "Openai",
+        "input_price": 2.5,
+        "output_price": 2.0,
+        "max_context": 400000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "claude-haiku-4.5": {
+        "name": "Anthropic: Claude Haiku 4.5",
+        "provider": "Anthropic",
+        "input_price": 1.0,
+        "output_price": 5.0,
+        "max_context": 200000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-8b-thinking": {
+        "name": "Qwen: Qwen3 VL 8B Thinking",
+        "provider": "Qwen",
+        "input_price": 0.117,
+        "output_price": 1.365,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-8b-instruct": {
+        "name": "Qwen: Qwen3 VL 8B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.08,
+        "output_price": 0.5,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-5-image": {
+        "name": "OpenAI: GPT-5 Image",
+        "provider": "Openai",
+        "input_price": 10.0,
+        "output_price": 10.0,
+        "max_context": 400000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "llama-3.3-nemotron-super-49b-v1.5": {
+        "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
+        "provider": "Nvidia",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.39999999999999997,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "ernie-4.5-21b-a3b-thinking": {
+        "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
+        "provider": "Baidu",
+        "input_price": 0.07,
+        "output_price": 0.28,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gemini-2.5-flash-image": {
+        "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
+        "provider": "Google",
+        "input_price": 0.3,
+        "output_price": 2.5,
+        "max_context": 32768,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-30b-a3b-thinking": {
+        "name": "Qwen: Qwen3 VL 30B A3B Thinking",
+        "provider": "Qwen",
+        "input_price": 0.13,
+        "output_price": 1.56,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-30b-a3b-instruct": {
+        "name": "Qwen: Qwen3 VL 30B A3B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.13,
+        "output_price": 0.52,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "glm-4.6": {
+        "name": "Z.ai: GLM 4.6",
+        "provider": "Z-ai",
+        "input_price": 0.39,
+        "output_price": 1.9,
+        "max_context": 204800,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "deepseek-v3.2-exp": {
+        "name": "DeepSeek: DeepSeek V3.2 Exp",
+        "provider": "Deepseek",
+        "input_price": 0.27,
+        "output_price": 0.41,
+        "max_context": 163840,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "cydonia-24b-v4.1": {
+        "name": "TheDrummer: Cydonia 24B V4.1",
+        "provider": "Thedrummer",
+        "input_price": 0.3,
+        "output_price": 0.5,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "relace-apply-3": {
+        "name": "Relace: Relace Apply 3",
+        "provider": "Relace",
+        "input_price": 0.85,
+        "output_price": 1.25,
+        "max_context": 256000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gemini-2.5-flash-lite-preview-09-2025": {
+        "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+        "provider": "Google",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.39999999999999997,
+        "max_context": 1048576,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-235b-a22b-thinking": {
+        "name": "Qwen: Qwen3 VL 235B A22B Thinking",
+        "provider": "Qwen",
+        "input_price": 0.26,
+        "output_price": 2.6,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-vl-235b-a22b-instruct": {
+        "name": "Qwen: Qwen3 VL 235B A22B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.19999999999999998,
+        "output_price": 0.88,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-max": {
+        "name": "Qwen: Qwen3 Max",
+        "provider": "Qwen",
+        "input_price": 0.78,
+        "output_price": 3.9,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-coder-plus": {
+        "name": "Qwen: Qwen3 Coder Plus",
+        "provider": "Qwen",
+        "input_price": 0.65,
+        "output_price": 3.25,
+        "max_context": 1000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-5-codex": {
+        "name": "OpenAI: GPT-5 Codex",
+        "provider": "Openai",
+        "input_price": 1.25,
+        "output_price": 10.0,
+        "max_context": 400000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "deepseek-v3.1-terminus": {
+        "name": "DeepSeek: DeepSeek V3.1 Terminus",
+        "provider": "Deepseek",
+        "input_price": 0.21,
+        "output_price": 0.7899999999999999,
+        "max_context": 163840,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "grok-4-fast": {
+        "name": "xAI: Grok 4 Fast",
+        "provider": "X-ai",
+        "input_price": 0.19999999999999998,
+        "output_price": 0.5,
+        "max_context": 2000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "tongyi-deepresearch-30b-a3b": {
+        "name": "Tongyi DeepResearch 30B A3B",
+        "provider": "Alibaba",
+        "input_price": 0.09,
+        "output_price": 0.44999999999999996,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-coder-flash": {
+        "name": "Qwen: Qwen3 Coder Flash",
+        "provider": "Qwen",
+        "input_price": 0.195,
+        "output_price": 0.975,
+        "max_context": 1000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-next-80b-a3b-thinking": {
+        "name": "Qwen: Qwen3 Next 80B A3B Thinking",
+        "provider": "Qwen",
+        "input_price": 0.0975,
+        "output_price": 0.78,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-next-80b-a3b-instruct": {
+        "name": "Qwen: Qwen3 Next 80B A3B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.09,
+        "output_price": 1.1,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "longcat-flash-chat": {
+        "name": "Meituan: LongCat Flash Chat",
+        "provider": "Meituan",
+        "input_price": 0.19999999999999998,
+        "output_price": 0.7999999999999999,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen-plus-2025-07-28:thinking": {
+        "name": "Qwen: Qwen Plus 0728 (thinking)",
+        "provider": "Qwen",
+        "input_price": 0.26,
+        "output_price": 0.78,
+        "max_context": 1000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen-plus-2025-07-28": {
+        "name": "Qwen: Qwen Plus 0728",
+        "provider": "Qwen",
+        "input_price": 0.26,
+        "output_price": 0.78,
+        "max_context": 1000000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "nemotron-nano-9b-v2": {
+        "name": "NVIDIA: Nemotron Nano 9B V2",
+        "provider": "Nvidia",
+        "input_price": 0.04,
+        "output_price": 0.16,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "kimi-k2-0905": {
+        "name": "MoonshotAI: Kimi K2 0905",
+        "provider": "Moonshotai",
+        "input_price": 0.39999999999999997,
+        "output_price": 2.0,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-30b-a3b-thinking-2507": {
+        "name": "Qwen: Qwen3 30B A3B Thinking 2507",
+        "provider": "Qwen",
+        "input_price": 0.08,
+        "output_price": 0.39999999999999997,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "grok-code-fast-1": {
+        "name": "xAI: Grok Code Fast 1",
+        "provider": "X-ai",
+        "input_price": 0.19999999999999998,
+        "output_price": 1.5,
+        "max_context": 256000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "hermes-4-70b": {
+        "name": "Nous: Hermes 4 70B",
+        "provider": "Nousresearch",
+        "input_price": 0.13,
+        "output_price": 0.39999999999999997,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "hermes-4-405b": {
+        "name": "Nous: Hermes 4 405B",
+        "provider": "Nousresearch",
+        "input_price": 1.0,
+        "output_price": 3.0,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "deepseek-chat-v3.1": {
+        "name": "DeepSeek: DeepSeek V3.1",
+        "provider": "Deepseek",
+        "input_price": 0.15,
+        "output_price": 0.75,
+        "max_context": 32768,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-4o-audio-preview": {
+        "name": "OpenAI: GPT-4o Audio",
+        "provider": "Openai",
+        "input_price": 2.5,
+        "output_price": 10.0,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "mistral-medium-3.1": {
+        "name": "Mistral: Mistral Medium 3.1",
+        "provider": "Mistralai",
+        "input_price": 0.39999999999999997,
+        "output_price": 2.0,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "ernie-4.5-21b-a3b": {
+        "name": "Baidu: ERNIE 4.5 21B A3B",
+        "provider": "Baidu",
+        "input_price": 0.07,
+        "output_price": 0.28,
+        "max_context": 120000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "ernie-4.5-vl-28b-a3b": {
+        "name": "Baidu: ERNIE 4.5 VL 28B A3B",
+        "provider": "Baidu",
+        "input_price": 0.14,
+        "output_price": 0.56,
+        "max_context": 30000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "glm-4.5v": {
+        "name": "Z.ai: GLM 4.5V",
+        "provider": "Z-ai",
+        "input_price": 0.6,
+        "output_price": 1.7999999999999998,
+        "max_context": 65536,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "jamba-large-1.7": {
+        "name": "AI21: Jamba Large 1.7",
+        "provider": "Ai21",
+        "input_price": 2.0,
+        "output_price": 8.0,
+        "max_context": 256000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-5-chat": {
+        "name": "OpenAI: GPT-5 Chat",
+        "provider": "Openai",
+        "input_price": 1.25,
+        "output_price": 10.0,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-oss-120b": {
+        "name": "OpenAI: gpt-oss-120b",
+        "provider": "Openai",
+        "input_price": 0.039,
+        "output_price": 0.19,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gpt-oss-20b": {
+        "name": "OpenAI: gpt-oss-20b",
+        "provider": "Openai",
+        "input_price": 0.03,
+        "output_price": 0.11,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "claude-opus-4.1": {
+        "name": "Anthropic: Claude Opus 4.1",
+        "provider": "Anthropic",
+        "input_price": 15.0,
+        "output_price": 75.0,
+        "max_context": 200000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "codestral-2508": {
+        "name": "Mistral: Codestral 2508",
+        "provider": "Mistralai",
+        "input_price": 0.3,
+        "output_price": 0.8999999999999999,
+        "max_context": 256000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-coder-30b-a3b-instruct": {
+        "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+        "provider": "Qwen",
+        "input_price": 0.07,
+        "output_price": 0.27,
+        "max_context": 160000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-30b-a3b-instruct-2507": {
+        "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+        "provider": "Qwen",
+        "input_price": 0.09,
+        "output_price": 0.3,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "glm-4.5": {
+        "name": "Z.ai: GLM 4.5",
+        "provider": "Z-ai",
+        "input_price": 0.6,
+        "output_price": 2.2,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "glm-4.5-air": {
+        "name": "Z.ai: GLM 4.5 Air",
+        "provider": "Z-ai",
+        "input_price": 0.13,
+        "output_price": 0.85,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-235b-a22b-thinking-2507": {
+        "name": "Qwen: Qwen3 235B A22B Thinking 2507",
+        "provider": "Qwen",
+        "input_price": 0.14950000000000002,
+        "output_price": 1.495,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "glm-4-32b": {
+        "name": "Z.ai: GLM 4 32B ",
+        "provider": "Z-ai",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.09999999999999999,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-coder": {
+        "name": "Qwen: Qwen3 Coder 480B A35B",
+        "provider": "Qwen",
+        "input_price": 0.22,
+        "output_price": 1.0,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "ui-tars-1.5-7b": {
+        "name": "ByteDance: UI-TARS 7B ",
+        "provider": "Bytedance",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.19999999999999998,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gemini-2.5-flash-lite": {
+        "name": "Google: Gemini 2.5 Flash Lite",
+        "provider": "Google",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.39999999999999997,
+        "max_context": 1048576,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "qwen3-235b-a22b-2507": {
+        "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+        "provider": "Qwen",
+        "input_price": 0.071,
+        "output_price": 0.09999999999999999,
+        "max_context": 262144,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "router": {
+        "name": "Switchpoint Router",
+        "provider": "Switchpoint",
+        "input_price": 0.85,
+        "output_price": 3.4,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "gemini-2.5-flash": {
+        "name": "Google: Gemini 2.5 Flash",
+        "provider": "Google",
+        "input_price": 0.3,
+        "output_price": 2.5,
+        "max_context": 1048576,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "grok-3-mini": {
+        "name": "xAI: Grok 3 Mini",
+        "provider": "X-ai",
+        "input_price": 0.3,
+        "output_price": 0.5,
+        "max_context": 131072,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
     "llama-3.2-3b-instruct": {
         "name": "Meta: Llama 3.2 3B Instruct",
         "provider": "Meta-llama",
@@ -3906,6 +3891,17 @@
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0
     },
+    "gpt-4o": {
+        "name": "OpenAI: GPT-4o",
+        "provider": "Openai",
+        "input_price": 2.5,
+        "output_price": 10.0,
+        "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
     "gpt-4o:extended": {
         "name": "OpenAI: GPT-4o (extended)",
         "provider": "Openai",
@@ -3978,6 +3974,17 @@
         "input_price": 10.0,
         "output_price": 30.0,
         "max_context": 128000,
+        "speed_tps": 30,
+        "release_date": "2024-Discover",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0
+    },
+    "claude-3-haiku": {
+        "name": "Anthropic: Claude 3 Haiku",
+        "provider": "Anthropic",
+        "input_price": 0.25,
+        "output_price": 1.25,
+        "max_context": 200000,
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
@@ -4157,7 +4164,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "reka/reka-edge": {
         "name": "Reka Edge",
@@ -4168,7 +4178,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "video"
+        ]
     },
     "xiaomi/mimo-v2-omni": {
         "name": "Xiaomi: MiMo-V2-Omni",
@@ -4179,7 +4194,13 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "audio",
+            "image",
+            "video"
+        ]
     },
     "xiaomi/mimo-v2-pro": {
         "name": "Xiaomi: MiMo-V2-Pro",
@@ -4190,7 +4211,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "minimax/minimax-m2.7": {
         "name": "MiniMax: MiniMax M2.7",
@@ -4201,7 +4225,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.4-nano": {
         "name": "OpenAI: GPT-5.4 Nano",
@@ -4212,7 +4239,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "openai/gpt-5.4-mini": {
         "name": "OpenAI: GPT-5.4 Mini",
@@ -4223,7 +4255,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "mistralai/mistral-small-2603": {
         "name": "Mistral: Mistral Small 4",
@@ -4234,7 +4271,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "z-ai/glm-5-turbo": {
         "name": "Z.ai: GLM 5 Turbo",
@@ -4245,7 +4286,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-4.20-multi-agent-beta": {
         "name": "xAI: Grok 4.20 Multi-Agent Beta",
@@ -4256,7 +4300,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "x-ai/grok-4.20-beta": {
         "name": "xAI: Grok 4.20 Beta",
@@ -4267,7 +4315,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "nvidia/nemotron-3-super-120b-a12b": {
         "name": "NVIDIA: Nemotron 3 Super",
@@ -4278,7 +4330,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "bytedance-seed/seed-2.0-lite": {
         "name": "ByteDance Seed: Seed-2.0-Lite",
@@ -4289,7 +4344,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "qwen/qwen3.5-9b": {
         "name": "Qwen: Qwen3.5-9B",
@@ -4300,7 +4360,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "openai/gpt-5.4-pro": {
         "name": "OpenAI: GPT-5.4 Pro",
@@ -4311,7 +4376,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-5.4": {
         "name": "OpenAI: GPT-5.4",
@@ -4322,7 +4392,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "inception/mercury-2": {
         "name": "Inception: Mercury 2",
@@ -4333,7 +4408,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.3-chat": {
         "name": "OpenAI: GPT-5.3 Chat",
@@ -4344,7 +4422,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "google/gemini-3.1-flash-lite-preview": {
         "name": "Google: Gemini 3.1 Flash Lite Preview",
@@ -4355,7 +4438,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ]
     },
     "bytedance-seed/seed-2.0-mini": {
         "name": "ByteDance Seed: Seed-2.0-Mini",
@@ -4366,7 +4456,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "google/gemini-3.1-flash-image-preview": {
         "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
@@ -4377,7 +4472,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "qwen/qwen3.5-35b-a3b": {
         "name": "Qwen: Qwen3.5-35B-A3B",
@@ -4388,7 +4487,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "qwen/qwen3.5-27b": {
         "name": "Qwen: Qwen3.5-27B",
@@ -4399,7 +4503,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "qwen/qwen3.5-122b-a10b": {
         "name": "Qwen: Qwen3.5-122B-A10B",
@@ -4410,7 +4519,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "qwen/qwen3.5-flash-02-23": {
         "name": "Qwen: Qwen3.5-Flash",
@@ -4421,7 +4535,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "liquid/lfm-2-24b-a2b": {
         "name": "LiquidAI: LFM2-24B-A2B",
@@ -4432,7 +4551,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-3.1-pro-preview-customtools": {
         "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
@@ -4443,7 +4565,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "audio",
+            "image",
+            "video",
+            "file"
+        ]
     },
     "openai/gpt-5.3-codex": {
         "name": "OpenAI: GPT-5.3-Codex",
@@ -4454,7 +4583,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "aion-labs/aion-2.0": {
         "name": "AionLabs: Aion-2.0",
@@ -4465,7 +4599,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-3.1-pro-preview": {
         "name": "Google: Gemini 3.1 Pro Preview",
@@ -4476,7 +4613,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "audio",
+            "file",
+            "image",
+            "text",
+            "video"
+        ]
     },
     "anthropic/claude-sonnet-4.6": {
         "name": "Anthropic: Claude Sonnet 4.6",
@@ -4487,7 +4631,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen3.5-plus-02-15": {
         "name": "Qwen: Qwen3.5 Plus 2026-02-15",
@@ -4498,7 +4646,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "qwen/qwen3.5-397b-a17b": {
         "name": "Qwen: Qwen3.5 397B A17B",
@@ -4509,7 +4662,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video"
+        ]
     },
     "minimax/minimax-m2.5": {
         "name": "MiniMax: MiniMax M2.5",
@@ -4520,7 +4678,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-5": {
         "name": "Z.ai: GLM 5",
@@ -4531,7 +4692,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-max-thinking": {
         "name": "Qwen: Qwen3 Max Thinking",
@@ -4542,7 +4706,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-opus-4.6": {
         "name": "Anthropic: Claude Opus 4.6",
@@ -4553,7 +4720,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen3-coder-next": {
         "name": "Qwen: Qwen3 Coder Next",
@@ -4564,7 +4735,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "stepfun/step-3.5-flash": {
         "name": "StepFun: Step 3.5 Flash",
@@ -4575,7 +4749,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "moonshotai/kimi-k2.5": {
         "name": "MoonshotAI: Kimi K2.5",
@@ -4586,7 +4763,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "upstage/solar-pro-3": {
         "name": "Upstage: Solar Pro 3",
@@ -4597,7 +4778,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "minimax/minimax-m2-her": {
         "name": "MiniMax: MiniMax M2-her",
@@ -4608,7 +4792,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "writer/palmyra-x5": {
         "name": "Writer: Palmyra X5",
@@ -4619,7 +4806,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-audio": {
         "name": "OpenAI: GPT Audio",
@@ -4630,7 +4820,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "audio"
+        ]
     },
     "openai/gpt-audio-mini": {
         "name": "OpenAI: GPT Audio Mini",
@@ -4641,7 +4835,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "audio"
+        ]
     },
     "z-ai/glm-4.7-flash": {
         "name": "Z.ai: GLM 4.7 Flash",
@@ -4652,7 +4850,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.2-codex": {
         "name": "OpenAI: GPT-5.2-Codex",
@@ -4663,7 +4864,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "allenai/olmo-3.1-32b-instruct": {
         "name": "AllenAI: Olmo 3.1 32B Instruct",
@@ -4674,7 +4879,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "bytedance-seed/seed-1.6-flash": {
         "name": "ByteDance Seed: Seed 1.6 Flash",
@@ -4685,7 +4893,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "video"
+        ]
     },
     "bytedance-seed/seed-1.6": {
         "name": "ByteDance Seed: Seed 1.6",
@@ -4696,7 +4909,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "video"
+        ]
     },
     "minimax/minimax-m2.1": {
         "name": "MiniMax: MiniMax M2.1",
@@ -4707,7 +4925,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-4.7": {
         "name": "Z.ai: GLM 4.7",
@@ -4718,7 +4939,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-3-flash-preview": {
         "name": "Google: Gemini 3 Flash Preview",
@@ -4729,7 +4953,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "mistralai/mistral-small-creative": {
         "name": "Mistral: Mistral Small Creative",
@@ -4740,7 +4971,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "allenai/olmo-3.1-32b-think": {
         "name": "AllenAI: Olmo 3.1 32B Think",
@@ -4751,7 +4985,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "xiaomi/mimo-v2-flash": {
         "name": "Xiaomi: MiMo-V2-Flash",
@@ -4762,7 +4999,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nvidia/nemotron-3-nano-30b-a3b": {
         "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
@@ -4773,7 +5013,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.2-chat": {
         "name": "OpenAI: GPT-5.2 Chat",
@@ -4784,7 +5027,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "openai/gpt-5.2-pro": {
         "name": "OpenAI: GPT-5.2 Pro",
@@ -4795,7 +5043,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/gpt-5.2": {
         "name": "OpenAI: GPT-5.2",
@@ -4806,7 +5059,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "mistralai/devstral-2512": {
         "name": "Mistral: Devstral 2 2512",
@@ -4817,7 +5075,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "relace/relace-search": {
         "name": "Relace: Relace Search",
@@ -4828,7 +5089,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-4.6v": {
         "name": "Z.ai: GLM 4.6V",
@@ -4839,7 +5103,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "video"
+        ]
     },
     "nex-agi/deepseek-v3.1-nex-n1": {
         "name": "Nex AGI: DeepSeek V3.1 Nex N1",
@@ -4850,7 +5119,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "essentialai/rnj-1-instruct": {
         "name": "EssentialAI: Rnj 1 Instruct",
@@ -4861,7 +5133,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.1-codex-max": {
         "name": "OpenAI: GPT-5.1-Codex-Max",
@@ -4872,7 +5147,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "amazon/nova-2-lite-v1": {
         "name": "Amazon: Nova 2 Lite",
@@ -4883,7 +5162,13 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "video",
+            "file"
+        ]
     },
     "mistralai/ministral-14b-2512": {
         "name": "Mistral: Ministral 3 14B 2512",
@@ -4894,7 +5179,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "mistralai/ministral-8b-2512": {
         "name": "Mistral: Ministral 3 8B 2512",
@@ -4905,7 +5194,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "mistralai/ministral-3b-2512": {
         "name": "Mistral: Ministral 3 3B 2512",
@@ -4916,7 +5209,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "mistralai/mistral-large-2512": {
         "name": "Mistral: Mistral Large 3 2512",
@@ -4927,7 +5224,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "arcee-ai/trinity-mini": {
         "name": "Arcee AI: Trinity Mini",
@@ -4938,7 +5239,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-v3.2-speciale": {
         "name": "DeepSeek: DeepSeek V3.2 Speciale",
@@ -4949,7 +5253,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-v3.2": {
         "name": "DeepSeek: DeepSeek V3.2",
@@ -4960,7 +5267,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "prime-intellect/intellect-3": {
         "name": "Prime Intellect: INTELLECT-3",
@@ -4971,7 +5281,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-opus-4.5": {
         "name": "Anthropic: Claude Opus 4.5",
@@ -4982,7 +5295,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "allenai/olmo-3-32b-think": {
         "name": "AllenAI: Olmo 3 32B Think",
@@ -4993,7 +5311,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-3-pro-image-preview": {
         "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
@@ -5004,7 +5325,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "x-ai/grok-4.1-fast": {
         "name": "xAI: Grok 4.1 Fast",
@@ -5015,7 +5340,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "deepcogito/cogito-v2.1-671b": {
         "name": "Deep Cogito: Cogito v2.1 671B",
@@ -5026,7 +5355,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5.1": {
         "name": "OpenAI: GPT-5.1",
@@ -5037,7 +5369,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/gpt-5.1-chat": {
         "name": "OpenAI: GPT-5.1 Chat",
@@ -5048,7 +5385,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "openai/gpt-5.1-codex": {
         "name": "OpenAI: GPT-5.1-Codex",
@@ -5059,7 +5401,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "openai/gpt-5.1-codex-mini": {
         "name": "OpenAI: GPT-5.1-Codex-Mini",
@@ -5070,7 +5416,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "kwaipilot/kat-coder-pro": {
         "name": "Kwaipilot: KAT-Coder-Pro V1",
@@ -5081,7 +5431,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "moonshotai/kimi-k2-thinking": {
         "name": "MoonshotAI: Kimi K2 Thinking",
@@ -5092,7 +5445,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "amazon/nova-premier-v1": {
         "name": "Amazon: Nova Premier 1.0",
@@ -5103,7 +5459,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "perplexity/sonar-pro-search": {
         "name": "Perplexity: Sonar Pro Search",
@@ -5114,7 +5474,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "mistralai/voxtral-small-24b-2507": {
         "name": "Mistral: Voxtral Small 24B 2507",
@@ -5125,7 +5489,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "audio"
+        ]
     },
     "openai/gpt-oss-safeguard-20b": {
         "name": "OpenAI: gpt-oss-safeguard-20b",
@@ -5136,7 +5504,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nvidia/nemotron-nano-12b-v2-vl": {
         "name": "NVIDIA: Nemotron Nano 12B 2 VL",
@@ -5147,7 +5518,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "video"
+        ]
     },
     "minimax/minimax-m2": {
         "name": "MiniMax: MiniMax M2",
@@ -5158,7 +5534,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-vl-32b-instruct": {
         "name": "Qwen: Qwen3 VL 32B Instruct",
@@ -5169,7 +5548,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "liquid/lfm2-8b-a1b": {
         "name": "LiquidAI: LFM2-8B-A1B",
@@ -5180,7 +5563,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "liquid/lfm-2.2-6b": {
         "name": "LiquidAI: LFM2-2.6B",
@@ -5191,7 +5577,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "ibm-granite/granite-4.0-h-micro": {
         "name": "IBM: Granite 4.0 Micro",
@@ -5202,7 +5591,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5-image-mini": {
         "name": "OpenAI: GPT-5 Image Mini",
@@ -5213,7 +5605,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "anthropic/claude-haiku-4.5": {
         "name": "Anthropic: Claude Haiku 4.5",
@@ -5224,7 +5621,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "qwen/qwen3-vl-8b-thinking": {
         "name": "Qwen: Qwen3 VL 8B Thinking",
@@ -5235,7 +5636,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "qwen/qwen3-vl-8b-instruct": {
         "name": "Qwen: Qwen3 VL 8B Instruct",
@@ -5246,7 +5651,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "openai/gpt-5-image": {
         "name": "OpenAI: GPT-5 Image",
@@ -5257,7 +5666,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/o3-deep-research": {
         "name": "OpenAI: o3 Deep Research",
@@ -5268,7 +5682,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/o4-mini-deep-research": {
         "name": "OpenAI: o4 Mini Deep Research",
@@ -5279,7 +5698,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "nvidia/llama-3.3-nemotron-super-49b-v1.5": {
         "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
@@ -5290,7 +5714,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "baidu/ernie-4.5-21b-a3b-thinking": {
         "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
@@ -5301,7 +5728,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-2.5-flash-image": {
         "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
@@ -5312,7 +5742,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "qwen/qwen3-vl-30b-a3b-thinking": {
         "name": "Qwen: Qwen3 VL 30B A3B Thinking",
@@ -5323,7 +5757,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen3-vl-30b-a3b-instruct": {
         "name": "Qwen: Qwen3 VL 30B A3B Instruct",
@@ -5334,7 +5772,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "openai/gpt-5-pro": {
         "name": "OpenAI: GPT-5 Pro",
@@ -5345,7 +5787,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "z-ai/glm-4.6": {
         "name": "Z.ai: GLM 4.6",
@@ -5356,7 +5803,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-sonnet-4.5": {
         "name": "Anthropic: Claude Sonnet 4.5",
@@ -5367,7 +5817,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "deepseek/deepseek-v3.2-exp": {
         "name": "DeepSeek: DeepSeek V3.2 Exp",
@@ -5378,7 +5833,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "thedrummer/cydonia-24b-v4.1": {
         "name": "TheDrummer: Cydonia 24B V4.1",
@@ -5389,7 +5847,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "relace/relace-apply-3": {
         "name": "Relace: Relace Apply 3",
@@ -5400,7 +5861,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-2.5-flash-lite-preview-09-2025": {
         "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
@@ -5411,7 +5875,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "qwen/qwen3-vl-235b-a22b-thinking": {
         "name": "Qwen: Qwen3 VL 235B A22B Thinking",
@@ -5422,7 +5893,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen3-vl-235b-a22b-instruct": {
         "name": "Qwen: Qwen3 VL 235B A22B Instruct",
@@ -5433,7 +5908,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen3-max": {
         "name": "Qwen: Qwen3 Max",
@@ -5444,7 +5923,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-coder-plus": {
         "name": "Qwen: Qwen3 Coder Plus",
@@ -5455,7 +5937,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5-codex": {
         "name": "OpenAI: GPT-5 Codex",
@@ -5466,7 +5951,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "deepseek/deepseek-v3.1-terminus": {
         "name": "DeepSeek: DeepSeek V3.1 Terminus",
@@ -5477,7 +5966,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-4-fast": {
         "name": "xAI: Grok 4 Fast",
@@ -5488,7 +5980,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "alibaba/tongyi-deepresearch-30b-a3b": {
         "name": "Tongyi DeepResearch 30B A3B",
@@ -5499,7 +5995,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-coder-flash": {
         "name": "Qwen: Qwen3 Coder Flash",
@@ -5510,7 +6009,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-next-80b-a3b-thinking": {
         "name": "Qwen: Qwen3 Next 80B A3B Thinking",
@@ -5521,7 +6023,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-next-80b-a3b-instruct": {
         "name": "Qwen: Qwen3 Next 80B A3B Instruct",
@@ -5532,7 +6037,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meituan/longcat-flash-chat": {
         "name": "Meituan: LongCat Flash Chat",
@@ -5543,7 +6051,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen-plus-2025-07-28:thinking": {
         "name": "Qwen: Qwen Plus 0728 (thinking)",
@@ -5554,7 +6065,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen-plus-2025-07-28": {
         "name": "Qwen: Qwen Plus 0728",
@@ -5565,7 +6079,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nvidia/nemotron-nano-9b-v2": {
         "name": "NVIDIA: Nemotron Nano 9B V2",
@@ -5576,7 +6093,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "moonshotai/kimi-k2-0905": {
         "name": "MoonshotAI: Kimi K2 0905",
@@ -5587,7 +6107,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-30b-a3b-thinking-2507": {
         "name": "Qwen: Qwen3 30B A3B Thinking 2507",
@@ -5598,7 +6121,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-code-fast-1": {
         "name": "xAI: Grok Code Fast 1",
@@ -5609,7 +6135,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nousresearch/hermes-4-70b": {
         "name": "Nous: Hermes 4 70B",
@@ -5620,7 +6149,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nousresearch/hermes-4-405b": {
         "name": "Nous: Hermes 4 405B",
@@ -5631,7 +6163,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-chat-v3.1": {
         "name": "DeepSeek: DeepSeek V3.1",
@@ -5642,7 +6177,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o-audio-preview": {
         "name": "OpenAI: GPT-4o Audio",
@@ -5653,7 +6191,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "audio",
+            "text"
+        ]
     },
     "mistralai/mistral-medium-3.1": {
         "name": "Mistral: Mistral Medium 3.1",
@@ -5664,7 +6206,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "baidu/ernie-4.5-21b-a3b": {
         "name": "Baidu: ERNIE 4.5 21B A3B",
@@ -5675,7 +6221,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "baidu/ernie-4.5-vl-28b-a3b": {
         "name": "Baidu: ERNIE 4.5 VL 28B A3B",
@@ -5686,7 +6235,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "z-ai/glm-4.5v": {
         "name": "Z.ai: GLM 4.5V",
@@ -5697,7 +6250,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "ai21/jamba-large-1.7": {
         "name": "AI21: Jamba Large 1.7",
@@ -5708,7 +6265,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-5-chat": {
         "name": "OpenAI: GPT-5 Chat",
@@ -5719,7 +6279,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text"
+        ]
     },
     "openai/gpt-5": {
         "name": "OpenAI: GPT-5",
@@ -5730,7 +6295,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-5-mini": {
         "name": "OpenAI: GPT-5 Mini",
@@ -5741,7 +6311,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-5-nano": {
         "name": "OpenAI: GPT-5 Nano",
@@ -5752,7 +6327,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-oss-120b": {
         "name": "OpenAI: gpt-oss-120b",
@@ -5763,7 +6343,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-oss-20b": {
         "name": "OpenAI: gpt-oss-20b",
@@ -5774,7 +6357,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-opus-4.1": {
         "name": "Anthropic: Claude Opus 4.1",
@@ -5785,7 +6371,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "mistralai/codestral-2508": {
         "name": "Mistral: Codestral 2508",
@@ -5796,7 +6387,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-coder-30b-a3b-instruct": {
         "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
@@ -5807,7 +6401,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-30b-a3b-instruct-2507": {
         "name": "Qwen: Qwen3 30B A3B Instruct 2507",
@@ -5818,7 +6415,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-4.5": {
         "name": "Z.ai: GLM 4.5",
@@ -5829,7 +6429,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-4.5-air": {
         "name": "Z.ai: GLM 4.5 Air",
@@ -5840,7 +6443,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-235b-a22b-thinking-2507": {
         "name": "Qwen: Qwen3 235B A22B Thinking 2507",
@@ -5851,7 +6457,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "z-ai/glm-4-32b": {
         "name": "Z.ai: GLM 4 32B ",
@@ -5862,7 +6471,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-coder": {
         "name": "Qwen: Qwen3 Coder 480B A35B",
@@ -5873,7 +6485,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "bytedance/ui-tars-1.5-7b": {
         "name": "ByteDance: UI-TARS 7B ",
@@ -5884,7 +6499,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "google/gemini-2.5-flash-lite": {
         "name": "Google: Gemini 2.5 Flash Lite",
@@ -5895,7 +6514,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "qwen/qwen3-235b-a22b-2507": {
         "name": "Qwen: Qwen3 235B A22B Instruct 2507",
@@ -5906,7 +6532,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "switchpoint/router": {
         "name": "Switchpoint Router",
@@ -5917,7 +6546,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "moonshotai/kimi-k2": {
         "name": "MoonshotAI: Kimi K2 0711",
@@ -5928,7 +6560,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/devstral-medium": {
         "name": "Mistral: Devstral Medium",
@@ -5939,7 +6574,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/devstral-small": {
         "name": "Mistral: Devstral Small 1.1",
@@ -5950,7 +6588,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-4": {
         "name": "xAI: Grok 4",
@@ -5961,7 +6602,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "tencent/hunyuan-a13b-instruct": {
         "name": "Tencent: Hunyuan A13B Instruct",
@@ -5972,7 +6617,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "tngtech/deepseek-r1t2-chimera": {
         "name": "TNG: DeepSeek R1T2 Chimera",
@@ -5983,7 +6631,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "morph/morph-v3-large": {
         "name": "Morph: Morph V3 Large",
@@ -5994,7 +6645,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "morph/morph-v3-fast": {
         "name": "Morph: Morph V3 Fast",
@@ -6005,7 +6659,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "baidu/ernie-4.5-vl-424b-a47b": {
         "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
@@ -6016,7 +6673,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "baidu/ernie-4.5-300b-a47b": {
         "name": "Baidu: ERNIE 4.5 300B A47B ",
@@ -6027,7 +6688,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "inception/mercury": {
         "name": "Inception: Mercury",
@@ -6038,7 +6702,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mistral-small-3.2-24b-instruct": {
         "name": "Mistral: Mistral Small 3.2 24B",
@@ -6049,7 +6716,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "minimax/minimax-m1": {
         "name": "MiniMax: MiniMax M1",
@@ -6060,7 +6731,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-2.5-flash": {
         "name": "Google: Gemini 2.5 Flash",
@@ -6071,7 +6745,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text",
+            "audio",
+            "video"
+        ]
     },
     "google/gemini-2.5-pro": {
         "name": "Google: Gemini 2.5 Pro",
@@ -6082,7 +6763,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "openai/o3-pro": {
         "name": "OpenAI: o3 Pro",
@@ -6093,7 +6781,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "file",
+            "image"
+        ]
     },
     "x-ai/grok-3-mini": {
         "name": "xAI: Grok 3 Mini",
@@ -6104,7 +6797,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-3": {
         "name": "xAI: Grok 3",
@@ -6115,7 +6811,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-2.5-pro-preview": {
         "name": "Google: Gemini 2.5 Pro Preview 06-05",
@@ -6126,7 +6825,13 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "file",
+            "image",
+            "text",
+            "audio"
+        ]
     },
     "deepseek/deepseek-r1-0528": {
         "name": "DeepSeek: R1 0528",
@@ -6137,7 +6842,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-opus-4": {
         "name": "Anthropic: Claude Opus 4",
@@ -6148,7 +6856,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "anthropic/claude-sonnet-4": {
         "name": "Anthropic: Claude Sonnet 4",
@@ -6159,7 +6872,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "google/gemma-3n-e4b-it": {
         "name": "Google: Gemma 3n 4B",
@@ -6170,7 +6888,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mistral-medium-3": {
         "name": "Mistral: Mistral Medium 3",
@@ -6181,7 +6902,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "google/gemini-2.5-pro-preview-05-06": {
         "name": "Google: Gemini 2.5 Pro Preview 05-06",
@@ -6192,7 +6917,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "arcee-ai/spotlight": {
         "name": "Arcee AI: Spotlight",
@@ -6203,7 +6935,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "arcee-ai/maestro-reasoning": {
         "name": "Arcee AI: Maestro Reasoning",
@@ -6214,7 +6950,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "arcee-ai/virtuoso-large": {
         "name": "Arcee AI: Virtuoso Large",
@@ -6225,7 +6964,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "arcee-ai/coder-large": {
         "name": "Arcee AI: Coder Large",
@@ -6236,7 +6978,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "inception/mercury-coder": {
         "name": "Inception: Mercury Coder",
@@ -6247,7 +6992,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-guard-4-12b": {
         "name": "Meta: Llama Guard 4 12B",
@@ -6258,7 +7006,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text"
+        ]
     },
     "qwen/qwen3-30b-a3b": {
         "name": "Qwen: Qwen3 30B A3B",
@@ -6269,7 +7021,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-8b": {
         "name": "Qwen: Qwen3 8B",
@@ -6280,7 +7035,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-14b": {
         "name": "Qwen: Qwen3 14B",
@@ -6291,7 +7049,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-32b": {
         "name": "Qwen: Qwen3 32B",
@@ -6302,7 +7063,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen3-235b-a22b": {
         "name": "Qwen: Qwen3 235B A22B",
@@ -6313,7 +7077,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/o4-mini-high": {
         "name": "OpenAI: o4 Mini High",
@@ -6324,7 +7091,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/o3": {
         "name": "OpenAI: o3",
@@ -6335,7 +7107,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/o4-mini": {
         "name": "OpenAI: o4 Mini",
@@ -6346,7 +7123,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "qwen/qwen2.5-coder-7b-instruct": {
         "name": "Qwen: Qwen2.5 Coder 7B Instruct",
@@ -6357,7 +7139,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4.1": {
         "name": "OpenAI: GPT-4.1",
@@ -6368,7 +7153,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/gpt-4.1-mini": {
         "name": "OpenAI: GPT-4.1 Mini",
@@ -6379,7 +7169,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "openai/gpt-4.1-nano": {
         "name": "OpenAI: GPT-4.1 Nano",
@@ -6390,7 +7185,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "image",
+            "text",
+            "file"
+        ]
     },
     "eleutherai/llemma_7b": {
         "name": "EleutherAI: Llemma 7b",
@@ -6401,7 +7201,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "alfredpros/codellama-7b-instruct-solidity": {
         "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity",
@@ -6412,7 +7215,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-3-mini-beta": {
         "name": "xAI: Grok 3 Mini Beta",
@@ -6423,7 +7229,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "x-ai/grok-3-beta": {
         "name": "xAI: Grok 3 Beta",
@@ -6434,7 +7243,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nvidia/llama-3.1-nemotron-ultra-253b-v1": {
         "name": "NVIDIA: Llama 3.1 Nemotron Ultra 253B v1",
@@ -6445,7 +7257,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-4-maverick": {
         "name": "Meta: Llama 4 Maverick",
@@ -6456,7 +7271,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "meta-llama/llama-4-scout": {
         "name": "Meta: Llama 4 Scout",
@@ -6467,7 +7286,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen2.5-vl-32b-instruct": {
         "name": "Qwen: Qwen2.5 VL 32B Instruct",
@@ -6478,7 +7301,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "deepseek/deepseek-chat-v3-0324": {
         "name": "DeepSeek: DeepSeek V3 0324",
@@ -6489,7 +7316,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/o1-pro": {
         "name": "OpenAI: o1-pro",
@@ -6500,7 +7330,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "mistralai/mistral-small-3.1-24b-instruct": {
         "name": "Mistral: Mistral Small 3.1 24B",
@@ -6511,7 +7346,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "allenai/olmo-2-0325-32b-instruct": {
         "name": "AllenAI: Olmo 2 32B Instruct",
@@ -6522,7 +7361,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemma-3-4b-it": {
         "name": "Google: Gemma 3 4B",
@@ -6533,7 +7375,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "google/gemma-3-12b-it": {
         "name": "Google: Gemma 3 12B",
@@ -6544,7 +7390,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "cohere/command-a": {
         "name": "Cohere: Command A",
@@ -6555,7 +7405,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o-mini-search-preview": {
         "name": "OpenAI: GPT-4o-mini Search Preview",
@@ -6566,7 +7419,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o-search-preview": {
         "name": "OpenAI: GPT-4o Search Preview",
@@ -6577,7 +7433,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemma-3-27b-it": {
         "name": "Google: Gemma 3 27B",
@@ -6588,7 +7447,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "thedrummer/skyfall-36b-v2": {
         "name": "TheDrummer: Skyfall 36B V2",
@@ -6599,7 +7462,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "perplexity/sonar-reasoning-pro": {
         "name": "Perplexity: Sonar Reasoning Pro",
@@ -6610,7 +7476,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "perplexity/sonar-pro": {
         "name": "Perplexity: Sonar Pro",
@@ -6621,7 +7491,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "perplexity/sonar-deep-research": {
         "name": "Perplexity: Sonar Deep Research",
@@ -6632,7 +7506,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwq-32b": {
         "name": "Qwen: QwQ 32B",
@@ -6643,7 +7520,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemini-2.0-flash-lite-001": {
         "name": "Google: Gemini 2.0 Flash Lite",
@@ -6654,7 +7534,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "anthropic/claude-3.7-sonnet": {
         "name": "Anthropic: Claude 3.7 Sonnet",
@@ -6665,7 +7552,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "anthropic/claude-3.7-sonnet:thinking": {
         "name": "Anthropic: Claude 3.7 Sonnet (thinking)",
@@ -6676,7 +7568,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "mistralai/mistral-saba": {
         "name": "Mistral: Saba",
@@ -6687,7 +7584,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-guard-3-8b": {
         "name": "Llama Guard 3 8B",
@@ -6698,7 +7598,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/o3-mini-high": {
         "name": "OpenAI: o3 Mini High",
@@ -6709,7 +7612,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "file"
+        ]
     },
     "google/gemini-2.0-flash-001": {
         "name": "Google: Gemini 2.0 Flash",
@@ -6720,7 +7627,14 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file",
+            "audio",
+            "video"
+        ]
     },
     "qwen/qwen-vl-plus": {
         "name": "Qwen: Qwen VL Plus",
@@ -6731,7 +7645,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "aion-labs/aion-1.0": {
         "name": "AionLabs: Aion-1.0",
@@ -6742,7 +7660,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "aion-labs/aion-1.0-mini": {
         "name": "AionLabs: Aion-1.0-Mini",
@@ -6753,7 +7674,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "aion-labs/aion-rp-llama-3.1-8b": {
         "name": "AionLabs: Aion-RP 1.0 (8B)",
@@ -6764,7 +7688,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen-vl-max": {
         "name": "Qwen: Qwen VL Max",
@@ -6775,7 +7702,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen-turbo": {
         "name": "Qwen: Qwen-Turbo",
@@ -6786,7 +7717,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen2.5-vl-72b-instruct": {
         "name": "Qwen: Qwen2.5 VL 72B Instruct",
@@ -6797,7 +7731,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen-plus": {
         "name": "Qwen: Qwen-Plus",
@@ -6808,7 +7746,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "qwen/qwen-max": {
         "name": "Qwen: Qwen-Max ",
@@ -6819,7 +7760,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/o3-mini": {
         "name": "OpenAI: o3 Mini",
@@ -6830,7 +7774,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "file"
+        ]
     },
     "mistralai/mistral-small-24b-instruct-2501": {
         "name": "Mistral: Mistral Small 3",
@@ -6841,7 +7789,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-r1-distill-qwen-32b": {
         "name": "DeepSeek: R1 Distill Qwen 32B",
@@ -6852,7 +7803,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "perplexity/sonar": {
         "name": "Perplexity: Sonar",
@@ -6863,7 +7817,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "deepseek/deepseek-r1-distill-llama-70b": {
         "name": "DeepSeek: R1 Distill Llama 70B",
@@ -6874,7 +7832,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-r1": {
         "name": "DeepSeek: R1",
@@ -6885,7 +7846,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "minimax/minimax-01": {
         "name": "MiniMax: MiniMax-01",
@@ -6896,7 +7860,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "microsoft/phi-4": {
         "name": "Microsoft: Phi 4",
@@ -6907,7 +7875,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "sao10k/l3.1-70b-hanami-x1": {
         "name": "Sao10K: Llama 3.1 70B Hanami x1",
@@ -6918,7 +7889,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "deepseek/deepseek-chat": {
         "name": "DeepSeek: DeepSeek V3",
@@ -6929,7 +7903,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "sao10k/l3.3-euryale-70b": {
         "name": "Sao10K: Llama 3.3 Euryale 70B",
@@ -6940,7 +7917,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/o1": {
         "name": "OpenAI: o1",
@@ -6951,7 +7931,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "cohere/command-r7b-12-2024": {
         "name": "Cohere: Command R7B (12-2024)",
@@ -6962,7 +7947,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3.3-70b-instruct": {
         "name": "Meta: Llama 3.3 70B Instruct",
@@ -6973,7 +7961,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "amazon/nova-lite-v1": {
         "name": "Amazon: Nova Lite 1.0",
@@ -6984,7 +7975,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "amazon/nova-micro-v1": {
         "name": "Amazon: Nova Micro 1.0",
@@ -6995,7 +7990,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "amazon/nova-pro-v1": {
         "name": "Amazon: Nova Pro 1.0",
@@ -7006,7 +8004,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "openai/gpt-4o-2024-11-20": {
         "name": "OpenAI: GPT-4o (2024-11-20)",
@@ -7017,7 +8019,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "mistralai/mistral-large-2411": {
         "name": "Mistral Large 2411",
@@ -7028,7 +8035,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mistral-large-2407": {
         "name": "Mistral Large 2407",
@@ -7039,7 +8049,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/pixtral-large-2411": {
         "name": "Mistral: Pixtral Large 2411",
@@ -7050,7 +8063,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen-2.5-coder-32b-instruct": {
         "name": "Qwen2.5 Coder 32B Instruct",
@@ -7061,7 +8078,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "thedrummer/unslopnemo-12b": {
         "name": "TheDrummer: UnslopNemo 12B",
@@ -7072,7 +8092,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-3.5-haiku": {
         "name": "Anthropic: Claude 3.5 Haiku",
@@ -7083,7 +8106,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "anthracite-org/magnum-v4-72b": {
         "name": "Magnum v4 72B",
@@ -7094,7 +8121,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "anthropic/claude-3.5-sonnet": {
         "name": "Anthropic: Claude 3.5 Sonnet",
@@ -7105,7 +8135,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "qwen/qwen-2.5-7b-instruct": {
         "name": "Qwen: Qwen2.5 7B Instruct",
@@ -7116,7 +8151,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nvidia/llama-3.1-nemotron-70b-instruct": {
         "name": "NVIDIA: Llama 3.1 Nemotron 70B Instruct",
@@ -7127,7 +8165,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "inflection/inflection-3-productivity": {
         "name": "Inflection: Inflection 3 Productivity",
@@ -7138,7 +8179,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "inflection/inflection-3-pi": {
         "name": "Inflection: Inflection 3 Pi",
@@ -7149,7 +8193,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "thedrummer/rocinante-12b": {
         "name": "TheDrummer: Rocinante 12B",
@@ -7160,7 +8207,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3.2-3b-instruct": {
         "name": "Meta: Llama 3.2 3B Instruct",
@@ -7171,7 +8221,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3.2-1b-instruct": {
         "name": "Meta: Llama 3.2 1B Instruct",
@@ -7182,7 +8235,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3.2-11b-vision-instruct": {
         "name": "Meta: Llama 3.2 11B Vision Instruct",
@@ -7193,7 +8249,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "qwen/qwen-2.5-72b-instruct": {
         "name": "Qwen2.5 72B Instruct",
@@ -7204,7 +8264,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "cohere/command-r-plus-08-2024": {
         "name": "Cohere: Command R+ (08-2024)",
@@ -7215,7 +8278,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "cohere/command-r-08-2024": {
         "name": "Cohere: Command R (08-2024)",
@@ -7226,7 +8292,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "sao10k/l3.1-euryale-70b": {
         "name": "Sao10K: Llama 3.1 Euryale 70B v2.2",
@@ -7237,7 +8306,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nousresearch/hermes-3-llama-3.1-70b": {
         "name": "Nous: Hermes 3 70B Instruct",
@@ -7248,7 +8320,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nousresearch/hermes-3-llama-3.1-405b": {
         "name": "Nous: Hermes 3 405B Instruct",
@@ -7259,7 +8334,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "sao10k/l3-lunaris-8b": {
         "name": "Sao10K: Llama 3 8B Lunaris",
@@ -7270,7 +8348,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o-2024-08-06": {
         "name": "OpenAI: GPT-4o (2024-08-06)",
@@ -7281,7 +8362,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "meta-llama/llama-3.1-8b-instruct": {
         "name": "Meta: Llama 3.1 8B Instruct",
@@ -7292,7 +8378,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3.1-70b-instruct": {
         "name": "Meta: Llama 3.1 70B Instruct",
@@ -7303,7 +8392,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mistral-nemo": {
         "name": "Mistral: Mistral Nemo",
@@ -7314,7 +8406,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o-mini": {
         "name": "OpenAI: GPT-4o-mini",
@@ -7325,7 +8420,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-4o-mini-2024-07-18": {
         "name": "OpenAI: GPT-4o-mini (2024-07-18)",
@@ -7336,7 +8436,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "google/gemma-2-27b-it": {
         "name": "Google: Gemma 2 27B",
@@ -7347,7 +8452,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "google/gemma-2-9b-it": {
         "name": "Google: Gemma 2 9B",
@@ -7358,7 +8466,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "sao10k/l3-euryale-70b": {
         "name": "Sao10k: Llama 3 Euryale 70B v2.1",
@@ -7369,7 +8480,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "nousresearch/hermes-2-pro-llama-3-8b": {
         "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
@@ -7380,7 +8494,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4o": {
         "name": "OpenAI: GPT-4o",
@@ -7391,7 +8508,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-4o:extended": {
         "name": "OpenAI: GPT-4o (extended)",
@@ -7402,7 +8524,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "openai/gpt-4o-2024-05-13": {
         "name": "OpenAI: GPT-4o (2024-05-13)",
@@ -7413,7 +8540,12 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
     },
     "meta-llama/llama-3-8b-instruct": {
         "name": "Meta: Llama 3 8B Instruct",
@@ -7424,7 +8556,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "meta-llama/llama-3-70b-instruct": {
         "name": "Meta: Llama 3 70B Instruct",
@@ -7435,7 +8570,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mixtral-8x22b-instruct": {
         "name": "Mistral: Mixtral 8x22B Instruct",
@@ -7446,7 +8584,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "microsoft/wizardlm-2-8x22b": {
         "name": "WizardLM-2 8x22B",
@@ -7457,7 +8598,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4-turbo": {
         "name": "OpenAI: GPT-4 Turbo",
@@ -7468,7 +8612,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "anthropic/claude-3-haiku": {
         "name": "Anthropic: Claude 3 Haiku",
@@ -7479,7 +8627,11 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
     },
     "mistralai/mistral-large": {
         "name": "Mistral Large",
@@ -7490,7 +8642,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4-turbo-preview": {
         "name": "OpenAI: GPT-4 Turbo Preview",
@@ -7501,7 +8656,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-3.5-turbo-0613": {
         "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
@@ -7512,7 +8670,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mixtral-8x7b-instruct": {
         "name": "Mistral: Mixtral 8x7B Instruct",
@@ -7523,7 +8684,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "alpindale/goliath-120b": {
         "name": "Goliath 120B",
@@ -7534,7 +8698,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4-1106-preview": {
         "name": "OpenAI: GPT-4 Turbo (older v1106)",
@@ -7545,7 +8712,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-3.5-turbo-instruct": {
         "name": "OpenAI: GPT-3.5 Turbo Instruct",
@@ -7556,7 +8726,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mistralai/mistral-7b-instruct-v0.1": {
         "name": "Mistral: Mistral 7B Instruct v0.1",
@@ -7567,7 +8740,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-3.5-turbo-16k": {
         "name": "OpenAI: GPT-3.5 Turbo 16k",
@@ -7578,7 +8754,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "mancer/weaver": {
         "name": "Mancer: Weaver (alpha)",
@@ -7589,7 +8768,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "undi95/remm-slerp-l2-13b": {
         "name": "ReMM SLERP 13B",
@@ -7600,7 +8782,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "gryphe/mythomax-l2-13b": {
         "name": "MythoMax 13B",
@@ -7611,7 +8796,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4": {
         "name": "OpenAI: GPT-4",
@@ -7622,7 +8810,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-4-0314": {
         "name": "OpenAI: GPT-4 (older v0314)",
@@ -7633,7 +8824,10 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     },
     "openai/gpt-3.5-turbo": {
         "name": "OpenAI: GPT-3.5 Turbo",
@@ -7644,6 +8838,9 @@
         "speed_tps": 30,
         "release_date": "2024-Discover",
         "cache_read_factor": 1.0,
-        "cache_write_factor": 1.0
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
     }
 }
