@@ -40,8 +40,10 @@ class ModelCalculator:
                     model_id = api_model["id"]
                     live_input = float(api_model["pricing"]["prompt"]) * 1_000_000
                     live_output = float(api_model["pricing"]["completion"]) * 1_000_000
+                    modalities = api_model.get("architecture", {}).get("input_modalities", ["text"])
                     
                     if model_id in working_catalog:
+                        working_catalog[model_id]["input_modalities"] = modalities
                         if live_input > 0 or live_output > 0:
                             working_catalog[model_id]["input_price"] = live_input
                             working_catalog[model_id]["output_price"] = live_output
@@ -56,7 +58,8 @@ class ModelCalculator:
                             "speed_tps": 30, # Guessed average
                             "release_date": "2024-Discover",
                             "cache_read_factor": 1.0,
-                            "cache_write_factor": 1.0
+                            "cache_write_factor": 1.0,
+                            "input_modalities": modalities
                         }
                         new_discoveries = True
             except Exception as e:
@@ -124,7 +127,8 @@ class ModelCalculator:
                 "estimated_latency_sec": latency,
                 "release_date": model["release_date"],
                 "max_context": max_ctx,
-                "is_too_big": total_context > max_ctx
+                "is_too_big": total_context > max_ctx,
+                "input_modalities": model.get("input_modalities", ["text"])
             })
 
         return sorted(results, key=lambda x: x["total_cost"])

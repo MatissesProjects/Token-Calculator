@@ -22,3 +22,4 @@
     - [x] Add Break-even Chart (Chart.js)
     - [x] Locked Comparison View (Pinning)
     - [x] Provider-based model filtering with select all/none capability
+    - [x] Input Modality extraction and filtering (Text, Audio, Image)

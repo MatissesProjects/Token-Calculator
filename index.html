@@ -524,6 +524,7 @@
         let currentEstimations = []; 
         let subscriptions = [];
         let selectedModelNames = new Set(); 
+        let selectedModalities = new Set(['text']); // Default to text
         let pinnedModelIds = new Set();
         let pinnedSubIds = new Set();
         let isFirstLoad = true;
@@ -587,6 +588,10 @@
                 
                 if (isFirstLoad) {
                     currentEstimations.forEach(m => selectedModelNames.add(m.model_name));
+                    // Collect all available modalities
+                    const allModalities = new Set();
+                    currentEstimations.forEach(m => m.input_modalities.forEach(mod => allModalities.add(mod)));
+                    selectedModalities = allModalities;
                     isFirstLoad = false;
                 }
                 
@@ -603,7 +608,28 @@
 
         function buildSelectionPanel() {
             const inner = document.getElementById('selectionInner');
-            inner.innerHTML = `
+            
+            // Modality Selection
+            const allModalities = new Set();
+            currentEstimations.forEach(m => m.input_modalities.forEach(mod => allModalities.add(mod)));
+            
+            let html = `
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
+                    <h3 style="margin: 0 0 1rem 0;">Input Modalities</h3>
+                    <div class="chip-container">
+            `;
+            
+            Array.from(allModalities).sort().forEach(mod => {
+                html += `
+                    <button class="chip ${selectedModalities.has(mod) ? 'selected' : ''}" onclick="toggleModality('${mod}')">
+                        ${mod.charAt(0).toUpperCase() + mod.slice(1)}
+                    </button>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                     <h3 style="margin: 0;">Model Visibility</h3>
                     <div class="btn-group">
@@ -611,7 +637,10 @@
                         <button class="chip" onclick="selectAllModels(false)">Select None</button>
                     </div>
                 </div>
-            `; 
+            `;
+            
+            inner.innerHTML = html;
+
             const grouped = {};
             currentEstimations.forEach(m => {
                 if (!grouped[m.provider]) grouped[m.provider] = [];
@@ -649,6 +678,13 @@
             }
         }
 
+        function toggleModality(mod) {
+            if (selectedModalities.has(mod)) selectedModalities.delete(mod);
+            else selectedModalities.add(mod);
+            buildSelectionPanel();
+            renderAll();
+        }
+
         function selectAllModels(selected) {
             if (selected) {
                 currentEstimations.forEach(m => selectedModelNames.add(m.model_name));
@@ -684,6 +720,9 @@
                     <div class="model-info">
                         <span class="provider-label">${model.provider}</span>
                         <h3>${model.model_name}</h3>
+                        <div style="display: flex; gap: 0.3rem; margin-top: 0.4rem;">
+                            ${model.input_modalities.map(m => `<span style="font-size: 0.6rem; padding: 0.1rem 0.4rem; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); text-transform: uppercase; font-weight: bold;">${m}</span>`).join('')}
+                        </div>
                     </div>
                     <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${model.model_name}')">
                         <svg width="18" height="18" fill="${isPinned ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
@@ -758,6 +797,12 @@
             pinnedContainer.innerHTML = '';
 
             let displayModels = currentEstimations.filter(m => selectedModelNames.has(m.model_name));
+            
+            // Filter by Modality: model must have at least one of the selected modalities
+            displayModels = displayModels.filter(m => {
+                return m.input_modalities.some(mod => selectedModalities.has(mod));
+            });
+
             displayModels = displayModels.filter(m => `${m.model_name} ${m.provider}`.toLowerCase().includes(search));
 
             if (sort === 'newest') displayModels.sort((a, b) => b.release_date.localeCompare(a.release_date));

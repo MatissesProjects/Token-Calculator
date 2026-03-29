@@ -22,6 +22,7 @@ class ModelEstimation(BaseModel):
     release_date: str
     max_context: float
     is_too_big: bool
+    input_modalities: List[str] = ["text"]
 
 class Subscription(BaseModel):
     id: str
