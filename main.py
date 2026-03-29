@@ -19,6 +19,7 @@ class ModelEstimation(BaseModel):
     output_cost: float
     total_cost: float
     estimated_latency_sec: float
+    speed_tps: int
     release_date: str
     max_context: float
     is_too_big: bool

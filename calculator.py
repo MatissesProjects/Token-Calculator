@@ -2,6 +2,7 @@ import json
 import requests
 import os
 from typing import List, Dict, Optional
+from datetime import datetime
 
 # Constants
 DEFAULT_MODELS_PATH = os.path.join(os.path.dirname(__file__), "models.json")
@@ -27,6 +28,19 @@ class ModelCalculator:
     def get_subscriptions(self) -> List[Dict]:
         return [{"id": k, **v} for k, v in self.subscriptions.items()]
 
+    def _estimate_tps(self, model_id: str, current_tps: Optional[int] = None) -> int:
+        if current_tps and current_tps != 30: # If we have a non-default manual value, keep it
+            return current_tps
+            
+        mid = model_id.lower()
+        if "flash" in mid or "nano" in mid or "8b" in mid or "lite" in mid:
+            return 120
+        if "pro" in mid or "sonnet" in mid or "medium" in mid:
+            return 60
+        if "large" in mid or "opus" in mid or "ultra" in mid or "o1" in mid:
+            return 20
+        return 40 # Default average
+
     def refresh_catalog(self, use_live_pricing: bool = False, discover_new: bool = False):
         """Builds the active model list, optionally fetching live prices and discovering new models."""
         working_catalog = dict(self.raw_catalog)
@@ -42,8 +56,17 @@ class ModelCalculator:
                     live_output = float(api_model["pricing"]["completion"]) * 1_000_000
                     modalities = api_model.get("architecture", {}).get("input_modalities", ["text"])
                     
+                    # Try to get a real release date from 'created' timestamp
+                    created_ts = api_model.get("created")
+                    formatted_date = None
+                    if created_ts:
+                        formatted_date = datetime.fromtimestamp(created_ts).strftime("%Y-%m")
+
                     if model_id in working_catalog:
                         working_catalog[model_id]["input_modalities"] = modalities
+                        if formatted_date and ("release_date" not in working_catalog[model_id] or "Discover" in working_catalog[model_id].get("release_date", "")):
+                            working_catalog[model_id]["release_date"] = formatted_date
+                        
                         if live_input > 0 or live_output > 0:
                             working_catalog[model_id]["input_price"] = live_input
                             working_catalog[model_id]["output_price"] = live_output
@@ -55,8 +78,8 @@ class ModelCalculator:
                             "input_price": live_input,
                             "output_price": live_output,
                             "max_context": api_model.get("context_length") or 128000,
-                            "speed_tps": 30, # Guessed average
-                            "release_date": "2024-Discover",
+                            "speed_tps": self._estimate_tps(model_id),
+                            "release_date": formatted_date or "2024-01",
                             "cache_read_factor": 1.0,
                             "cache_write_factor": 1.0,
                             "input_modalities": modalities
@@ -78,6 +101,10 @@ class ModelCalculator:
         for key, data in working_catalog.items():
             model_data = dict(data)
             model_data["id"] = key
+            
+            # Recalculate TPS if it seems default
+            model_data["speed_tps"] = self._estimate_tps(key, model_data.get("speed_tps"))
+
             # Advanced caching logic
             model_data["cache_read_price"] = model_data["input_price"] * model_data.get("cache_read_factor", model_data.get("cache_discount", 1.0))
             model_data["cache_write_price"] = model_data["input_price"] * model_data.get("cache_write_factor", 1.0)
@@ -125,6 +152,7 @@ class ModelCalculator:
                 "output_cost": round(output_cost, 6),
                 "total_cost": round(total_cost, 6),
                 "estimated_latency_sec": latency,
+                "speed_tps": speed,
                 "release_date": model["release_date"],
                 "max_context": max_ctx,
                 "is_too_big": total_context > max_ctx,
