@@ -52,7 +52,7 @@ class ModelCalculator:
                             "provider": model_id.split("/")[0].capitalize(),
                             "input_price": live_input,
                             "output_price": live_output,
-                            "max_context": api_model.get("context_length", 128000),
+                            "max_context": api_model.get("context_length") or 128000,
                             "speed_tps": 30, # Guessed average
                             "release_date": "2024-Discover",
                             "cache_read_factor": 1.0,
@@ -96,7 +96,10 @@ class ModelCalculator:
         total_context = actual_fresh_input + actual_read + actual_write + output_tokens
 
         for model in self.active_models:
-            max_ctx = model.get("max_context", float('inf'))
+            max_ctx = model.get("max_context")
+            if max_ctx is None:
+                max_ctx = float('inf')
+            
             min_ctx = model.get("min_context", 0)
             if not (min_ctx <= total_context):
                 continue
