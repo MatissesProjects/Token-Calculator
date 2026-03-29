@@ -393,6 +393,24 @@
             animation: spin 1s linear infinite;
         }
 
+        /* Compact Subscription Cards */
+        .sub-card {
+            padding: 1rem !important;
+            border-radius: var(--radius-md) !important;
+        }
+        .sub-card .card-top { margin-bottom: 0.5rem !important; }
+        .sub-card .card-metrics { margin-bottom: 0.5rem !important; }
+        .sub-card .card-footer { 
+            padding: 0.75rem 1rem !important; 
+            margin: 0.75rem -1rem -1rem -1rem !important;
+            border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+        }
+        .sub-card .model-info h3 { font-size: 1rem !important; }
+        .sub-card .price-value { font-size: 1.25rem !important; }
+        .sub-card .provider-label { font-size: 0.65rem !important; }
+        .sub-card .metric-label { font-size: 0.6rem !important; }
+        .sub-card .metric-value { font-size: 0.8rem !important; }
+
         @keyframes spin { to { transform: rotate(360deg); } }
         @keyframes slideUp { 
             from { opacity: 0; transform: translateY(20px); } 
@@ -507,6 +525,7 @@
         let subscriptions = [];
         let selectedModelNames = new Set(); 
         let pinnedModelIds = new Set();
+        let pinnedSubIds = new Set();
         let isFirstLoad = true;
         let costChart = null;
 
@@ -532,9 +551,10 @@
             renderAll();
         }
 
-        function togglePin(modelName) {
-            if (pinnedModelIds.has(modelName)) pinnedModelIds.delete(modelName);
-            else pinnedModelIds.add(modelName);
+        function togglePin(id, type = 'model') {
+            const set = type === 'model' ? pinnedModelIds : pinnedSubIds;
+            if (set.has(id)) set.delete(id);
+            else set.add(id);
             renderAll();
         }
 
@@ -697,6 +717,37 @@
             return card;
         }
 
+        function createSubCard(sub) {
+            const isPinned = pinnedSubIds.has(sub.id);
+            const card = document.createElement('div');
+            card.className = 'model-card sub-card fade-in';
+            card.style.borderColor = '#6366f1';
+            card.innerHTML = `
+                <div class="card-top">
+                    <div class="model-info">
+                        <span class="provider-label">${sub.provider}</span>
+                        <h3>${sub.name}</h3>
+                    </div>
+                    <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${sub.id}', 'sub')">
+                        <svg width="18" height="18" fill="${isPinned ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                    </button>
+                </div>
+                <div class="card-metrics" style="grid-template-columns: 1fr;">
+                    <div class="metric-item">
+                        <span class="metric-label">Included Models</span>
+                        <span class="metric-value" style="font-size: 0.8rem;">${sub.included_models.join(', ')}</span>
+                    </div>
+                </div>
+                <div class="card-footer" style="background: var(--primary-light); margin: 0.75rem -1rem -1rem -1rem; padding: 0.75rem 1rem;">
+                    <div class="price-main">
+                        <span class="price-label">Fixed Subscription</span>
+                        <span class="price-value">${formatMoney(sub.monthly_price)}</span>
+                    </div>
+                </div>
+            `;
+            return card;
+        }
+
         function renderCards() {
             const container = document.getElementById('resultsContainer');
             const pinnedContainer = document.getElementById('pinnedContainer');
@@ -713,9 +764,13 @@
             else displayModels.sort((a, b) => a.total_cost - b.total_cost);
 
             const pinned = displayModels.filter(m => pinnedModelIds.has(m.model_name));
-            document.getElementById('pinnedSection').style.display = pinned.length ? 'block' : 'none';
-            document.getElementById('pinnedCount').innerText = pinned.length;
+            const pinnedSubs = subscriptions.filter(s => pinnedSubIds.has(s.id));
+
+            document.getElementById('pinnedSection').style.display = (pinned.length || pinnedSubs.length) ? 'block' : 'none';
+            document.getElementById('pinnedCount').innerText = pinned.length + pinnedSubs.length;
+
             pinned.forEach(m => pinnedContainer.appendChild(createModelCard(m)));
+            pinnedSubs.forEach(s => pinnedContainer.appendChild(createSubCard(s)));
 
             document.getElementById('totalCount').innerText = displayModels.length;
             displayModels.forEach(m => container.appendChild(createModelCard(m)));
@@ -728,30 +783,7 @@
             container.innerHTML = '';
 
             subscriptions.forEach(sub => {
-                const card = document.createElement('div');
-                card.className = 'model-card';
-                card.style.borderColor = '#6366f1';
-                card.innerHTML = `
-                    <div class="card-top">
-                        <div class="model-info">
-                            <span class="provider-label">${sub.provider}</span>
-                            <h3>${sub.name}</h3>
-                        </div>
-                    </div>
-                    <div class="card-metrics" style="grid-template-columns: 1fr;">
-                        <div class="metric-item">
-                            <span class="metric-label">Included Models</span>
-                            <span class="metric-value" style="font-size: 0.85rem;">${sub.included_models.join(', ')}</span>
-                        </div>
-                    </div>
-                    <div class="card-footer" style="background: var(--primary-light); margin: 1.5rem -1.5rem -1.5rem -1.5rem; padding: 1.25rem 1.5rem;">
-                        <div class="price-main">
-                            <span class="price-label">Fixed Subscription</span>
-                            <span class="price-value">${formatMoney(sub.monthly_price)}</span>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
+                container.appendChild(createSubCard(sub));
             });
         }
 
@@ -762,7 +794,11 @@
             const runs = [1, 100, 250, 500, 1000, 1500, 2000, 3000, 5000];
             
             let modelsToChart = currentEstimations.filter(m => pinnedModelIds.has(m.model_name));
-            if (modelsToChart.length === 0) modelsToChart = currentEstimations.slice(0, 5);
+            let subsToChart = subscriptions.filter(s => pinnedSubIds.has(s.id));
+
+            if (modelsToChart.length === 0 && subsToChart.length === 0) {
+                modelsToChart = currentEstimations.slice(0, 5);
+            }
 
             const datasets = modelsToChart.map((m, i) => ({
                 label: m.model_name,
@@ -774,7 +810,7 @@
                 fill: false
             }));
 
-            subscriptions.forEach((sub, i) => {
+            subsToChart.forEach((sub, i) => {
                 datasets.push({
                     label: `Sub: ${sub.name}`,
                     data: runs.map(() => sub.monthly_price),
