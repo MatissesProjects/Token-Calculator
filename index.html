@@ -457,9 +457,13 @@
                 <input type="number" id="monthlyRuns" value="500" min="1">
                 <div class="runs-actions">
                     <button class="chip" onclick="setRuns(1)">1x</button>
+                    <button class="chip" onclick="setRuns(30)">30x</button>
                     <button class="chip" onclick="setRuns(100)">100x</button>
-                    <button class="chip" onclick="setRuns(1000)">1k</button>
                 </div>
+            </div>
+            <div class="input-group">
+                <label for="instanceMultiplier">Parallel Instances</label>
+                <input type="number" id="instanceMultiplier" value="1" min="1">
             </div>
         </section>
 
@@ -774,7 +778,8 @@
 
         function createModelCard(model) {
             const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
-            const monthlyTotal = model.total_cost * runs;
+            const instances = parseInt(document.getElementById('instanceMultiplier').value) || 1;
+            const monthlyTotal = model.total_cost * runs * instances;
             const isPinned = pinnedModelIds.has(model.model_name);
 
             const card = document.createElement('div');
@@ -814,7 +819,7 @@
                 </div>
                 <div class="card-footer" style="${model.is_too_big ? 'opacity: 0.5' : ''}">
                     <div class="price-main">
-                        <span class="price-label">Monthly (${runs}x)</span>
+                        <span class="price-label">Monthly (${runs * instances}x total)</span>
                         <span class="price-value">${formatMoney(monthlyTotal)}</span>
                     </div>
                 </div>
@@ -903,6 +908,7 @@
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             const runs = [1, 100, 250, 500, 1000, 1500, 2000, 3000, 5000];
+            const instances = parseInt(document.getElementById('instanceMultiplier').value) || 1;
             
             let modelsToChart = currentEstimations.filter(m => pinnedModelIds.has(m.model_name));
             let subsToChart = subscriptions.filter(s => pinnedSubIds.has(s.id));
@@ -913,7 +919,7 @@
 
             const datasets = modelsToChart.map((m, i) => ({
                 label: m.model_name,
-                data: runs.map(r => m.total_cost * r),
+                data: runs.map(r => m.total_cost * r * instances),
                 borderColor: `hsl(${i * 60}, 70%, 50%)`,
                 backgroundColor: `hsl(${i * 60}, 70%, 50%, 0.1)`,
                 borderWidth: 3,
@@ -924,7 +930,7 @@
             subsToChart.forEach((sub, i) => {
                 datasets.push({
                     label: `Sub: ${sub.name}`,
-                    data: runs.map(() => sub.monthly_price),
+                    data: runs.map(() => sub.monthly_price * instances),
                     borderColor: '#1e293b',
                     borderDash: [8, 4],
                     borderWidth: 2,
@@ -955,16 +961,17 @@
 
         function exportToCSV() {
             const runs = parseInt(document.getElementById('monthlyRuns').value) || 1;
+            const instances = parseInt(document.getElementById('instanceMultiplier').value) || 1;
             const headers = ["Provider", "Model", "Per Run", "Monthly", "Context", "Latency"];
             const rows = currentEstimations.filter(m => selectedModelNames.has(m.model_name)).map(m => [
-                m.provider, m.model_name, m.total_cost, (m.total_cost * runs), m.max_context, m.estimated_latency_sec
+                m.provider, m.model_name, m.total_cost, (m.total_cost * runs * instances), m.max_context, m.estimated_latency_sec
             ]);
             const csv = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
             const blob = new Blob([csv], { type: 'text/csv' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `token-costs-${runs}x.csv`;
+            a.download = `token-costs-${runs * instances}x.csv`;
             a.click();
         }
 
@@ -979,6 +986,7 @@
                 debounce = setTimeout(fetchEstimates, 400);
             });
         });
+        document.getElementById('instanceMultiplier').addEventListener('input', renderAll);
         document.getElementById('searchInput').addEventListener('input', renderCards);
         document.getElementById('sortSelect').addEventListener('change', renderCards);
 
