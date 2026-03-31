@@ -571,9 +571,9 @@
 
             for (let line of lines) {
                 // Remove box characters but preserve internal spacing for column separation
-                const cleanLine = line.replace(/[│┃┆┇┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬]/g, ' ');
+                const cleanLine = line.replace(/[|+│┃┆┇┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬]/g, ' ');
                 const trimmed = cleanLine.trim();
-                if (!trimmed || trimmed.includes('──') || trimmed.includes('==')) continue;
+                if (!trimmed || trimmed.includes('──') || trimmed.includes('==') || trimmed.includes('--')) continue;
 
                 // 1. Header Detection
                 const lowLine = trimmed.toLowerCase();
