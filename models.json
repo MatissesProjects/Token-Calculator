@@ -6,7 +6,7 @@
         "output_price": 1.2,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -20,7 +20,7 @@
         "output_price": 0.09999999999999999,
         "max_context": 16384,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -36,7 +36,7 @@
         "output_price": 2.0,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -53,7 +53,7 @@
         "output_price": 3.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -67,7 +67,7 @@
         "output_price": 1.2,
         "max_context": 204800,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -81,7 +81,7 @@
         "output_price": 1.25,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -97,7 +97,7 @@
         "output_price": 4.5,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -113,7 +113,7 @@
         "output_price": 0.6,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -128,7 +128,7 @@
         "output_price": 4.0,
         "max_context": 202752,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -142,12 +142,13 @@
         "output_price": 6.0,
         "max_context": 2000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ]
     },
     "x-ai/grok-4.20-beta": {
@@ -157,7 +158,7 @@
         "output_price": 6.0,
         "max_context": 2000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -172,7 +173,7 @@
         "output_price": 0.5,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -186,7 +187,7 @@
         "output_price": 2.0,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -202,7 +203,7 @@
         "output_price": 0.15,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -218,7 +219,7 @@
         "output_price": 180.0,
         "max_context": 1050000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -234,7 +235,7 @@
         "output_price": 15.0,
         "max_context": 1050000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -250,7 +251,7 @@
         "output_price": 0.75,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -264,7 +265,7 @@
         "output_price": 14.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -280,7 +281,7 @@
         "output_price": 1.5,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -298,7 +299,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -314,7 +315,7 @@
         "output_price": 3.0,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -329,7 +330,7 @@
         "output_price": 1.3,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -345,7 +346,7 @@
         "output_price": 1.56,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -361,7 +362,7 @@
         "output_price": 2.08,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -377,7 +378,7 @@
         "output_price": 0.26,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -393,7 +394,7 @@
         "output_price": 0.12,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -407,7 +408,7 @@
         "output_price": 12.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -425,7 +426,7 @@
         "output_price": 14.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -441,7 +442,7 @@
         "output_price": 1.5999999999999999,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -455,7 +456,7 @@
         "output_price": 12.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -473,7 +474,7 @@
         "output_price": 15.0,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -488,7 +489,7 @@
         "output_price": 1.56,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -504,7 +505,7 @@
         "output_price": 2.34,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -516,11 +517,11 @@
     "minimax/minimax-m2.5": {
         "name": "MiniMax: MiniMax M2.5",
         "provider": "Minimax",
-        "input_price": 0.19,
-        "output_price": 1.15,
+        "input_price": 0.16,
+        "output_price": 1.1,
         "max_context": 196608,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -534,7 +535,7 @@
         "output_price": 2.3,
         "max_context": 80000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -548,7 +549,7 @@
         "output_price": 3.9,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -562,7 +563,7 @@
         "output_price": 25.0,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -577,7 +578,7 @@
         "output_price": 0.75,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -591,7 +592,7 @@
         "output_price": 0.3,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -605,7 +606,7 @@
         "output_price": 2.2,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -620,7 +621,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -634,7 +635,7 @@
         "output_price": 1.2,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -648,7 +649,7 @@
         "output_price": 6.0,
         "max_context": 1040000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -662,7 +663,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -677,7 +678,7 @@
         "output_price": 2.4,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -692,7 +693,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 202752,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -706,7 +707,7 @@
         "output_price": 14.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -721,7 +722,7 @@
         "output_price": 0.6,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2026-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -735,7 +736,7 @@
         "output_price": 0.3,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -751,7 +752,7 @@
         "output_price": 2.0,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -767,7 +768,7 @@
         "output_price": 0.95,
         "max_context": 196608,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -781,7 +782,7 @@
         "output_price": 1.75,
         "max_context": 202752,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -795,7 +796,7 @@
         "output_price": 3.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -813,7 +814,7 @@
         "output_price": 0.3,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -827,7 +828,7 @@
         "output_price": 0.5,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -841,7 +842,7 @@
         "output_price": 0.29,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -855,7 +856,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -869,7 +870,7 @@
         "output_price": 14.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -885,7 +886,7 @@
         "output_price": 168.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -901,7 +902,7 @@
         "output_price": 14.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -917,7 +918,7 @@
         "output_price": 2.0,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -931,7 +932,7 @@
         "output_price": 3.0,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -945,7 +946,7 @@
         "output_price": 0.8999999999999999,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -961,7 +962,7 @@
         "output_price": 0.5,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -975,7 +976,7 @@
         "output_price": 0.15,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -989,7 +990,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1004,7 +1005,7 @@
         "output_price": 2.5,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1021,7 +1022,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1036,7 +1037,7 @@
         "output_price": 0.15,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1051,7 +1052,7 @@
         "output_price": 0.09999999999999999,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1066,7 +1067,7 @@
         "output_price": 1.5,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1081,7 +1082,7 @@
         "output_price": 0.15,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1095,7 +1096,7 @@
         "output_price": 1.2,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1109,7 +1110,7 @@
         "output_price": 0.38,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1123,7 +1124,7 @@
         "output_price": 1.1,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1137,7 +1138,7 @@
         "output_price": 25.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1153,7 +1154,7 @@
         "output_price": 0.5,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1167,7 +1168,7 @@
         "output_price": 12.0,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1182,12 +1183,13 @@
         "output_price": 0.5,
         "max_context": 2000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ]
     },
     "deepcogito/cogito-v2.1-671b": {
@@ -1197,7 +1199,7 @@
         "output_price": 1.25,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1211,7 +1213,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1227,7 +1229,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1243,7 +1245,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1258,7 +1260,7 @@
         "output_price": 2.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1287,7 +1289,7 @@
         "output_price": 2.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1301,7 +1303,7 @@
         "output_price": 12.5,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1316,7 +1318,7 @@
         "output_price": 15.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1331,7 +1333,7 @@
         "output_price": 0.3,
         "max_context": 32000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1346,7 +1348,7 @@
         "output_price": 0.3,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1360,7 +1362,7 @@
         "output_price": 0.6,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1376,7 +1378,7 @@
         "output_price": 1.0,
         "max_context": 196608,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1390,7 +1392,7 @@
         "output_price": 0.41600000000000004,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1405,7 +1407,7 @@
         "output_price": 0.02,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1419,7 +1421,7 @@
         "output_price": 0.02,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1433,7 +1435,7 @@
         "output_price": 0.11,
         "max_context": 131000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1447,7 +1449,7 @@
         "output_price": 2.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1463,7 +1465,7 @@
         "output_price": 5.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1478,7 +1480,7 @@
         "output_price": 1.365,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1493,7 +1495,7 @@
         "output_price": 0.5,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1508,7 +1510,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1524,7 +1526,7 @@
         "output_price": 40.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1540,7 +1542,7 @@
         "output_price": 8.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1556,7 +1558,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1570,7 +1572,7 @@
         "output_price": 0.28,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1584,7 +1586,7 @@
         "output_price": 2.5,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1599,7 +1601,7 @@
         "output_price": 1.56,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1614,7 +1616,7 @@
         "output_price": 0.52,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1629,7 +1631,7 @@
         "output_price": 120.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1645,7 +1647,7 @@
         "output_price": 1.9,
         "max_context": 204800,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1659,7 +1661,7 @@
         "output_price": 15.0,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1675,7 +1677,7 @@
         "output_price": 0.41,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1689,7 +1691,7 @@
         "output_price": 0.5,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1703,7 +1705,7 @@
         "output_price": 1.25,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1717,7 +1719,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1735,7 +1737,7 @@
         "output_price": 2.6,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1750,7 +1752,7 @@
         "output_price": 0.88,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1765,7 +1767,7 @@
         "output_price": 3.9,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1779,7 +1781,7 @@
         "output_price": 3.25,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1793,7 +1795,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1808,7 +1810,7 @@
         "output_price": 0.7899999999999999,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1822,12 +1824,13 @@
         "output_price": 0.5,
         "max_context": 2000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ]
     },
     "alibaba/tongyi-deepresearch-30b-a3b": {
@@ -1837,7 +1840,7 @@
         "output_price": 0.44999999999999996,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1851,7 +1854,7 @@
         "output_price": 0.975,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1865,7 +1868,7 @@
         "output_price": 0.78,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1879,7 +1882,7 @@
         "output_price": 1.1,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1893,7 +1896,7 @@
         "output_price": 0.7999999999999999,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1907,7 +1910,7 @@
         "output_price": 0.78,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1921,7 +1924,7 @@
         "output_price": 0.78,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1935,7 +1938,7 @@
         "output_price": 0.16,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1949,7 +1952,7 @@
         "output_price": 2.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1963,7 +1966,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1977,7 +1980,7 @@
         "output_price": 1.5,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -1991,7 +1994,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2005,7 +2008,7 @@
         "output_price": 3.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2019,7 +2022,7 @@
         "output_price": 0.75,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2033,7 +2036,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2048,7 +2051,7 @@
         "output_price": 2.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2063,7 +2066,7 @@
         "output_price": 0.28,
         "max_context": 120000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2077,7 +2080,7 @@
         "output_price": 0.56,
         "max_context": 30000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2092,7 +2095,7 @@
         "output_price": 1.7999999999999998,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2107,7 +2110,7 @@
         "output_price": 8.0,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2121,7 +2124,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2137,7 +2140,7 @@
         "output_price": 10.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2153,7 +2156,7 @@
         "output_price": 2.0,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2169,7 +2172,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 400000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2185,7 +2188,7 @@
         "output_price": 0.19,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2199,7 +2202,7 @@
         "output_price": 0.11,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2213,7 +2216,7 @@
         "output_price": 75.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2229,7 +2232,7 @@
         "output_price": 0.8999999999999999,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2243,7 +2246,7 @@
         "output_price": 0.27,
         "max_context": 160000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2257,7 +2260,7 @@
         "output_price": 0.3,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2271,7 +2274,7 @@
         "output_price": 2.2,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2285,7 +2288,7 @@
         "output_price": 0.85,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2299,7 +2302,7 @@
         "output_price": 1.495,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2313,7 +2316,7 @@
         "output_price": 0.09999999999999999,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2327,7 +2330,7 @@
         "output_price": 1.0,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2341,7 +2344,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2356,7 +2359,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2374,7 +2377,7 @@
         "output_price": 0.09999999999999999,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2388,7 +2391,7 @@
         "output_price": 3.4,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2402,7 +2405,7 @@
         "output_price": 2.3,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2416,7 +2419,7 @@
         "output_price": 2.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2430,7 +2433,7 @@
         "output_price": 0.3,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2444,12 +2447,13 @@
         "output_price": 15.0,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
             "image",
-            "text"
+            "text",
+            "file"
         ]
     },
     "tencent/hunyuan-a13b-instruct": {
@@ -2459,7 +2463,7 @@
         "output_price": 0.5700000000000001,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2473,7 +2477,7 @@
         "output_price": 1.1,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2487,7 +2491,7 @@
         "output_price": 1.9,
         "max_context": 262144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2501,7 +2505,7 @@
         "output_price": 1.2,
         "max_context": 81920,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2515,7 +2519,7 @@
         "output_price": 1.25,
         "max_context": 123000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2530,7 +2534,7 @@
         "output_price": 1.1,
         "max_context": 123000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2544,7 +2548,7 @@
         "output_price": 0.75,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2558,7 +2562,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2573,7 +2577,7 @@
         "output_price": 2.2,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2587,7 +2591,7 @@
         "output_price": 2.5,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2605,7 +2609,7 @@
         "output_price": 10.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2623,7 +2627,7 @@
         "output_price": 80.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2639,7 +2643,7 @@
         "output_price": 0.5,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2653,7 +2657,7 @@
         "output_price": 15.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2667,7 +2671,7 @@
         "output_price": 10.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2684,7 +2688,7 @@
         "output_price": 2.1500000000000004,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2698,7 +2702,7 @@
         "output_price": 75.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2714,7 +2718,7 @@
         "output_price": 15.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2730,7 +2734,7 @@
         "output_price": 0.04,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2744,7 +2748,7 @@
         "output_price": 2.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2759,7 +2763,7 @@
         "output_price": 10.0,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2777,7 +2781,7 @@
         "output_price": 0.18,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2792,7 +2796,7 @@
         "output_price": 3.3000000000000003,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2806,7 +2810,7 @@
         "output_price": 1.2,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2820,7 +2824,7 @@
         "output_price": 0.7999999999999999,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2834,7 +2838,7 @@
         "output_price": 0.75,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2848,7 +2852,7 @@
         "output_price": 0.18,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2863,7 +2867,7 @@
         "output_price": 0.28,
         "max_context": 40960,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2877,7 +2881,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 40960,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2891,7 +2895,7 @@
         "output_price": 0.24,
         "max_context": 40960,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2905,7 +2909,7 @@
         "output_price": 0.24,
         "max_context": 40960,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2919,7 +2923,7 @@
         "output_price": 1.8199999999999998,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2933,7 +2937,7 @@
         "output_price": 4.4,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2949,7 +2953,7 @@
         "output_price": 8.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2965,7 +2969,7 @@
         "output_price": 4.4,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2981,7 +2985,7 @@
         "output_price": 0.09,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -2995,7 +2999,7 @@
         "output_price": 8.0,
         "max_context": 1047576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3011,7 +3015,7 @@
         "output_price": 1.5999999999999999,
         "max_context": 1047576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3027,7 +3031,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 1047576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3043,7 +3047,7 @@
         "output_price": 1.2,
         "max_context": 4096,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3057,7 +3061,7 @@
         "output_price": 1.2,
         "max_context": 4096,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3071,7 +3075,7 @@
         "output_price": 0.5,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3085,7 +3089,7 @@
         "output_price": 15.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3099,7 +3103,7 @@
         "output_price": 1.7999999999999998,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3113,7 +3117,7 @@
         "output_price": 0.6,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3128,7 +3132,7 @@
         "output_price": 0.3,
         "max_context": 327680,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3143,7 +3147,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3158,7 +3162,7 @@
         "output_price": 0.77,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3172,7 +3176,7 @@
         "output_price": 600.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3188,7 +3192,7 @@
         "output_price": 0.11,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3203,7 +3207,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3217,7 +3221,7 @@
         "output_price": 0.08,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3232,7 +3236,7 @@
         "output_price": 0.13,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3247,7 +3251,7 @@
         "output_price": 10.0,
         "max_context": 256000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3261,7 +3265,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3275,7 +3279,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3289,7 +3293,7 @@
         "output_price": 0.16,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3304,7 +3308,7 @@
         "output_price": 0.7999999999999999,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3318,7 +3322,7 @@
         "output_price": 8.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3333,7 +3337,7 @@
         "output_price": 15.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3348,7 +3352,7 @@
         "output_price": 8.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3362,7 +3366,7 @@
         "output_price": 0.58,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3376,7 +3380,7 @@
         "output_price": 0.3,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3394,7 +3398,7 @@
         "output_price": 15.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3410,7 +3414,7 @@
         "output_price": 15.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3426,7 +3430,7 @@
         "output_price": 0.6,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3440,7 +3444,7 @@
         "output_price": 0.06,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3454,7 +3458,7 @@
         "output_price": 4.4,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3469,7 +3473,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 1048576,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3487,7 +3491,7 @@
         "output_price": 0.40950000000000003,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3502,7 +3506,7 @@
         "output_price": 8.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3516,7 +3520,7 @@
         "output_price": 1.4,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3530,7 +3534,7 @@
         "output_price": 1.5999999999999999,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3544,7 +3548,7 @@
         "output_price": 2.08,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3559,7 +3563,7 @@
         "output_price": 0.13,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3573,7 +3577,7 @@
         "output_price": 0.7999999999999999,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3588,7 +3592,7 @@
         "output_price": 0.78,
         "max_context": 1000000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3602,7 +3606,7 @@
         "output_price": 4.16,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3616,7 +3620,7 @@
         "output_price": 4.4,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3631,7 +3635,7 @@
         "output_price": 0.08,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3645,7 +3649,7 @@
         "output_price": 0.29,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3659,7 +3663,7 @@
         "output_price": 1.0,
         "max_context": 127072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3674,7 +3678,7 @@
         "output_price": 0.7999999999999999,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3688,7 +3692,7 @@
         "output_price": 2.5,
         "max_context": 64000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3702,7 +3706,7 @@
         "output_price": 1.1,
         "max_context": 1000192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3717,7 +3721,7 @@
         "output_price": 0.14,
         "max_context": 16384,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3731,7 +3735,7 @@
         "output_price": 3.0,
         "max_context": 16000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2025-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3745,7 +3749,7 @@
         "output_price": 0.8899999999999999,
         "max_context": 163840,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3759,7 +3763,7 @@
         "output_price": 0.75,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3773,7 +3777,7 @@
         "output_price": 60.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3789,7 +3793,7 @@
         "output_price": 0.15,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3803,7 +3807,7 @@
         "output_price": 0.32,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3817,7 +3821,7 @@
         "output_price": 0.24,
         "max_context": 300000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3832,7 +3836,7 @@
         "output_price": 0.14,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3846,7 +3850,7 @@
         "output_price": 3.1999999999999997,
         "max_context": 300000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3861,7 +3865,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3877,7 +3881,7 @@
         "output_price": 6.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3891,7 +3895,7 @@
         "output_price": 6.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3905,7 +3909,7 @@
         "output_price": 6.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3920,7 +3924,7 @@
         "output_price": 1.0,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3934,7 +3938,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3948,7 +3952,7 @@
         "output_price": 4.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3963,7 +3967,7 @@
         "output_price": 5.0,
         "max_context": 16384,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3977,7 +3981,7 @@
         "output_price": 30.0,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -3993,7 +3997,7 @@
         "output_price": 0.09999999999999999,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4007,7 +4011,7 @@
         "output_price": 1.2,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4021,7 +4025,7 @@
         "output_price": 10.0,
         "max_context": 8000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4035,7 +4039,7 @@
         "output_price": 10.0,
         "max_context": 8000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-10",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4049,7 +4053,7 @@
         "output_price": 0.43,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4063,7 +4067,7 @@
         "output_price": 0.33999999999999997,
         "max_context": 80000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4077,7 +4081,7 @@
         "output_price": 0.19999999999999998,
         "max_context": 60000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4091,7 +4095,7 @@
         "output_price": 0.049,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4106,7 +4110,7 @@
         "output_price": 0.39,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4120,7 +4124,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4134,7 +4138,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4148,7 +4152,7 @@
         "output_price": 0.85,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4162,7 +4166,7 @@
         "output_price": 0.3,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4176,7 +4180,7 @@
         "output_price": 1.0,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4190,7 +4194,7 @@
         "output_price": 0.049999999999999996,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4204,7 +4208,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4220,7 +4224,7 @@
         "output_price": 0.049999999999999996,
         "max_context": 16384,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4234,7 +4238,7 @@
         "output_price": 0.39999999999999997,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4248,7 +4252,7 @@
         "output_price": 0.04,
         "max_context": 131072,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4262,7 +4266,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4278,7 +4282,7 @@
         "output_price": 0.6,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4294,7 +4298,7 @@
         "output_price": 0.65,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4308,7 +4312,7 @@
         "output_price": 0.09,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4322,7 +4326,7 @@
         "output_price": 1.48,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-06",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4336,7 +4340,7 @@
         "output_price": 0.14,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4350,7 +4354,7 @@
         "output_price": 10.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4366,7 +4370,7 @@
         "output_price": 18.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4382,7 +4386,7 @@
         "output_price": 15.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4398,7 +4402,7 @@
         "output_price": 0.04,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4412,7 +4416,7 @@
         "output_price": 0.74,
         "max_context": 8192,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4426,7 +4430,7 @@
         "output_price": 6.0,
         "max_context": 65536,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4440,7 +4444,7 @@
         "output_price": 0.62,
         "max_context": 65535,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4454,7 +4458,7 @@
         "output_price": 30.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-04",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4469,7 +4473,7 @@
         "output_price": 1.25,
         "max_context": 200000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4484,7 +4488,7 @@
         "output_price": 6.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-02",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4498,7 +4502,7 @@
         "output_price": 30.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4512,7 +4516,7 @@
         "output_price": 2.0,
         "max_context": 4095,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2024-01",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4526,7 +4530,7 @@
         "output_price": 0.54,
         "max_context": 32768,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-12",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4540,7 +4544,7 @@
         "output_price": 7.5,
         "max_context": 6144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4554,7 +4558,7 @@
         "output_price": 30.0,
         "max_context": 128000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-11",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4568,7 +4572,7 @@
         "output_price": 2.0,
         "max_context": 4095,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4582,7 +4586,7 @@
         "output_price": 0.19,
         "max_context": 2824,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-09",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4596,7 +4600,7 @@
         "output_price": 4.0,
         "max_context": 16385,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4610,7 +4614,7 @@
         "output_price": 1.0,
         "max_context": 8000,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-08",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4624,7 +4628,7 @@
         "output_price": 0.65,
         "max_context": 6144,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4638,7 +4642,7 @@
         "output_price": 0.06,
         "max_context": 4096,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-07",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4652,7 +4656,7 @@
         "output_price": 60.0,
         "max_context": 8191,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4666,7 +4670,7 @@
         "output_price": 60.0,
         "max_context": 8191,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-05",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
@@ -4680,7 +4684,52 @@
         "output_price": 1.5,
         "max_context": 16385,
         "speed_tps": 30,
-        "release_date": "2024-Discover",
+        "release_date": "2023-05",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text"
+        ]
+    },
+    "x-ai/grok-4.20-multi-agent": {
+        "name": "xAI: Grok 4.20 Multi-Agent",
+        "provider": "X-ai",
+        "input_price": 2.0,
+        "output_price": 6.0,
+        "max_context": 2000000,
+        "speed_tps": 40,
+        "release_date": "2026-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image",
+            "file"
+        ]
+    },
+    "x-ai/grok-4.20": {
+        "name": "xAI: Grok 4.20",
+        "provider": "X-ai",
+        "input_price": 2.0,
+        "output_price": 6.0,
+        "max_context": 2000000,
+        "speed_tps": 40,
+        "release_date": "2026-03",
+        "cache_read_factor": 1.0,
+        "cache_write_factor": 1.0,
+        "input_modalities": [
+            "text",
+            "image"
+        ]
+    },
+    "rekaai/reka-flash-3": {
+        "name": "Reka: Flash 3",
+        "provider": "Rekaai",
+        "input_price": 0.09999999999999999,
+        "output_price": 0.19999999999999998,
+        "max_context": 65536,
+        "speed_tps": 120,
+        "release_date": "2025-03",
         "cache_read_factor": 1.0,
         "cache_write_factor": 1.0,
         "input_modalities": [
