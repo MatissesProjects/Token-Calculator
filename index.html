@@ -558,49 +558,118 @@
 
         function importStats() {
             const text = document.getElementById('statsImport').value;
-            
-            // Regex patterns for different formats
-            const patterns = {
-                input: [
-                    /(\d+)\s+prompt tokens/i,
-                    /(\d+)\s+input tokens/i,
-                    /Input:\s*(\d+)/i,
-                    /Prompt:\s*(\d+)/i
-                ],
-                output: [
-                    /(\d+)\s+completion tokens/i,
-                    /(\d+)\s+output tokens/i,
-                    /Output:\s*(\d+)/i,
-                    /Completion:\s*(\d+)/i
-                ],
-                cached: [
-                    /(\d+)\s+cached tokens/i,
-                    /Cached:\s*(\d+)/i,
-                    /Cache read:\s*(\d+)/i
-                ]
-            };
+            console.log("Importing text:", text);
+            let totalInput = 0;
+            let totalOutput = 0;
+            let totalCached = 0;
+            let totalWrite = 0;
+            let foundAny = false;
 
-            const findMatch = (patternList) => {
-                for (const regex of patternList) {
-                    const match = text.match(regex);
-                    if (match) return parseInt(match[1]);
+            const lines = text.split('\n');
+            let tableHeaderFound = false;
+            let colIndices = { input: -1, cache: -1, output: -1, write: -1 };
+
+            for (let line of lines) {
+                // Remove box characters but preserve internal spacing for column separation
+                const cleanLine = line.replace(/[│┃┆┇┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬]/g, ' ');
+                const trimmed = cleanLine.trim();
+                if (!trimmed || trimmed.includes('──') || trimmed.includes('==')) continue;
+
+                // 1. Header Detection
+                const lowLine = trimmed.toLowerCase();
+                if (!tableHeaderFound && lowLine.includes('model') && (lowLine.includes('token') || lowLine.includes('input') || lowLine.includes('output'))) {
+                    const headerParts = cleanLine.split(/\s{2,}/).map(h => h.trim()).filter(h => h);
+                    headerParts.forEach((h, i) => {
+                        const lowH = h.toLowerCase();
+                        if (lowH.includes('input')) colIndices.input = i;
+                        else if (lowH.includes('output') || lowH.includes('completion')) colIndices.output = i;
+                        else if (lowH.includes('cache') || lowH.includes('read') || lowH.includes('creation') || lowH.includes('write')) {
+                            if (lowH.includes('creation') || lowH.includes('write')) colIndices.write = i;
+                            else colIndices.cache = i;
+                        }
+                    });
+                    
+                    if (colIndices.input !== -1 || colIndices.output !== -1) {
+                        tableHeaderFound = true;
+                        console.log("Found header indices:", colIndices);
+                        continue;
+                    }
                 }
-                return null;
-            };
 
-            const input = findMatch(patterns.input);
-            const output = findMatch(patterns.output);
-            const cached = findMatch(patterns.cached);
+                // 2. Data Parsing
+                const parts = cleanLine.split(/\s{2,}/).map(p => p.trim()).filter(p => p);
+                if (parts.length >= 2) {
+                    let input = 0, output = 0, cache = 0, write = 0;
+                    let rowHasData = false;
 
-            if (input !== null) document.getElementById('inputTokens').value = input;
-            if (output !== null) document.getElementById('outputTokens').value = output;
-            if (cached !== null) document.getElementById('cachedTokens').value = cached;
+                    const parseNum = (s) => parseInt(s?.replace(/,/g, '')) || 0;
 
-            if (input !== null || output !== null || cached !== null) {
+                    if (tableHeaderFound) {
+                        if (colIndices.input !== -1 && parts[colIndices.input]) { input = parseNum(parts[colIndices.input]); rowHasData = true; }
+                        if (colIndices.output !== -1 && parts[colIndices.output]) { output = parseNum(parts[colIndices.output]); rowHasData = true; }
+                        if (colIndices.cache !== -1 && parts[colIndices.cache]) { cache = parseNum(parts[colIndices.cache]); rowHasData = true; }
+                        if (colIndices.write !== -1 && parts[colIndices.write]) { write = parseNum(parts[colIndices.write]); rowHasData = true; }
+                    } else {
+                        // Header-less guessing (Model, Reqs, Input, Cache, Output)
+                        const nums = parts.slice(1).map(parseNum).filter(n => !isNaN(n));
+                        if (nums.length >= 2) {
+                            if (nums.length === 4) { // Reqs, Input, Cache, Output
+                                input = nums[1]; cache = nums[2]; output = nums[3];
+                            } else if (nums.length === 3) { // Reqs, Input, Output
+                                input = nums[1]; output = nums[2];
+                            } else if (nums.length === 2) { // Input, Output
+                                input = nums[0]; output = nums[1];
+                            }
+                            rowHasData = true;
+                        }
+                    }
+
+                    if (rowHasData && (input > 0 || output > 0 || cache > 0 || write > 0)) {
+                        totalInput += input; totalOutput += output; totalCached += cache; totalWrite += write;
+                        foundAny = true;
+                    }
+                }
+            }
+
+            // 3. Fallback Regex (Global Sum)
+            if (!foundAny) {
+                console.log("Table parse failed, trying regex fallback...");
+                const patterns = {
+                    input: [/([\d,]+)\s+prompt tokens/gi, /([\d,]+)\s+input tokens/gi, /Input:\s*([\d,]+)/gi],
+                    output: [/([\d,]+)\s+completion tokens/gi, /([\d,]+)\s+output tokens/gi, /Output:\s*([\d,]+)/gi],
+                    cached: [/([\d,]+)\s+cached tokens/gi, /Cached:\s*([\d,]+)/gi, /Cache read:\s*([\d,]+)/gi, /Cache hit:\s*([\d,]+)/gi],
+                    write: [/Cache write:\s*([\d,]+)/gi, /Cache creation:\s*([\d,]+)/gi]
+                };
+
+                const sumMatches = (pats) => {
+                    let sum = 0, matched = false;
+                    pats.forEach(regex => {
+                        regex.lastIndex = 0;
+                        let m; while ((m = regex.exec(text)) !== null) { sum += parseInt(m[1].replace(/,/g, '')); matched = true; }
+                    });
+                    return matched ? sum : null;
+                };
+
+                const i = sumMatches(patterns.input);
+                const o = sumMatches(patterns.output);
+                const c = sumMatches(patterns.cached);
+                const w = sumMatches(patterns.write);
+
+                if (i !== null) { totalInput = i; foundAny = true; }
+                if (o !== null) { totalOutput = o; foundAny = true; }
+                if (c !== null) { totalCached = c; foundAny = true; }
+                if (w !== null) { totalWrite = w; foundAny = true; }
+            }
+
+            if (foundAny) {
+                document.getElementById('inputTokens').value = totalInput;
+                document.getElementById('outputTokens').value = totalOutput;
+                document.getElementById('cachedTokens').value = totalCached;
+                document.getElementById('cacheWriteTokens').value = totalWrite;
                 togglePanel('importPanel');
                 fetchEstimates();
             } else {
-                alert("Could not find any token counts in the pasted text. Try a format like '1500 prompt tokens, 500 completion tokens'.");
+                alert("Could not find any token counts. Try pasting a usage table or a summary like '1,500 prompt tokens, 500 completion tokens'.");
             }
         }
 
