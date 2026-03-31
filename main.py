@@ -12,6 +12,7 @@ class EstimationRequest(BaseModel):
     output_tokens: int = 500
 
 class ModelEstimation(BaseModel):
+    model_id: str
     model_name: str
     provider: str
     input_cost: float

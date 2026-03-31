@@ -564,18 +564,17 @@
             let totalCached = 0;
             let totalWrite = 0;
             let foundAny = false;
+            let foundModelHints = new Set();
 
             const lines = text.split('\n');
             let tableHeaderFound = false;
             let colIndices = { input: -1, cache: -1, output: -1, write: -1 };
 
             for (let line of lines) {
-                // Remove box characters but preserve internal spacing for column separation
                 const cleanLine = line.replace(/[|+│┃┆┇┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬]/g, ' ');
                 const trimmed = cleanLine.trim();
                 if (!trimmed || trimmed.includes('──') || trimmed.includes('==') || trimmed.includes('--')) continue;
 
-                // 1. Header Detection
                 const lowLine = trimmed.toLowerCase();
                 if (!tableHeaderFound && lowLine.includes('model') && (lowLine.includes('token') || lowLine.includes('input') || lowLine.includes('output'))) {
                     const headerParts = cleanLine.split(/\s{2,}/).map(h => h.trim()).filter(h => h);
@@ -591,12 +590,10 @@
                     
                     if (colIndices.input !== -1 || colIndices.output !== -1) {
                         tableHeaderFound = true;
-                        console.log("Found header indices:", colIndices);
                         continue;
                     }
                 }
 
-                // 2. Data Parsing
                 const parts = cleanLine.split(/\s{2,}/).map(p => p.trim()).filter(p => p);
                 if (parts.length >= 2) {
                     let input = 0, output = 0, cache = 0, write = 0;
@@ -610,16 +607,11 @@
                         if (colIndices.cache !== -1 && parts[colIndices.cache]) { cache = parseNum(parts[colIndices.cache]); rowHasData = true; }
                         if (colIndices.write !== -1 && parts[colIndices.write]) { write = parseNum(parts[colIndices.write]); rowHasData = true; }
                     } else {
-                        // Header-less guessing (Model, Reqs, Input, Cache, Output)
                         const nums = parts.slice(1).map(parseNum).filter(n => !isNaN(n));
                         if (nums.length >= 2) {
-                            if (nums.length === 4) { // Reqs, Input, Cache, Output
-                                input = nums[1]; cache = nums[2]; output = nums[3];
-                            } else if (nums.length === 3) { // Reqs, Input, Output
-                                input = nums[1]; output = nums[2];
-                            } else if (nums.length === 2) { // Input, Output
-                                input = nums[0]; output = nums[1];
-                            }
+                            if (nums.length === 4) { input = nums[1]; cache = nums[2]; output = nums[3]; }
+                            else if (nums.length === 3) { input = nums[1]; output = nums[2]; }
+                            else if (nums.length === 2) { input = nums[0]; output = nums[1]; }
                             rowHasData = true;
                         }
                     }
@@ -627,13 +619,13 @@
                     if (rowHasData && (input > 0 || output > 0 || cache > 0 || write > 0)) {
                         totalInput += input; totalOutput += output; totalCached += cache; totalWrite += write;
                         foundAny = true;
+                        if (parts[0]) foundModelHints.add(parts[0]);
                     }
                 }
             }
 
-            // 3. Fallback Regex (Global Sum)
+            // Fallback Regex for tokens
             if (!foundAny) {
-                console.log("Table parse failed, trying regex fallback...");
                 const patterns = {
                     input: [/([\d,]+)\s+prompt tokens/gi, /([\d,]+)\s+input tokens/gi, /Input:\s*([\d,]+)/gi],
                     output: [/([\d,]+)\s+completion tokens/gi, /([\d,]+)\s+output tokens/gi, /Output:\s*([\d,]+)/gi],
@@ -661,13 +653,40 @@
                 if (w !== null) { totalWrite = w; foundAny = true; }
             }
 
+            // Look for model names/IDs in the text regardless of table
+            const modelPatterns = [
+                /([a-z0-9-]+)\/([a-z0-9.-]+)/gi, // e.g. google/gemini-1.5-flash
+                /Model:\s*([a-z0-9.-]+)/gi,
+                /Using model\s*([a-z0-9.-]+)/gi
+            ];
+            modelPatterns.forEach(regex => {
+                let m; while ((m = regex.exec(text)) !== null) { foundModelHints.add(m[0]); if (m[1] && m[2]) foundModelHints.add(m[2]); }
+            });
+
             if (foundAny) {
                 document.getElementById('inputTokens').value = totalInput;
                 document.getElementById('outputTokens').value = totalOutput;
                 document.getElementById('cachedTokens').value = totalCached;
                 document.getElementById('cacheWriteTokens').value = totalWrite;
                 togglePanel('importPanel');
-                fetchEstimates();
+                
+                fetchEstimates().then(() => {
+                    if (foundModelHints.size > 0) {
+                        currentEstimations.forEach(est => {
+                            const estId = est.model_id.toLowerCase();
+                            const estName = est.model_name.toLowerCase();
+                            for (let hint of foundModelHints) {
+                                const h = hint.toLowerCase();
+                                if (estId.includes(h) || h.includes(estId) || estName.includes(h)) {
+                                    pinnedModelIds.add(est.model_name);
+                                    selectedModelNames.add(est.model_name); // Ensure it's selected so it shows up
+                                }
+                            }
+                        });
+                        buildSelectionPanel();
+                        renderAll();
+                    }
+                });
             } else {
                 alert("Could not find any token counts. Try pasting a usage table or a summary like '1,500 prompt tokens, 500 completion tokens'.");
             }
